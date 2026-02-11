@@ -2,13 +2,13 @@
 type: post
 status: draft
 created: 2026-02-10
-updated: 2026-02-10
+updated: 2026-02-11
 target: club
 tags: [architecture, platform, layers, MCP, AI-systems, digital-twin]
 source_knowledge: https://github.com/TserenTserenov/spf-digital-platform-pack/tree/main/pack/digital-platform
 ---
 
-# Архитектура ИТ-платформы: 4 слоя, 3 характеристики и принцип отчуждаемости
+# Архитектура ИТ-платформы: 3 слоя, 4 характеристики и принцип отчуждаемости
 
 ---
 
@@ -22,44 +22,43 @@ source_knowledge: https://github.com/TserenTserenov/spf-digital-platform-pack/tr
 
 ---
 
-## 4 слоя платформы
+## 3 слоя платформы
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  СЛОЙ 4: ИНТЕРФЕЙСЫ (тонкие клиенты)                        │
+│  СЛОЙ 3: ИНТЕРФЕЙСЫ (тонкие клиенты)                        │
 │  Telegram Bot │ Web LMS │ ChatGPT Apps │ Mobile │ API       │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  СЛОЙ 3: ИИ-СИСТЕМЫ (stateless, LLM-зависимые)              │
-│  Стратег │ Проводник │ Консультант │ Знание-Экстрактор │ …  │
+│  СЛОЙ 2: ОБРАБОТКА                                           │
+│  ┌─────────────────────────┐  ┌───────────────────────────┐ │
+│  │ Зона А: ИИ-системы      │◄►│ Зона Б: Детерминированные │ │
+│  │ (LLM, stateless)        │  │ (код, stateful, MCP)      │ │
+│  │ Стратег, Проводник,     │  │ Twin, Hub, CRM, LMS,      │ │
+│  │ Консультант, KE, …      │  │ Биллинг, ORY, Event Bus,  │ │
+│  └─────────────────────────┘  └───────────────────────────┘ │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  СЛОЙ 2: ДЕТЕРМИНИРОВАННЫЕ СИСТЕМЫ                            │
-│  Twin │ Hub │ CRM │ LMS │ Биллинг │ ORY │ Event Bus │ MCP  │
-└───────────────────────────┬─────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│  СЛОЙ 1: ХРАНИЛИЩЕ + ИНФРАСТРУКТУРА                          │
+│  СЛОЙ 1: ДАННЫЕ + ИНФРАСТРУКТУРА                             │
 │  GitHub Repos │ PostgreSQL │ SurrealDB │ Embeddings │ Cache  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-Каждый слой взаимодействует только с соседним. Интерфейс не обращается к базе напрямую. ИИ-система не знает, через какой UI пришёл пользователь.
+ИИ-системы и детерминированные системы — **пиры** внутри слоя обработки (горизонтальное взаимодействие). Интерфейс не обращается к данным напрямую. ИИ-система не знает, через какой UI пришёл пользователь.
 
-| Слой                 | Назначение                          | Характер                          | Примеры                             |
-| -------------------- | ----------------------------------- | --------------------------------- | ----------------------------------- |
-| **4. Интерфейсы**    | Точки входа для пользователей       | Тонкие клиенты, без бизнес-логики | Telegram Bot, Web LMS, ChatGPT Apps |
-| **3. ИИ-системы**    | Логика, принятие решений, генерация | Stateless, LLM-зависимые          | Стратег, Проводник, Консультант     |
-| **2. Детерминированные системы** | Доступ к данным и функциям          | Детерминированные                 | Twin, Hub, CRM, LMS, MCP-серверы    |
-| **1. Хранилище**     | Персистентность данных              | Физическое хранение               | GitHub, PostgreSQL, SurrealDB       |
+| Слой | Назначение | Характер | Примеры |
+|------|------------|----------|---------|
+| **3. Интерфейсы** | Точки входа для пользователей | Тонкие клиенты, без бизнес-логики | Telegram Bot, Web LMS, ChatGPT Apps |
+| **2. Обработка** | Логика, принятие решений, доступ к данным | Две зоны-пира (ИИ + детерминированные) | Стратег, Проводник, Twin, Hub, MCP |
+| **1. Данные** | Персистентность данных | Физическое хранение | GitHub, PostgreSQL, SurrealDB |
 
 > Полное описание: [DP.ARCH.001 — Архитектура ИТ-платформы](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.ARCH.001-platform-architecture.md)
 
 ---
 
-## Три архитектурные характеристики
+## Четыре архитектурные характеристики
 
 Характеристика — не лозунг. Это измеряемое качество с конкретным индикатором.
 
@@ -94,11 +93,23 @@ source_knowledge: https://github.com/TserenTserenov/spf-digital-platform-pack/tr
 - Знание-Экстрактор повышает точность на основе ревью (feedback loop)
 - Memory хранит операционный контекст → каждая следующая сессия эффективнее предыдущей
 
+### 4. Генеративность
+
+**Вопрос:** Может ли новый пользователь развернуть работающую систему из шаблона платформы за один сеанс?
+
+**Как обеспечиваем:**
+- **Общее знание** (Platform-space): Pack, SPF, FPF — структурированные знания, доступные всем
+- **Шаблоны развёртывания**: Template-репо экзокортекса → fork & deploy → работающая система
+- **Правила наследования**: пользователь строит User-space поверх Platform-space, не с нуля
+- **Feedback loop**: captures пользователей обогащают общее знание → следующий стартует с лучшей базы
+
+Платформа помогает людям быть созидателями — не просто предоставляет инструменты, а порождает новые автономные системы из своих знаний и шаблонов.
+
 ---
 
 ## Ключевые механизмы
 
-### Цифровой двойник (слой 2)
+### Цифровой двойник (слой 2, зона Б)
 
 Единое хранилище состояния человека на платформе.
 
@@ -111,7 +122,7 @@ source_knowledge: https://github.com/TserenTserenov/spf-digital-platform-pack/tr
 | Ступени | STAGE.* | Текущий уровень |
 | Метрики | MET.* | Агрегированные показатели |
 
-### MCP Registry (слой 2)
+### MCP Registry (слой 2, зона Б)
 
 Три категории MCP-серверов:
 
@@ -121,7 +132,7 @@ source_knowledge: https://github.com/TserenTserenov/spf-digital-platform-pack/tr
 | **Персональные данные** | Read/Write per user | digital-twin-mcp, user-repos | Только владелец |
 | **Сервисы** | Read/Write | fsm-mcp, linear, github | По авторизации |
 
-### Экзокортекс-интерфейс (слой 3 ↔ пользователь)
+### Экзокортекс-интерфейс (слой 3 ↔ пользователь, слой 2 ↔ ИИ)
 
 Модульный CLAUDE.md + Memory — конфигурация взаимодействия пользователя с ИИ-системами. Platform-space (общие модули, шаблоны) + user-space (персональный контекст, план, цели).
 
@@ -180,7 +191,7 @@ LMS/Клуб → Activity Hub → Proof-of-Impact → Token Economy
 
 | Документ | Что описывает | Ссылка |
 |----------|--------------|--------|
-| **DP.ARCH.001** | Архитектура (4 слоя, 3 характеристики, принципы) | [→ файл](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.ARCH.001-platform-architecture.md) |
+| **DP.ARCH.001** | Архитектура (3 слоя, 4 характеристики, принципы) | [→ файл](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.ARCH.001-platform-architecture.md) |
 | **DP.CONCEPT.001** | Концепция: что платформа даёт человеку | [→ файл](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.CONCEPT.001-platform-concept.md) |
 | **DP.AGENT.001** | Реестр ИИ-систем (агенты + ассистенты) | [→ файл](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.AGENT.001-ai-agents.md) |
 | **DP.SYS.001** | Детерминированные системы (LMS, CRM, Twin) | [→ файл](https://github.com/TserenTserenov/spf-digital-platform-pack/blob/main/pack/digital-platform/02-domain-entities/DP.SYS.001-deterministic-systems.md) |
@@ -194,10 +205,10 @@ LMS/Клуб → Activity Hub → Proof-of-Impact → Token Economy
 
 | Репо | Тип | Что делает |
 |------|-----|-----------|
-| [aist_bot](https://github.com/aisystant/aist_bot) | instrument | Telegram-бот (тонкий клиент, слой 4) |
-| [digital-twin-mcp](https://github.com/aisystant/digital-twin-mcp) | instrument | MCP-реализация цифрового двойника (слой 2) |
-| [strategist-agent](https://github.com/TserenTserenov/strategist-agent) | instrument | Агент Стратег (слой 3) |
-| [extractor-agent](https://github.com/TserenTserenov/extractor-agent) | instrument | Знание-Экстрактор — prompt-based ИИ-система (слой 3) |
+| [aist_bot](https://github.com/aisystant/aist_bot) | instrument | Telegram-бот (тонкий клиент, слой 3) |
+| [digital-twin-mcp](https://github.com/aisystant/digital-twin-mcp) | instrument | MCP-реализация цифрового двойника (слой 2, зона Б) |
+| [strategist-agent](https://github.com/TserenTserenov/strategist-agent) | instrument | Агент Стратег (слой 2, зона А) |
+| [extractor-agent](https://github.com/TserenTserenov/extractor-agent) | instrument | Знание-Экстрактор — prompt-based ИИ-система (слой 2, зона А) |
 | [exocortex-setup-agent](https://github.com/TserenTserenov/exocortex-setup-agent) | instrument | Агент развёртывания экзокортекса |
 | [exocortex-template](https://github.com/TserenTserenov/exocortex-template) | format | Шаблон экзокортекса (CLAUDE.md + memory + стратег) |
 | [ecosystem-development](https://github.com/aisystant/ecosystem-development) | governance | Планы, реестры, процессы |
