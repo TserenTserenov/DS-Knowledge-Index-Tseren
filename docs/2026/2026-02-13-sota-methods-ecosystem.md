@@ -294,7 +294,7 @@ SPF определяет **слоты**, которые SOTA-методы зап
 
 **Результат:** одно изменение в Pack → автоматически обновляет все downstream. Знание не дублируется. Агенты работают с проверенным знанием, не с галлюцинациями. Система эволюционирует через обновление Pack, не через переписывание кода.
 
-### Оценка через 4 характеристики
+### Оценка через 5 характеристик (ЭМОГС)
 
 | Характеристика | Как обеспечивается |
 |----------------|-------------------|
@@ -302,6 +302,7 @@ SPF определяет **слоты**, которые SOTA-методы зап
 | **Масштабируемость** | RAPTOR (3-layer loading) + GraphRAG (multi-hop) + Sub-Pack Protocol |
 | **Обучаемость** | Context Engineering (Write/Select/Compress) + UL (единый язык) + llms.txt (manifest) |
 | **Генеративность** | Multi-Representation (Pack → любой surface) + AI-Native Org (новый агент = новая org unit) + Digital Twins (Pack + данные = двойник) |
+| **Скорость** | MCP на Cloudflare Workers (edge, <50ms cold start) + Neon serverless (connection pooling) + stateless ИИ-системы |
 
 ---
 
