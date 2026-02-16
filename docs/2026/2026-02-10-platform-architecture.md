@@ -42,7 +42,7 @@ source_knowledge: https://github.com/TserenTserenov/PACK-digital-platform/tree/m
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  СЛОЙ 1: ДАННЫЕ + ИНФРАСТРУКТУРА                             │
-│  GitHub Repos │ PostgreSQL │ SurrealDB │ Embeddings │ Cache  │
+│  GitHub Repos │ Neon PostgreSQL (pgvector, pg_trgm) │ Cache  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -52,7 +52,7 @@ source_knowledge: https://github.com/TserenTserenov/PACK-digital-platform/tree/m
 |------|------------|----------|---------|
 | **3. Интерфейсы** | Точки входа для пользователей | Тонкие клиенты, без бизнес-логики | Telegram Bot, Web LMS, ChatGPT Apps |
 | **2. Обработка** | Логика, принятие решений, доступ к данным | Две зоны-пира (ИИ + детерминированные) | Стратег, Проводник, Twin, Hub, MCP |
-| **1. Данные** | Персистентность данных | Физическое хранение | GitHub, PostgreSQL, SurrealDB |
+| **1. Данные** | Персистентность данных | Физическое хранение | GitHub, Neon PostgreSQL (pgvector + pg_trgm) |
 
 > Полное описание: [DP.ARCH.001 — Архитектура ИТ-платформы](https://github.com/TserenTserenov/PACK-digital-platform/blob/main/pack/digital-platform/02-domain-entities/DP.ARCH.001-platform-architecture.md)
 
