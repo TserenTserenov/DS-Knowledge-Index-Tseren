@@ -54,4 +54,4 @@ OpenAI показали: дело не в мощности ИИ. Дело в с�
 
 Harness engineering для кода — уже реальность. Harness engineering для интеллекта — это то, что мы строим прямо сейчас.
 
-Источник: OpenAI, «Harness engineering: leveraging Codex in an agent-first world», 11 февраля 2026
+Источник: OpenAI, «Harness engineering: leveraging Codex in an agent-first world», 11 февраля 2026 — https://openai.com/index/harness-engineering/
