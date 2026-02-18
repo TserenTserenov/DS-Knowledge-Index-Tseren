@@ -4,40 +4,40 @@
 
 ## Февраль
 
-- [Pieces помнит всё. Интеллектуальная рабочая среда (IWE) — только важное](2026-02-18-pieces-vs-exocortex.md) — 18 фев
-- [У меня не персональный ассистент. У меня 21 репозиторий и четыре типа](2026-02-18-not-personal-exocortex.md) — 18 фев
-- [OpenAI построили упряжь для кода. Мы строим упряжь для интеллекта](2026-02-17-harness-engineering-iwe.md) — 17 фев
-- [Агенты заработали автономно: W08, 16 февраля 2026](2026-02-16-week-with-ai-exocortex.md) — 16 фев
-- [Один объект — много предметных областей](2026-02-14-one-object-many-domains.md) — 14 фев
-- [Университеты — всё. Программа для 17-18-летних](2026-02-13-universitety-vse-programma-dlya-17-18-letnih.md) — 13 фев
-- [SOTA методы в экосистеме](2026-02-13-sota-methods-ecosystem.md) — 13 фев
-- [DDD vs FPF / SPF / Pack](2026-02-10-ddd-vs-fpf-spf-pack.md) — 10 фев
-- [Как устроена моя система управления знаниями](2026-02-10-how-the-system-works.md) — 10 фев
-- [Архитектура платформы](2026-02-10-platform-architecture.md) — 10 фев
+- [Pieces помнит всё. Интеллектуальная рабочая среда (IWE) — только важное](2026/2026-02-18-pieces-vs-exocortex.md) — 18 фев
+- [У меня не персональный ассистент. У меня 21 репозиторий и четыре типа](2026/2026-02-18-not-personal-exocortex.md) — 18 фев
+- [OpenAI построили упряжь для кода. Мы строим упряжь для интеллекта](2026/2026-02-17-harness-engineering-iwe.md) — 17 фев
+- [Агенты заработали автономно: W08, 16 февраля 2026](2026/2026-02-16-week-with-ai-exocortex.md) — 16 фев
+- [Один объект — много предметных областей](2026/2026-02-14-one-object-many-domains.md) — 14 фев
+- [Университеты — всё. Программа для 17-18-летних](2026/2026-02-13-universitety-vse-programma-dlya-17-18-letnih.md) — 13 фев
+- [SOTA методы в экосистеме](2026/2026-02-13-sota-methods-ecosystem.md) — 13 фев
+- [DDD vs FPF / SPF / Pack](2026/2026-02-10-ddd-vs-fpf-spf-pack.md) — 10 фев
+- [Как устроена моя система управления знаниями](2026/2026-02-10-how-the-system-works.md) — 10 фев
+- [Архитектура платформы](2026/2026-02-10-platform-architecture.md) — 10 фев
 
 ## Январь
 
-- [Миф о "праздной жизни богатых" и миф о "скучном ученике"](2026-01-18-mif-o-prazdnoy-zhizni-bogatyh-i-mif-o-skuchnom-uch.md) — 18 янв
-- [Системное саморазвитие, Г7: вопросы для повторения](2026-01-18-sistemnoe-samorazvitie-g7-voprosy-dlya-povtoreniya.md) — 18 янв
-- [Мысли по седьмому разделу системного саморазвития](2026-01-16-mysli-po-sedmomu-razdelu-sistemnogo-samorazvitiya.md) — 16 янв
-- [Слово "контроль" ломает мышление об AGI](2026-01-16-slovo-kontrol-lomaet-myshlenie-ob-agi.md) — 16 янв
-- [Создаю концепцию Индексатора знаний и Генератора инфопродуктов](2026-01-16-sozdayu-kontseptsiyu-indeksatora-znaniy-i-generato.md) — 16 янв
-- [Моя первая ИТ-система](2026-01-15-moya-pervaya-it-sistema.md) — 15 янв
-- ["Скучная" жизнь](2026-01-12-skuchnaya-zhizn.md) — 12 янв
-- [ДЗ: Получение инвестиций на мой проект](2026-01-11-dz-poluchenie-investitsiy-na-moy-proekt.md) — 11 янв
-- [Системное саморазвитие, Г6: вопросы для повторения](2026-01-11-sistemnoe-samorazvitie-g6-voprosy-dlya-povtoreniya.md) — 11 янв
-- [Важное лично для меня из раздела "Что такое системное мышление"](2026-01-11-vazhnoe-lichno-dlya-menya-iz-razdela-chto-takoe-si.md) — 11 янв
-- [Мысли по шестому разделу системы саморазвития](2026-01-10-mysli-po-shestomu-razdelu-sistemy-samorazvitiya.md) — 10 янв
-- [Роль — это не "кто ты". Роль — это "что от тебя ждут сейчас"](2026-01-10-rol-eto-ne-kto-ty-rol-eto-chto-ot-tebya-zhdut-seyc.md) — 10 янв
-- [Мое личное стратегирование](2026-01-09-moe-lichnoe-strategirovanie.md) — 9 янв
-- [Руководства программы "Личное развитие" становятся открытыми](2026-01-08-rukovodstva-programmy-lichnoe-razvitie-stanovyatsy.md) — 8 янв
-- ["Нет времени", "не знаю с чего начать", "не уверен": что это на самом деле](2026-01-06-net-vremeni-ne-znayu-s-chego-nachat-ne-uveren-chto.md) — 6 янв
-- [Практики саморазвития: заготовка по встрече с мастером](2026-01-06-praktiki-samorazvitiya-zagotovka-po-vstreche-s-mas.md) — 6 янв
-- [Мысли по пятому разделу руководства "Системное саморазвитие"](2026-01-05-moi-anatoliya-mysli-po-pyatomu-razdelu-rukovodstva.md) — 5 янв
-- [Практики саморазвития: заготовка к разделу 6 "Организация отдыха"](2026-01-05-praktiki-samorazvitiya-zagotovka-k-razdelu-6-organ.md) — 5 янв
-- [Рефлексия по мастерствам общения и мышления проговариванием](2026-01-05-refleksiya-po-masterstvam-obscheniya-i-myshleniya.md) — 5 янв
-- [Моя текущая работа с окружением](2026-01-04-moya-tekuschaya-rabota-s-okruzheniem.md) — 4 янв
-- [Моя досуговая деятельность](2026-01-03-moya-dosugovaya-deyatelnost.md) — 3 янв
-- [Заготовка по разделу 5: мышление проговариванием](2026-01-03-zagotovka-po-razdelu-5-praktik-samorazvitiya-myshl.md) — 3 янв
-- [Заметки по 5 встрече "Практик саморазвития"](2026-01-03-zametki-po-5-vstreche-praktik-samorazvitiya.md) — 3 янв
-- [Итоги 2025](2026-01-01-itogi-2025-2699.md) — 1 янв
+- [Миф о "праздной жизни богатых" и миф о "скучном ученике"](2026/2026-01-18-mif-o-prazdnoy-zhizni-bogatyh-i-mif-o-skuchnom-uch.md) — 18 янв
+- [Системное саморазвитие, Г7: вопросы для повторения](2026/2026-01-18-sistemnoe-samorazvitie-g7-voprosy-dlya-povtoreniya.md) — 18 янв
+- [Мысли по седьмому разделу системного саморазвития](2026/2026-01-16-mysli-po-sedmomu-razdelu-sistemnogo-samorazvitiya.md) — 16 янв
+- [Слово "контроль" ломает мышление об AGI](2026/2026-01-16-slovo-kontrol-lomaet-myshlenie-ob-agi.md) — 16 янв
+- [Создаю концепцию Индексатора знаний и Генератора инфопродуктов](2026/2026-01-16-sozdayu-kontseptsiyu-indeksatora-znaniy-i-generato.md) — 16 янв
+- [Моя первая ИТ-система](2026/2026-01-15-moya-pervaya-it-sistema.md) — 15 янв
+- ["Скучная" жизнь](2026/2026-01-12-skuchnaya-zhizn.md) — 12 янв
+- [ДЗ: Получение инвестиций на мой проект](2026/2026-01-11-dz-poluchenie-investitsiy-na-moy-proekt.md) — 11 янв
+- [Системное саморазвитие, Г6: вопросы для повторения](2026/2026-01-11-sistemnoe-samorazvitie-g6-voprosy-dlya-povtoreniya.md) — 11 янв
+- [Важное лично для меня из раздела "Что такое системное мышление"](2026/2026-01-11-vazhnoe-lichno-dlya-menya-iz-razdela-chto-takoe-si.md) — 11 янв
+- [Мысли по шестому разделу системы саморазвития](2026/2026-01-10-mysli-po-shestomu-razdelu-sistemy-samorazvitiya.md) — 10 янв
+- [Роль — это не "кто ты". Роль — это "что от тебя ждут сейчас"](2026/2026-01-10-rol-eto-ne-kto-ty-rol-eto-chto-ot-tebya-zhdut-seyc.md) — 10 янв
+- [Мое личное стратегирование](2026/2026-01-09-moe-lichnoe-strategirovanie.md) — 9 янв
+- [Руководства программы "Личное развитие" становятся открытыми](2026/2026-01-08-rukovodstva-programmy-lichnoe-razvitie-stanovyatsy.md) — 8 янв
+- ["Нет времени", "не знаю с чего начать", "не уверен": что это на самом деле](2026/2026-01-06-net-vremeni-ne-znayu-s-chego-nachat-ne-uveren-chto.md) — 6 янв
+- [Практики саморазвития: заготовка по встрече с мастером](2026/2026-01-06-praktiki-samorazvitiya-zagotovka-po-vstreche-s-mas.md) — 6 янв
+- [Мысли по пятому разделу руководства "Системное саморазвитие"](2026/2026-01-05-moi-anatoliya-mysli-po-pyatomu-razdelu-rukovodstva.md) — 5 янв
+- [Практики саморазвития: заготовка к разделу 6 "Организация отдыха"](2026/2026-01-05-praktiki-samorazvitiya-zagotovka-k-razdelu-6-organ.md) — 5 янв
+- [Рефлексия по мастерствам общения и мышления проговариванием](2026/2026-01-05-refleksiya-po-masterstvam-obscheniya-i-myshleniya.md) — 5 янв
+- [Моя текущая работа с окружением](2026/2026-01-04-moya-tekuschaya-rabota-s-okruzheniem.md) — 4 янв
+- [Моя досуговая деятельность](2026/2026-01-03-moya-dosugovaya-deyatelnost.md) — 3 янв
+- [Заготовка по разделу 5: мышление проговариванием](2026/2026-01-03-zagotovka-po-razdelu-5-praktik-samorazvitiya-myshl.md) — 3 янв
+- [Заметки по 5 встрече "Практик саморазвития"](2026/2026-01-03-zametki-po-5-vstreche-praktik-samorazvitiya.md) — 3 янв
+- [Итоги 2025](2026/2026-01-01-itogi-2025-2699.md) — 1 янв
