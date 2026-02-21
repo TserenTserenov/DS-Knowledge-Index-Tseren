@@ -5,7 +5,8 @@ date: 2026-02-20
 audience: wide
 category: knowledge
 tags: [AI, knowledge-management, worldview, compilation, strategy]
-status: draft
+status: ready
+target: club
 related_wp: [43, 49]
 ---
 

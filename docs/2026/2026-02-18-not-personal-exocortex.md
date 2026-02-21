@@ -2,9 +2,9 @@
 type: post
 title: "22 репозитория и три слоя: среда, где человек созидает, а агенты обслуживают"
 audience: community
-status: draft
+status: ready
 created: 2026-02-18
-target: telegram
+target: club
 source_knowledge: null
 tags: [IWE, экзокортекс, архитектура, агенты, Aisystant]
 content_plan: "WP-43"

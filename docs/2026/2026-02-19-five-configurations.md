@@ -2,9 +2,9 @@
 type: post
 title: "5 конфигураций одной платформы: от справочника до со-мыслителя"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-19
-target: facebook
+target: club
 source_knowledge: "DP.ARCH.002, DP.D.028"
 tags: [тиры, платформа, AI, персонализация, экзокортекс, IWE]
 content_plan: "WP-43, post #13"

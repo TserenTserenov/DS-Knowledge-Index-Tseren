@@ -2,9 +2,9 @@
 type: post
 title: "Что общего между мостом, розовым кустом и вами"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-18
-target: telegram
+target: club
 source_knowledge: null
 tags: [семинар, развитие, системное мышление]
 content_plan: "WP-43, post #3"

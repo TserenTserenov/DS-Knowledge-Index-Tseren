@@ -2,9 +2,9 @@
 type: post
 title: "IDE для интеллекта: как устроена среда, где развитие работает без героизма"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-18
-target: facebook
+target: club
 source_knowledge: "WP-36, WP-41"
 tags: [IWE, IDE, экзокортекс, AI, развитие, системное мышление]
 content_plan: "WP-43, post #8"

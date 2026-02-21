@@ -2,9 +2,9 @@
 type: post
 title: "Четыре вещи, спрятанные в одном слове"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-20
-target: telegram
+target: club
 source_knowledge: "DP.AGENT.001, DP.D.033, PD.FORM.004"
 tags: [ИИ-системы, роли, различения, архитектура, экзокортекс]
 content_plan: "WP-43, post #14"

@@ -1,6 +1,6 @@
 ---
 type: post
-status: draft
+status: published
 created: 2026-02-10
 updated: 2026-02-11
 target: club

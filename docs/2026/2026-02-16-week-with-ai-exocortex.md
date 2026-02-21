@@ -2,7 +2,7 @@
 type: post
 title: "Агенты заработали автономно: W08, 16 февраля 2026"
 audience: community
-status: draft
+status: published
 created: 2026-02-16
 target: club
 source_knowledge: null

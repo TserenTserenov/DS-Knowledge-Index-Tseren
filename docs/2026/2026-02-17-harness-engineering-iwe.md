@@ -2,9 +2,9 @@
 type: post
 title: "OpenAI построили упряжь для кода. Мы строим упряжь для интеллекта"
 audience: community
-status: draft
+status: ready
 created: 2026-02-17
-target: facebook
+target: club
 source_knowledge: "PACK-digital-platform/DP.SOTA.002, DP.D.025"
 tags: [IWE, harness-engineering, context-engineering, AI, OpenAI, экзокортекс]
 content_plan: "WP-43"
