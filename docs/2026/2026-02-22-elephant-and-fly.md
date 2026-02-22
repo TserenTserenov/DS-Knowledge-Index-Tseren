@@ -2,7 +2,7 @@
 type: post
 title: "Что общего между слоном и мухой?"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-22
 target: club
 source_knowledge: "PD.FORM.019"

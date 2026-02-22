@@ -2,6 +2,8 @@
 type: post
 title: "Один объект — много предметных областей"
 date: 2026-02-14
+status: ready
+target: club
 tags: [fpf, spf, pack, bounded-context, distinctions]
 ---
 
