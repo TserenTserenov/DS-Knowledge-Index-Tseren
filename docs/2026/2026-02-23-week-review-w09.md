@@ -2,7 +2,7 @@
 type: post
 title: "451 коммит, семинар и 3 новых Pack'а: W09, 16–23 февраля 2026"
 audience: community
-status: ready
+status: published
 created: 2026-02-23
 target: club
 source_knowledge: null
