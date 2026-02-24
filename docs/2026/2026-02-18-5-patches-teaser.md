@@ -2,7 +2,7 @@
 type: post
 title: "Что общего между мостом, розовым кустом и вами"
 audience: wide
-status: ready
+status: published
 created: 2026-02-18
 target: club
 source_knowledge: null
