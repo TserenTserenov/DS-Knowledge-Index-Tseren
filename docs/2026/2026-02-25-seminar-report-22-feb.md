@@ -2,7 +2,7 @@
 type: post
 title: "Развитие — не про силу воли: отчёт по семинару 22 февраля"
 audience: community
-status: ready
+status: published
 created: 2026-02-25
 target: club
 source_knowledge: null
