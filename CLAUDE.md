@@ -1,6 +1,6 @@
 # DS-Knowledge-Index-Tseren — инструкции для Claude
 
-> **Тип:** Downstream / instrument
+> **Тип:** DS/instrument
 > **Система:** Созидатель (Knowledge-Creator)
 > **Source-of-truth:** нет (upstream: PACK-personal, PACK-MIM, PACK-digital-platform, PACK-ecosystem)
 > **Роль Claude:** Автор контента (при написании постов)

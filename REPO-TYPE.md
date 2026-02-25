@@ -1,6 +1,6 @@
 # Тип репозитория
 
-**Тип**: `Downstream/instrument`
+**Тип**: `DS/instrument`
 **Система (SoI)**: Созидатель
 **Содержание**: code
 **Для кого**: personal
