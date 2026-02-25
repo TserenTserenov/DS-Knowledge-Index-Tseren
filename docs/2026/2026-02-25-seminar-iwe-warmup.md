@@ -2,7 +2,7 @@
 type: post
 title: "От блокнота к IDE — 30 лет. От ChatGPT к интеллектуальной среде — сейчас"
 audience: wide
-status: ready
+status: published
 created: 2026-02-25
 target: club
 source_knowledge: "WP-48"
