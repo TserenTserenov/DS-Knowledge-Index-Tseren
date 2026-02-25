@@ -2,7 +2,7 @@
 type: post
 title: "Pieces помнит всё. Интеллектуальная рабочая среда (IWE) — только важное"
 audience: community
-status: draft
+status: published
 created: 2026-02-18
 target: club
 source_knowledge: null
