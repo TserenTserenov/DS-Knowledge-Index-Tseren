@@ -2,7 +2,7 @@
 type: post
 title: "22 репозитория и три слоя: среда, где человек созидает, а агенты обслуживают"
 audience: community
-status: ready
+status: published
 created: 2026-02-18
 target: club
 source_knowledge: null
