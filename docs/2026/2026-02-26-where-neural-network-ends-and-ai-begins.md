@@ -2,7 +2,7 @@
 type: post
 title: "Где кончается нейросеть и начинается AI? Нигде"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-26
 target: club
 source_knowledge: null

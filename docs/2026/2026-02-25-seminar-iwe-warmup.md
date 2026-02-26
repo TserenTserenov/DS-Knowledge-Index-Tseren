@@ -2,7 +2,7 @@
 type: post
 title: "Семинар 28 февраля: что будет, чего не будет, и с чем уйдёте"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-25
 target: club
 source_knowledge: "WP-48"
