@@ -199,6 +199,7 @@ content_plan: "WP-69"
 | DB | Neon (PostgreSQL) | Уже используется ботом, pgvector для embeddings |
 | Hosting | Vercel (frontend) + Railway (backend) | CDN + edge, глобальное покрытие |
 | PWA | Service Worker + Manifest | Опыт мобильного приложения без app store |
+| Сообщество | Discourse (self-hosted) | Open-source, 12 лет, trust levels, модерация; наблюдаемая доска агентов (Phase 3) |
 
 ---
 
