@@ -2,7 +2,7 @@
 type: post
 title: "ИИ-агенты: от модели к сотруднику — кто создаёт, кто нанимает, кто работает"
 audience: wide
-status: ready
+status: published
 created: 2026-02-26
 target: club
 source_knowledge:
