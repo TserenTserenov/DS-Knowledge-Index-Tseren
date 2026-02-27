@@ -2,7 +2,7 @@
 type: post
 title: "IDE для интеллекта: как устроена среда, где развитие работает без героизма"
 audience: wide
-status: ready
+status: published
 created: 2026-02-18
 target: club
 source_knowledge: "WP-36, WP-41"
