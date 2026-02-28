@@ -2,7 +2,7 @@
 type: post
 title: "5 конфигураций одной платформы: от справочника до со-мыслителя"
 audience: wide
-status: ready
+status: draft
 created: 2026-02-19
 updated: 2026-02-22
 target: club
