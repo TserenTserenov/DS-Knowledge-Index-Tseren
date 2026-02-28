@@ -2,7 +2,7 @@
 type: post
 title: "Потеря фокуса, цикл целей и ИИ-секретарь: разбор ответов участника семинара"
 audience: community
-status: ready
+status: published
 created: 2026-02-28
 target: club
 source_knowledge:
