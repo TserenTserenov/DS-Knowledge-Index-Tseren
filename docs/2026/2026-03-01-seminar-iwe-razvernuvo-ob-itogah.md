@@ -2,7 +2,7 @@
 type: post
 title: "Семинар «IWE для управляемого развития»: что произошло, что зацепило участников и что дальше"
 audience: community
-status: ready
+status: published
 created: 2026-03-01
 target: club
 source_knowledge:
