@@ -3,7 +3,7 @@ type: post
 title: "Почему продуктивность — не про волю, а про умение и желание"
 date: 2026-02-21
 audience: wide
-status: ready
+status: published
 created: 2026-02-21
 target: club
 source_knowledge: "PD.D.065, PD.D.062, PD.CHR.004"
