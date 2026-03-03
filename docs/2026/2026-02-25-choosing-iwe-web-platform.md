@@ -2,7 +2,7 @@
 type: post
 title: "5 вариантов, 8 характеристик, 1 решение: как я выбирал интерфейсную платформу для IWE"
 audience: community
-status: ready
+status: published
 created: 2026-02-25
 target: club
 source_knowledge: "PACK-digital-platform/01D-adr-web-ui-platform.md"
