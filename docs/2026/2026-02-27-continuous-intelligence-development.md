@@ -2,7 +2,7 @@
 type: post
 title: "Непрерывное развитие интеллекта: чему нас учит работа Anthropic и OpenAI"
 audience: wide
-status: ready
+status: published
 created: 2026-02-27
 target: club
 source_knowledge: null
