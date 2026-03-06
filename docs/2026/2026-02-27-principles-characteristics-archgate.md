@@ -2,7 +2,7 @@
 type: post
 title: "20 принципов, 7 характеристик, 1 метод: как не путать средства с целями в архитектуре"
 audience: community
-status: ready
+status: published
 created: 2026-02-27
 target: club
 source_knowledge: "PACK-digital-platform/DP.ARCH.001, DP.M.005, DP.D.010"
