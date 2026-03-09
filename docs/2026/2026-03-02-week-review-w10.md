@@ -2,7 +2,7 @@
 type: post
 title: "Семинар, новая архитектура и терминологический долг: W10, 23 фев — 1 мар"
 audience: community
-status: ready
+status: published
 created: 2026-03-02
 target: club
 source_knowledge: null
