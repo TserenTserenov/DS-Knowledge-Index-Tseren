@@ -2,7 +2,7 @@
 type: post
 title: "Образованные агенты: что если платформа, которая учит людей, научит и ИИ?"
 audience: wide
-status: draft
+status: ready
 created: 2026-02-27
 target: club
 source_knowledge:
