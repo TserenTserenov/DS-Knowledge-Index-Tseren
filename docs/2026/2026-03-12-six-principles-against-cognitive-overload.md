@@ -2,7 +2,7 @@
 type: post
 title: "Шесть принципов против когнитивной перегрузки: что говорит наука"
 audience: community
-status: ready
+status: draft
 created: 2026-03-12
 target: club
 source_knowledge: null
