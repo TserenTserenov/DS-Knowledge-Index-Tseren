@@ -2,7 +2,7 @@
 type: post
 title: "Модульная структура IWE"
 audience: community
-status: ready
+status: published
 created: 2026-03-12
 target: club
 source_knowledge: "PACK-digital-platform/DP.IWE.002"
