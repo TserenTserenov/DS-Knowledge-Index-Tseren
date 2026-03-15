@@ -2,7 +2,7 @@
 type: post
 title: "Человек→Агент→Человек: как шаблон IWE решает проблему потери контекста"
 audience: community
-status: ready
+status: published
 created: 2026-03-14
 target: club
 source_knowledge: "PACK-digital-platform/DP.ARCH.001"
