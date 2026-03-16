@@ -2,7 +2,7 @@
 type: post
 title: "Когда completion rate падает, это сигнал к пересмотру: W11, 2 мар — 8 мар"
 audience: community
-status: ready
+status: published
 created: 2026-03-09
 target: club
 source_knowledge: null
