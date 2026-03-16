@@ -2,7 +2,7 @@
 type: post
 title: "Восстановление фокуса через фрактал: W12, 9–15 марта"
 audience: community
-status: ready
+status: published
 created: 2026-03-16
 target: club
 source_knowledge: null
