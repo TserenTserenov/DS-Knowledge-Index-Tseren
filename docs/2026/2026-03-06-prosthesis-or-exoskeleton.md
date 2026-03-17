@@ -5,7 +5,7 @@ date: 2026-03-06
 audience: wide
 category: knowledge
 tags: [AI, thinking, affordances, IWE, worldview, learning]
-status: ready
+status: published
 target: club
 related_wp: [76]
 ---
