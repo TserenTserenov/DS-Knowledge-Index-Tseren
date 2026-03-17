@@ -2,7 +2,7 @@
 type: post
 title: "IWE для новичков: твоя интеллектуальная рабочая среда"
 audience: wide
-status: ready
+status: published
 created: 2026-03-17
 target: club
 source_knowledge: "PACK-digital-platform/DP.IWE.001, DP.IWE.002"
