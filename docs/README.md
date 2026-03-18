@@ -4,6 +4,7 @@
 
 ## Март
 
+- [Извозчики XXI века: почему ИТ-шники не замечают, что меняется не технология, а культура](2026/10-март/2026-03-18-071-coachmen-of-xxi-century/) — 18 мар (club, facebook, linkedin, telegram, tenchat, x)
 - [Как я строю IWE для мышления — Intellectual Work Environment](2026/10-март/2026-03-18-070-iwe-platform-overview/) — 18 мар (club, habr, draft)
 - [Особое время великих событий](2026/10-март/2026-03-18-068-time-of-great-events/068-1-club-2026-03-18.md) — 18 мар (+ facebook, linkedin, telegram)
 - [Протез или экзоскелет: как не деградировать с ИИ](2026/10-март/2026-03-18-069-prosthesis-or-exoskeleton/) — 18 мар (club, далее адаптации)
