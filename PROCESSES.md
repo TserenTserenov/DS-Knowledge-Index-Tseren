@@ -70,6 +70,60 @@
 
 ---
 
+## S47. Multi-Channel Publish (Мультиканальная публикация)
+
+**Роль:** R21 Публикатор
+**Триггер:** `python social_publish.py publish <file>` или `python social_publish.py scan`
+**Вход:** Файлы адаптаций с `status: ready` и `target: {channel}`
+**Выход:** Пост опубликован в канале, `status → published`
+
+### Поддерживаемые каналы
+
+| Канал | API | Auth | Ограничения |
+|-------|-----|------|-------------|
+| `telegram` | Telegram Bot API | Bot token + channel admin | 4096 символов |
+| `x` | X API v2 | OAuth 1.0a (4 ключа) | 280 символов (тред автоматически) |
+| `linkedin` | Posts API | OAuth 2.0 (`w_member_social`) | 3000 символов |
+| `facebook` | Graph API v25 | Page Access Token | ~63K символов |
+| `tenchat` | — | — | ⚠ Ручной (нет API) |
+| `youtube` | — | — | ⚠ Ручной (нет API community posts) |
+
+### Алгоритм
+
+1. Прочитать frontmatter: `target`, `status`
+2. Если `status ≠ ready` → пропуск
+3. Определить адаптер по `target`
+4. Адаптер форматирует текст (markdown → формат канала)
+5. Адаптер публикует через API канала
+6. Обновить `status: ready → published` в файле
+
+### CLI
+
+```bash
+# Опубликовать один файл:
+python social_publish.py publish path/to/071-4-telegram-2026-03-18.md
+
+# Сканировать и опубликовать все ready:
+python social_publish.py scan [--dry-run]
+
+# Показать статус файла:
+python social_publish.py status path/to/file.md
+
+# Показать доступные каналы:
+python social_publish.py channels
+```
+
+### Конфигурация
+
+Файл: `DS-IT-systems/DS-ai-systems/publisher/scripts/.env`
+Шаблон: `.env.example`
+
+### Реализация
+
+Скрипт: [`DS-IT-systems/DS-ai-systems/publisher/scripts/social_publish.py`](../DS-IT-systems/DS-ai-systems/publisher/scripts/social_publish.py)
+
+---
+
 ## Полный процесс: от идеи до всех каналов
 
 ```
@@ -85,15 +139,18 @@
        ↓
   [5] Пользователь: status: ready на club-файле
        ↓
-  ┌────┴────────────────────────────┐
-  [6] Бот (S25→S26):               [7] Пользователь:
-  автопубликация в клуб             ручная публикация в соцсети
-  ↓                                 (копипаст из файлов)
-  [8] Бот (S28):
-  уведомления о комментариях
+  ┌────┴──────────────────────────────────────┐
+  [6] Бот (S25→S26):                         [7] Пользователь: status: ready
+  автопубликация в клуб                       на адаптациях
+  ↓                                           ↓
+  [8] Бот (S28):                             [8] S47 (social_publish.py):
+  уведомления о комментариях                  автопубликация в соцсети
+                                              (TG, X, LinkedIn, Facebook)
 ```
 
-> **Одноканальный режим:** шаги [1] → [2] → [5] → [6] → [8]. Без адаптаций.
+> **Одноканальный режим:** шаги [1] → [2] → [5] → [6] → [8 клуб]. Без адаптаций.
+> **Мультиканальный:** [1] → [2] → [3] → [4] → [5] → [6] → [7] → [8 соцсети].
+> **TenChat / YouTube:** шаг [8] — ручная публикация (нет API).
 
 ---
 
