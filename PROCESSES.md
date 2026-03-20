@@ -124,6 +124,47 @@ python social_publish.py channels
 
 ---
 
+## S48. Cover Image Generation (Генерация обложки)
+
+**Роль:** R4 Автор (Claude) или вручную
+**Триггер:** Пост написан (club-версия согласована)
+**Вход:** Файл поста `.md` с frontmatter
+**Выход:** `cover.png` в директории поста
+
+### Алгоритм
+
+1. Прочитать пост → извлечь title, tags, первые 3 абзаца
+2. Построить промпт: IWE-стиль (blueprint, navy + cyan + amber) + содержание поста
+3. Вызвать DALL-E 3 API → получить PNG (1792x1024 — горизонтальная обложка)
+4. Сохранить `cover.png` рядом с постом
+
+### CLI
+
+```bash
+# Автоматический промпт из содержимого поста:
+python generate_post_image.py path/to/post.md
+
+# Кастомный промпт:
+python generate_post_image.py path/to/post.md --prompt "три слоя экзокортекса"
+
+# Квадратная (для соцсетей):
+python generate_post_image.py path/to/post.md --size 1024x1024
+
+# Dry-run (показать промпт без генерации):
+python generate_post_image.py path/to/post.md --dry-run
+```
+
+### Конфигурация
+
+API key: `~/IWE/.secrets/openai-api-key` или `OPENAI_API_KEY` env var
+Стоимость: ~$0.04 (1024x1024) / ~$0.08 (1792x1024) за картинку
+
+### Реализация
+
+Скрипт: [`DS-IT-systems/DS-ai-systems/publisher/scripts/generate_post_image.py`](../DS-IT-systems/DS-ai-systems/publisher/scripts/generate_post_image.py)
+
+---
+
 ## Полный процесс: от идеи до всех каналов
 
 ```
@@ -132,6 +173,8 @@ python social_publish.py channels
   [1] Автор + Claude: лонгрид для клуба (club)
        ↓
   [2] Пользователь: согласование club-версии
+       ↓
+  [2b] Claude (S48): генерация обложки (cover.png)
        ↓
   [3] Claude (S46): адаптации для запрошенных каналов
        ↓
@@ -154,4 +197,4 @@ python social_publish.py channels
 
 ---
 
-*Последнее обновление: 2026-03-18*
+*Последнее обновление: 2026-03-20*
