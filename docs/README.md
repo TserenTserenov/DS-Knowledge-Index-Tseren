@@ -4,6 +4,7 @@
 
 ## Март
 
+- [Что я собираюсь сделать до конца года](2026/10-март/2026-03-20-073-strategy-2026/) — 20 мар (club, telegram)
 - [Инженерия среды мышления: context engineering для человека](2026/10-март/2026-03-19-072-engineering-thinking-environment/) — 19 мар (club, habr, draft)
 - [Извозчики XXI века: почему ИТ-шники не замечают, что меняется не технология, а культура](2026/10-март/2026-03-18-071-coachmen-of-xxi-century/) — 18 мар (club, facebook, linkedin, telegram, tenchat, x)
 - [Как я строю IWE для мышления — Intellectual Work Environment](2026/10-март/2026-03-18-070-iwe-platform-overview/) — 18 мар (club, habr, draft)
