@@ -159,6 +159,20 @@ python generate_post_image.py path/to/post.md --dry-run
 API key: `~/IWE/.secrets/openai-api-key` или `OPENAI_API_KEY` env var
 Стоимость: ~$0.04 (1024x1024) / ~$0.08 (1792x1024) за картинку
 
+### Интеграция с публикаторами
+
+Все публикаторы автоматически подхватывают `cover.png` при публикации:
+
+| Публикатор | Как использует cover.png |
+|------------|------------------------|
+| S25/S26 (Discourse) | Upload через Discourse API → markdown `![](url)` в начало поста |
+| S47 Telegram | `sendPhoto` с caption вместо `sendMessage` |
+| S47 X | `media_upload` (v1.1) → `media_ids` в первый твит |
+| S47 LinkedIn | Initialize upload → PUT binary → `content.media.id` в пост |
+| S47 Facebook | `/{page_id}/photos` с `source` + `message` |
+
+Если `cover.png` нет — публикация проходит как раньше (только текст).
+
 ### Реализация
 
 Скрипт: [`DS-IT-systems/DS-ai-systems/publisher/scripts/generate_post_image.py`](../DS-IT-systems/DS-ai-systems/publisher/scripts/generate_post_image.py)
