@@ -198,7 +198,7 @@ LMS/Клуб → Activity Hub → Proof-of-Impact → Token Economy
 
 | Элемент | Что описывает | Пример (Стратег) |
 |---------|--------------|-----------------|
-| **Входы** | Данные, триггеры | Коммиты из git, планы из DS-my-strategy, cron 7:00 |
+| **Входы** | Данные, триггеры | Коммиты из git, планы из DS-my-strategy (приватный governance-хаб), cron 7:00 |
 | **Обработка** | Логика, промпты | Агрегация РП, генерация плана дня |
 | **Выходы** | Артефакты, события | DayPlan.md, WeekPlan.md, PLAN.DayCreated |
 
@@ -230,12 +230,12 @@ LMS/Клуб → Activity Hub → Proof-of-Impact → Token Economy
 |------|-----|-----------|
 | [aist_bot](https://github.com/aisystant/aist_bot) | instrument | Telegram-бот (тонкий клиент, слой 3) |
 | [digital-twin-mcp](https://github.com/aisystant/digital-twin-mcp) | instrument | MCP-реализация цифрового двойника (слой 2, зона Б) |
-| [DS-strategist-agent](https://github.com/TserenTserenov/DS-strategist-agent) | instrument | Агент Стратег (слой 2, зона А) |
+| DS-strategist-agent (приватный) | instrument | Агент Стратег (слой 2, зона А) |
 | [DS-extractor-agent](https://github.com/TserenTserenov/DS-extractor-agent) | instrument | Знание-Экстрактор — prompt-based ИИ-система (слой 2, зона А) |
 | [DS-exocortex-setup-agent](https://github.com/TserenTserenov/DS-exocortex-setup-agent) | instrument | Агент развёртывания экзокортекса |
 | [FMT-exocortex-template](https://github.com/TserenTserenov/FMT-exocortex-template) | format | Шаблон экзокортекса (CLAUDE.md + memory + стратег) |
 | [DS-ecosystem-development](https://github.com/aisystant/DS-ecosystem-development) | governance | Планы, реестры, процессы |
-| [DS-my-strategy](https://github.com/TserenTserenov/DS-my-strategy) | governance | Личный стратегический хаб |
+| DS-my-strategy (приватный) | governance | Личный стратегический хаб |
 
 ### Upstream (откуда берём принципы)
 
@@ -274,7 +274,7 @@ LMS/Клуб → Activity Hub → Proof-of-Impact → Token Economy
 
 2. **Отчуждаемость vs скорость** — принцип «строить для передачи» замедляет разработку. Когда это оправдано, а когда можно hardcode?
 
-3. **ИИ-системы stateless** — текущий Стратег хранит состояние в файлах (DS-my-strategy). Это нарушение stateless или допустимый паттерн?
+3. **ИИ-системы stateless** — текущий Стратег хранит состояние в файлах (DS-my-strategy, приватный). Это нарушение stateless или допустимый паттерн?
 
 4. **Порядок реализации** — что строить следующим: Digital Twin MCP, Token Economy или Hub?
 

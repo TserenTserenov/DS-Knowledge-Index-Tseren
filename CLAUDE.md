@@ -2,7 +2,7 @@
 
 > **Тип:** DS/instrument
 > **Система:** Созидатель (Knowledge-Creator)
-> **Source-of-truth:** нет (upstream: PACK-personal, PACK-MIM, PACK-digital-platform, PACK-ecosystem)
+> **Source-of-truth:** нет (upstream: PACK-personal, PACK-MIM, PACK-digital-platform, PACK-ecosystem (приватный))
 > **Роль Claude:** Автор контента (при написании постов)
 
 ---
