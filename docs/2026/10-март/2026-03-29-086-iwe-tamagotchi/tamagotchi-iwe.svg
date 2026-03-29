@@ -1,111 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif">
 
-  <!-- Background: light -->
-  <rect width="800" height="460" fill="#f8f9fc"/>
+  <!-- Background -->
+  <rect width="400" height="500" fill="#f0f4ff"/>
 
-  <!-- ── TITLE ── -->
-  <text x="400" y="44" text-anchor="middle" fill="#111827" font-size="18" font-weight="700">Две роли создателя ИИ-ассистента</text>
+  <!-- ── Device body ── -->
+  <!-- Shadow -->
+  <ellipse cx="202" cy="408" rx="115" ry="18" fill="#c7d2fe" opacity="0.5"/>
+  <!-- Main body -->
+  <rect x="80" y="60" width="240" height="330" rx="50" fill="#ffffff" stroke="#818cf8" stroke-width="3"/>
+  <!-- Inner rim -->
+  <rect x="96" y="76" width="208" height="298" rx="40" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
 
-  <!-- ══════════════════════════════════════
-       LEFT PANEL — «Из коробки» (яйцо)
-  ══════════════════════════════════════ -->
-  <rect x="30" y="64" width="220" height="340" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
-
-  <!-- Panel label -->
-  <text x="140" y="96" text-anchor="middle" fill="#9ca3af" font-size="12" font-weight="600" letter-spacing="1.5">ИЗ КОРОБКИ</text>
-
-  <!-- Egg -->
-  <ellipse cx="140" cy="210" rx="60" ry="74" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2"/>
-  <!-- Blank face -->
-  <circle cx="124" cy="203" r="6" fill="#d1d5db"/>
-  <circle cx="156" cy="203" r="6" fill="#d1d5db"/>
-  <line x1="127" y1="225" x2="153" y2="225" stroke="#d1d5db" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Brand hint dots -->
-  <circle cx="140" cy="172" r="3.5" fill="#d1d5db"/>
-  <circle cx="130" cy="181" r="2.5" fill="#e5e7eb"/>
-  <circle cx="150" cy="181" r="2.5" fill="#e5e7eb"/>
-  <!-- Crack -->
-  <path d="M123 152 L130 166 L118 178" stroke="#d1d5db" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Caption -->
-  <text x="140" y="316" text-anchor="middle" fill="#9ca3af" font-size="13">Умный, но безликий</text>
-  <text x="140" y="334" text-anchor="middle" fill="#9ca3af" font-size="13">Каждый раз с нуля</text>
-  <text x="140" y="352" text-anchor="middle" fill="#9ca3af" font-size="13">Не знает тебя</text>
-
-  <!-- ══════════════════════════════════════
-       ARROW (center)
-  ══════════════════════════════════════ -->
+  <!-- ── Screen ── -->
+  <rect x="118" y="102" width="164" height="148" rx="16" fill="#1e1b4b" stroke="#4f46e5" stroke-width="2.5"/>
+  <!-- Screen glow -->
+  <rect x="118" y="102" width="164" height="148" rx="16" fill="url(#screenGlow)" opacity="0.3"/>
   <defs>
-    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
-    </marker>
+    <radialGradient id="screenGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <line x1="262" y1="210" x2="338" y2="210" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
-  <text x="300" y="198" text-anchor="middle" fill="#6366f1" font-size="12" font-weight="600">растишь</text>
-  <text x="300" y="228" text-anchor="middle" fill="#9ca3af" font-size="11">вкладываешь</text>
 
-  <!-- ══════════════════════════════════════
-       RIGHT PANEL — IWE (живой ассистент)
-  ══════════════════════════════════════ -->
-  <rect x="350" y="64" width="420" height="340" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <!-- ── AI Robot face on screen ── -->
+  <!-- Robot head -->
+  <rect x="158" y="118" width="84" height="76" rx="12" fill="#312e81" stroke="#6366f1" stroke-width="2"/>
+  <!-- Antenna -->
+  <line x1="200" y1="118" x2="200" y2="106" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="200" cy="103" r="5" fill="#a5b4fc"/>
+  <!-- Eyes (LED-style) -->
+  <rect x="168" y="136" width="20" height="14" rx="4" fill="#1e1b4b"/>
+  <rect x="212" y="136" width="20" height="14" rx="4" fill="#1e1b4b"/>
+  <!-- Eye glow -->
+  <rect x="170" y="138" width="16" height="10" rx="3" fill="#00e5ff" opacity="0.9"/>
+  <rect x="214" y="138" width="16" height="10" rx="3" fill="#00e5ff" opacity="0.9"/>
+  <!-- Mouth (pixel grid) -->
+  <rect x="174" y="162" width="6" height="6" rx="1" fill="#818cf8"/>
+  <rect x="184" y="158" width="6" height="6" rx="1" fill="#a5b4fc"/>
+  <rect x="194" y="158" width="6" height="6" rx="1" fill="#a5b4fc"/>
+  <rect x="204" y="162" width="6" height="6" rx="1" fill="#818cf8"/>
+  <!-- Chest panel -->
+  <rect x="172" y="178" width="56" height="24" rx="6" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1"/>
+  <circle cx="186" cy="190" r="4" fill="#22d3ee"/>
+  <circle cx="200" cy="190" r="4" fill="#818cf8"/>
+  <circle cx="214" cy="190" r="4" fill="#22d3ee"/>
+  <!-- Screen bottom text -->
+  <text x="200" y="236" text-anchor="middle" fill="#818cf8" font-size="9" letter-spacing="1">IWE v2.0</text>
 
-  <!-- Panel label -->
-  <text x="560" y="96" text-anchor="middle" fill="#6366f1" font-size="12" font-weight="600" letter-spacing="1.5">ТВОЙ IWE-АССИСТЕНТ</text>
+  <!-- ── Buttons ── -->
+  <!-- Left button -->
+  <circle cx="128" cy="292" r="16" fill="#6366f1" stroke="#4338ca" stroke-width="2"/>
+  <text x="128" y="297" text-anchor="middle" fill="white" font-size="14" font-weight="700">◀</text>
+  <!-- Center button (main) -->
+  <circle cx="200" cy="300" r="20" fill="#4f46e5" stroke="#3730a3" stroke-width="2.5"/>
+  <circle cx="200" cy="300" r="13" fill="#6366f1"/>
+  <circle cx="200" cy="300" r="6" fill="#a5b4fc"/>
+  <!-- Right button -->
+  <circle cx="272" cy="292" r="16" fill="#6366f1" stroke="#4338ca" stroke-width="2"/>
+  <text x="272" y="297" text-anchor="middle" fill="white" font-size="14" font-weight="700">▶</text>
 
-  <!-- ── Assistant figure (center of right panel) ── -->
-  <rect x="490" y="112" width="140" height="148" rx="22" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
-  <!-- Alive eyes -->
-  <ellipse cx="530" cy="166" rx="11" ry="12" fill="#c7d2fe"/>
-  <ellipse cx="570" cy="166" rx="11" ry="12" fill="#c7d2fe"/>
-  <circle cx="532" cy="164" r="5" fill="#4f46e5"/>
-  <circle cx="572" cy="164" r="5" fill="#4f46e5"/>
-  <!-- Smile -->
-  <path d="M528 192 Q550 207 572 192" stroke="#4f46e5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- Memory chip -->
-  <rect x="541" y="214" width="28" height="20" rx="4" fill="#c7d2fe" stroke="#818cf8" stroke-width="1.5"/>
-  <line x1="547" y1="214" x2="547" y2="234" stroke="#818cf8" stroke-width="1"/>
-  <line x1="554" y1="214" x2="554" y2="234" stroke="#818cf8" stroke-width="1"/>
-  <line x1="561" y1="214" x2="561" y2="234" stroke="#818cf8" stroke-width="1"/>
+  <!-- ── Keychain hole ── -->
+  <circle cx="200" cy="66" r="8" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="200" cy="66" r="4" fill="none" stroke="#818cf8" stroke-width="1.5"/>
 
-  <!-- ── YOU label ── -->
-  <text x="750" y="210" text-anchor="middle" fill="#374151" font-size="14" font-weight="800">ТЫ</text>
-  <line x1="740" y1="155" x2="740" y2="265" stroke="#e5e7eb" stroke-width="1.5"/>
+  <!-- ── Brand label ── -->
+  <text x="200" y="358" text-anchor="middle" fill="#818cf8" font-size="11" font-weight="600" letter-spacing="2">IWE-GOTCHI</text>
 
-  <!-- ── Role 1: Creator (top right) ── -->
-  <rect x="660" y="108" width="128" height="80" rx="12" fill="#f5f3ff" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="724" y="136" text-anchor="middle" fill="#4f46e5" font-size="13" font-weight="700">СОЗДАТЕЛЬ</text>
-  <text x="724" y="154" text-anchor="middle" fill="#6b7280" font-size="11">проектирует</text>
-  <text x="724" y="170" text-anchor="middle" fill="#6b7280" font-size="11">обучает · корректирует</text>
-  <!-- arrow creator → assistant -->
-  <defs>
-    <marker id="arrBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#818cf8"/>
-    </marker>
-  </defs>
-  <path d="M662 172 Q640 182 632 186" stroke="#818cf8" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrBlue)"/>
-
-  <!-- ── Role 2: User (bottom right) ── -->
-  <defs>
-    <marker id="arrTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#14b8a6"/>
-    </marker>
-  </defs>
-  <rect x="660" y="232" width="128" height="80" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="724" y="260" text-anchor="middle" fill="#0f766e" font-size="13" font-weight="700">ПОЛЬЗОВАТЕЛЬ</text>
-  <text x="724" y="278" text-anchor="middle" fill="#6b7280" font-size="11">ставит задачи</text>
-  <text x="724" y="294" text-anchor="middle" fill="#6b7280" font-size="11">получает результат</text>
-  <!-- arrow assistant → user -->
-  <path d="M632 232 Q640 238 660 248" stroke="#5eead4" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrTeal)"/>
-
-  <!-- ── Caption below assistant ── -->
-  <text x="490" y="300" text-anchor="start" fill="#4f46e5" font-size="13">Знает твой контекст</text>
-  <text x="490" y="318" text-anchor="start" fill="#4f46e5" font-size="13">Накапливает опыт</text>
-  <text x="490" y="336" text-anchor="start" fill="#4f46e5" font-size="13">Растёт вместе с тобой</text>
-  <text x="490" y="354" text-anchor="start" fill="#4f46e5" font-size="13">Роли чередуются</text>
-
-  <!-- ══════════════════════════════════════
-       BOTTOM TAGLINE
-  ══════════════════════════════════════ -->
-  <text x="400" y="428" text-anchor="middle" fill="#9ca3af" font-size="13" font-style="italic">Нельзя купить. Только вырастить.</text>
+  <!-- ── Caption ── -->
+  <text x="200" y="440" text-anchor="middle" fill="#6366f1" font-size="15" font-weight="700">Вырасти своего ИИ</text>
+  <text x="200" y="462" text-anchor="middle" fill="#9ca3af" font-size="12">Нельзя купить. Только вырастить.</text>
 
 </svg>
