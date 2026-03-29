@@ -1,100 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif">
-  <!-- Background -->
-  <rect width="800" height="460" fill="#0f1117"/>
 
-  <!-- ─── LEFT SIDE: "From the box" ─── -->
-  <!-- Label -->
-  <text x="200" y="42" text-anchor="middle" fill="#6b7280" font-size="13" letter-spacing="2" font-weight="500">ИЗ КОРОБКИ</text>
+  <!-- Background: light -->
+  <rect width="800" height="460" fill="#f8f9fc"/>
 
-  <!-- Egg shape (generic AI) -->
-  <ellipse cx="200" cy="185" rx="68" ry="82" fill="#1e2130" stroke="#374151" stroke-width="2"/>
-  <!-- Face: blank -->
-  <circle cx="183" cy="178" r="6" fill="#4b5563"/>
-  <circle cx="217" cy="178" r="6" fill="#4b5563"/>
-  <line x1="186" y1="202" x2="214" y2="202" stroke="#4b5563" stroke-width="3" stroke-linecap="round"/>
-  <!-- Brand logos hint (small dots) -->
-  <circle cx="200" cy="148" r="3" fill="#374151"/>
-  <circle cx="190" cy="158" r="2" fill="#374151"/>
-  <circle cx="210" cy="158" r="2" fill="#374151"/>
+  <!-- ── TITLE ── -->
+  <text x="400" y="44" text-anchor="middle" fill="#111827" font-size="18" font-weight="700">Две роли создателя ИИ-ассистента</text>
 
-  <!-- Crack lines on egg -->
-  <path d="M180 120 L188 135 L175 148" stroke="#374151" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- ══════════════════════════════════════
+       LEFT PANEL — «Из коробки» (яйцо)
+  ══════════════════════════════════════ -->
+  <rect x="30" y="64" width="220" height="340" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
 
-  <!-- Bottom caption -->
-  <text x="200" y="296" text-anchor="middle" fill="#6b7280" font-size="14">Умный, но безликий</text>
-  <text x="200" y="316" text-anchor="middle" fill="#6b7280" font-size="14">Не знает тебя</text>
-  <text x="200" y="336" text-anchor="middle" fill="#6b7280" font-size="14">Каждый раз с нуля</text>
+  <!-- Panel label -->
+  <text x="140" y="96" text-anchor="middle" fill="#9ca3af" font-size="12" font-weight="600" letter-spacing="1.5">ИЗ КОРОБКИ</text>
 
-  <!-- ─── ARROW ─── -->
+  <!-- Egg -->
+  <ellipse cx="140" cy="210" rx="60" ry="74" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2"/>
+  <!-- Blank face -->
+  <circle cx="124" cy="203" r="6" fill="#d1d5db"/>
+  <circle cx="156" cy="203" r="6" fill="#d1d5db"/>
+  <line x1="127" y1="225" x2="153" y2="225" stroke="#d1d5db" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Brand hint dots -->
+  <circle cx="140" cy="172" r="3.5" fill="#d1d5db"/>
+  <circle cx="130" cy="181" r="2.5" fill="#e5e7eb"/>
+  <circle cx="150" cy="181" r="2.5" fill="#e5e7eb"/>
+  <!-- Crack -->
+  <path d="M123 152 L130 166 L118 178" stroke="#d1d5db" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Caption -->
+  <text x="140" y="316" text-anchor="middle" fill="#9ca3af" font-size="13">Умный, но безликий</text>
+  <text x="140" y="334" text-anchor="middle" fill="#9ca3af" font-size="13">Каждый раз с нуля</text>
+  <text x="140" y="352" text-anchor="middle" fill="#9ca3af" font-size="13">Не знает тебя</text>
+
+  <!-- ══════════════════════════════════════
+       ARROW (center)
+  ══════════════════════════════════════ -->
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#4f46e5"/>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
     </marker>
   </defs>
-  <line x1="305" y1="185" x2="455" y2="185" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrowhead)"/>
-  <text x="380" y="172" text-anchor="middle" fill="#4f46e5" font-size="12" font-weight="600">растишь</text>
-  <text x="380" y="205" text-anchor="middle" fill="#4f46e5" font-size="12">вкладываешь</text>
+  <line x1="262" y1="210" x2="338" y2="210" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="300" y="198" text-anchor="middle" fill="#6366f1" font-size="12" font-weight="600">растишь</text>
+  <text x="300" y="228" text-anchor="middle" fill="#9ca3af" font-size="11">вкладываешь</text>
 
-  <!-- ─── RIGHT SIDE: IWE / Grown assistant ─── -->
-  <!-- Label -->
-  <text x="600" y="42" text-anchor="middle" fill="#a5b4fc" font-size="13" letter-spacing="2" font-weight="500">IWE — ТВОЙ АССИСТЕНТ</text>
+  <!-- ══════════════════════════════════════
+       RIGHT PANEL — IWE (живой ассистент)
+  ══════════════════════════════════════ -->
+  <rect x="350" y="64" width="420" height="340" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
 
-  <!-- Assistant body (rounded rect, alive) -->
-  <rect x="532" y="110" width="136" height="150" rx="24" fill="#1e1b4b" stroke="#4f46e5" stroke-width="2"/>
+  <!-- Panel label -->
+  <text x="560" y="96" text-anchor="middle" fill="#6366f1" font-size="12" font-weight="600" letter-spacing="1.5">ТВОЙ IWE-АССИСТЕНТ</text>
 
-  <!-- Eyes: alive -->
-  <ellipse cx="578" cy="168" rx="10" ry="11" fill="#312e81"/>
-  <ellipse cx="622" cy="168" rx="10" ry="11" fill="#312e81"/>
-  <circle cx="580" cy="167" r="5" fill="#818cf8"/>
-  <circle cx="624" cy="167" r="5" fill="#818cf8"/>
+  <!-- ── Assistant figure (center of right panel) ── -->
+  <rect x="490" y="112" width="140" height="148" rx="22" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
+  <!-- Alive eyes -->
+  <ellipse cx="530" cy="166" rx="11" ry="12" fill="#c7d2fe"/>
+  <ellipse cx="570" cy="166" rx="11" ry="12" fill="#c7d2fe"/>
+  <circle cx="532" cy="164" r="5" fill="#4f46e5"/>
+  <circle cx="572" cy="164" r="5" fill="#4f46e5"/>
   <!-- Smile -->
-  <path d="M578 196 Q600 212 622 196" stroke="#818cf8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M528 192 Q550 207 572 192" stroke="#4f46e5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Memory chip -->
+  <rect x="541" y="214" width="28" height="20" rx="4" fill="#c7d2fe" stroke="#818cf8" stroke-width="1.5"/>
+  <line x1="547" y1="214" x2="547" y2="234" stroke="#818cf8" stroke-width="1"/>
+  <line x1="554" y1="214" x2="554" y2="234" stroke="#818cf8" stroke-width="1"/>
+  <line x1="561" y1="214" x2="561" y2="234" stroke="#818cf8" stroke-width="1"/>
 
-  <!-- Memory chip icon on chest -->
-  <rect x="588" y="220" width="24" height="18" rx="3" fill="#312e81" stroke="#6366f1" stroke-width="1.5"/>
-  <line x1="593" y1="220" x2="593" y2="238" stroke="#6366f1" stroke-width="1"/>
-  <line x1="600" y1="220" x2="600" y2="238" stroke="#6366f1" stroke-width="1"/>
-  <line x1="607" y1="220" x2="607" y2="238" stroke="#6366f1" stroke-width="1"/>
+  <!-- ── YOU label ── -->
+  <text x="750" y="210" text-anchor="middle" fill="#374151" font-size="14" font-weight="800">ТЫ</text>
+  <line x1="740" y1="155" x2="740" y2="265" stroke="#e5e7eb" stroke-width="1.5"/>
 
-  <!-- ─── TWO ROLES orbiting ─── -->
-
-  <!-- Role 1: Creator (top-right) -->
-  <circle cx="720" cy="120" r="38" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="720" y="113" text-anchor="middle" fill="#a5b4fc" font-size="13" font-weight="700">СОЗДАТЕЛЬ</text>
-  <text x="720" y="130" text-anchor="middle" fill="#6b7280" font-size="11">проектирует</text>
-  <text x="720" y="146" text-anchor="middle" fill="#6b7280" font-size="11">обучает</text>
-  <!-- Arrow from role to assistant -->
-  <path d="M685 138 Q660 158 660 165" stroke="#6366f1" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowhead)"/>
-
-  <!-- Role 2: User (bottom-right) -->
-  <circle cx="720" cy="258" r="38" fill="#1e1b4b" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="720" y="251" text-anchor="middle" fill="#67e8f9" font-size="13" font-weight="700">ПОЛЬЗОВАТЕЛЬ</text>
-  <text x="720" y="268" text-anchor="middle" fill="#6b7280" font-size="11">ставит задачи</text>
-  <text x="720" y="284" text-anchor="middle" fill="#6b7280" font-size="11">получает результат</text>
-  <!-- Arrow from assistant to role -->
-  <path d="M660 210 Q660 230 683 242" stroke="#22d3ee" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowheadCyan)"/>
-
+  <!-- ── Role 1: Creator (top right) ── -->
+  <rect x="660" y="108" width="128" height="80" rx="12" fill="#f5f3ff" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="724" y="136" text-anchor="middle" fill="#4f46e5" font-size="13" font-weight="700">СОЗДАТЕЛЬ</text>
+  <text x="724" y="154" text-anchor="middle" fill="#6b7280" font-size="11">проектирует</text>
+  <text x="724" y="170" text-anchor="middle" fill="#6b7280" font-size="11">обучает · корректирует</text>
+  <!-- arrow creator → assistant -->
   <defs>
-    <marker id="arrowheadCyan" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    <marker id="arrBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#818cf8"/>
     </marker>
   </defs>
+  <path d="M662 172 Q640 182 632 186" stroke="#818cf8" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrBlue)"/>
 
-  <!-- YOU label -->
-  <text x="720" y="185" text-anchor="middle" fill="#f9fafb" font-size="15" font-weight="800">ТЫ</text>
-  <line x1="700" y1="158" x2="700" y2="241" stroke="#374151" stroke-width="1"/>
+  <!-- ── Role 2: User (bottom right) ── -->
+  <defs>
+    <marker id="arrTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#14b8a6"/>
+    </marker>
+  </defs>
+  <rect x="660" y="232" width="128" height="80" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="724" y="260" text-anchor="middle" fill="#0f766e" font-size="13" font-weight="700">ПОЛЬЗОВАТЕЛЬ</text>
+  <text x="724" y="278" text-anchor="middle" fill="#6b7280" font-size="11">ставит задачи</text>
+  <text x="724" y="294" text-anchor="middle" fill="#6b7280" font-size="11">получает результат</text>
+  <!-- arrow assistant → user -->
+  <path d="M632 232 Q640 238 660 248" stroke="#5eead4" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrTeal)"/>
 
-  <!-- Bottom caption right -->
-  <text x="590" y="296" text-anchor="middle" fill="#a5b4fc" font-size="14">Знает твой контекст</text>
-  <text x="590" y="316" text-anchor="middle" fill="#a5b4fc" font-size="14">Накапливает опыт</text>
-  <text x="590" y="336" text-anchor="middle" fill="#a5b4fc" font-size="14">Растёт вместе с тобой</text>
+  <!-- ── Caption below assistant ── -->
+  <text x="490" y="300" text-anchor="start" fill="#4f46e5" font-size="13">Знает твой контекст</text>
+  <text x="490" y="318" text-anchor="start" fill="#4f46e5" font-size="13">Накапливает опыт</text>
+  <text x="490" y="336" text-anchor="start" fill="#4f46e5" font-size="13">Растёт вместе с тобой</text>
+  <text x="490" y="354" text-anchor="start" fill="#4f46e5" font-size="13">Роли чередуются</text>
 
-  <!-- ─── BOTTOM TAGLINE ─── -->
-  <text x="400" y="400" text-anchor="middle" fill="#4b5563" font-size="13">Нельзя купить. Только вырастить.</text>
+  <!-- ══════════════════════════════════════
+       BOTTOM TAGLINE
+  ══════════════════════════════════════ -->
+  <text x="400" y="428" text-anchor="middle" fill="#9ca3af" font-size="13" font-style="italic">Нельзя купить. Только вырастить.</text>
 
-  <!-- Tamagotchi device outline hint (bottom left) -->
-  <rect x="30" y="380" width="54" height="62" rx="12" fill="none" stroke="#374151" stroke-width="1.5"/>
-  <rect x="38" y="390" width="38" height="28" rx="4" fill="#1e2130" stroke="#374151" stroke-width="1"/>
-  <circle cx="57" cy="432" r="6" fill="#1e2130" stroke="#374151" stroke-width="1.5"/>
-  <text x="57" y="460" text-anchor="middle" fill="#374151" font-size="10">1996</text>
 </svg>
