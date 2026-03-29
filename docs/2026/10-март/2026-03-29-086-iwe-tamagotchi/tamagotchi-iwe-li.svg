@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 627" width="1200" height="627" font-family="'SF Pro Display', 'Segoe UI', Arial, sans-serif">
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="screenGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#818cf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="627" fill="url(#bg)"/>
+  <ellipse cx="350" cy="314" rx="320" ry="290" fill="url(#glow)"/>
+
+  <!-- Thin accent line top -->
+  <rect x="0" y="0" width="1200" height="4" fill="#4f46e5"/>
+
+  <!-- ══════════════════════════════
+       DEVICE
+  ══════════════════════════════ -->
+
+  <!-- Shadow -->
+  <ellipse cx="302" cy="570" rx="130" ry="14" fill="#4f46e5" opacity="0.2"/>
+
+  <!-- Body -->
+  <rect x="172" y="54" width="260" height="490" rx="55" fill="#0f172a" stroke="#4f46e5" stroke-width="2.5"/>
+  <rect x="188" y="70" width="228" height="458" rx="44" fill="#1e1b4b" stroke="#312e81" stroke-width="1"/>
+
+  <!-- Screen -->
+  <rect x="206" y="92" width="192" height="180" rx="16" fill="#0d0b2b" stroke="#4f46e5" stroke-width="2"/>
+  <rect x="206" y="92" width="192" height="180" rx="16" fill="url(#screenGlow)" opacity="0.3"/>
+
+  <!-- Robot head -->
+  <rect x="254" y="110" width="96" height="88" rx="13" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+  <!-- Antenna -->
+  <line x1="302" y1="110" x2="302" y2="97" stroke="#818cf8" stroke-width="2"/>
+  <circle cx="302" cy="93" r="6" fill="#a5b4fc"/>
+  <!-- Eyes -->
+  <rect x="265" y="130" width="24" height="16" rx="4" fill="#0d0b2b"/>
+  <rect x="315" y="130" width="24" height="16" rx="4" fill="#0d0b2b"/>
+  <rect x="267" y="132" width="20" height="12" rx="3" fill="#00e5ff" opacity="0.95"/>
+  <rect x="317" y="132" width="20" height="12" rx="3" fill="#00e5ff" opacity="0.95"/>
+  <!-- Mouth pixels -->
+  <rect x="272" y="160" width="7" height="7" rx="2" fill="#6366f1"/>
+  <rect x="283" y="155" width="7" height="7" rx="2" fill="#a5b4fc"/>
+  <rect x="294" y="155" width="7" height="7" rx="2" fill="#a5b4fc"/>
+  <rect x="305" y="160" width="7" height="7" rx="2" fill="#6366f1"/>
+  <!-- Chest -->
+  <rect x="266" y="178" width="72" height="16" rx="5" fill="#0d0b2b" stroke="#4f46e5" stroke-width="1.5"/>
+  <circle cx="282" cy="186" r="4" fill="#22d3ee"/>
+  <circle cx="302" cy="186" r="4" fill="#818cf8"/>
+  <circle cx="322" cy="186" r="4" fill="#22d3ee"/>
+  <!-- Screen text -->
+  <text x="302" y="260" text-anchor="middle" fill="#4f46e5" font-size="10" letter-spacing="2">IWE v2.0</text>
+
+  <!-- Buttons row -->
+  <circle cx="222" cy="340" r="20" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="222" y="347" text-anchor="middle" fill="#818cf8" font-size="15">◀</text>
+
+  <circle cx="302" cy="350" r="26" fill="#1e1b4b" stroke="#4f46e5" stroke-width="2"/>
+  <circle cx="302" cy="350" r="16" fill="#312e81"/>
+  <circle cx="302" cy="350" r="7" fill="#818cf8"/>
+
+  <circle cx="382" cy="340" r="20" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="382" y="347" text-anchor="middle" fill="#818cf8" font-size="15">▶</text>
+
+  <!-- Keychain -->
+  <circle cx="302" cy="60" r="9" fill="#1e1b4b" stroke="#4f46e5" stroke-width="2"/>
+  <circle cx="302" cy="60" r="4" fill="none" stroke="#818cf8" stroke-width="1.5"/>
+
+  <!-- Brand -->
+  <text x="302" y="430" text-anchor="middle" fill="#4f46e5" font-size="11" font-weight="600" letter-spacing="3">IWE-GOTCHI</text>
+
+  <!-- ══════════════════════════════
+       RIGHT TEXT
+  ══════════════════════════════ -->
+
+  <!-- Eyebrow -->
+  <text x="580" y="118" fill="#818cf8" font-size="13" font-weight="600" letter-spacing="3">НОВЫЙ НАВЫК</text>
+
+  <!-- Headline -->
+  <text x="580" y="175" fill="#f8fafc" font-size="44" font-weight="800" letter-spacing="-1">ИИ-ассистента</text>
+  <text x="580" y="228" fill="#f8fafc" font-size="44" font-weight="800" letter-spacing="-1">нельзя купить —</text>
+  <text x="580" y="281" fill="#a5b4fc" font-size="44" font-weight="800" letter-spacing="-1">только вырастить</text>
+
+  <!-- Divider -->
+  <rect x="580" y="305" width="60" height="3" rx="2" fill="#4f46e5"/>
+
+  <!-- Two roles -->
+  <rect x="580" y="328" width="185" height="82" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="672" y="358" text-anchor="middle" fill="#a5b4fc" font-size="14" font-weight="700">СОЗДАТЕЛЬ</text>
+  <text x="672" y="378" text-anchor="middle" fill="#6b7280" font-size="12">проектирует · обучает</text>
+  <text x="672" y="396" text-anchor="middle" fill="#6b7280" font-size="12">корректирует</text>
+
+  <line x1="777" y1="369" x2="805" y2="369" stroke="#4f46e5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="818" y="328" width="185" height="82" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="910" y="358" text-anchor="middle" fill="#67e8f9" font-size="14" font-weight="700">ПОЛЬЗОВАТЕЛЬ</text>
+  <text x="910" y="378" text-anchor="middle" fill="#6b7280" font-size="12">ставит задачи</text>
+  <text x="910" y="396" text-anchor="middle" fill="#6b7280" font-size="12">получает результат</text>
+
+  <!-- Body lines -->
+  <text x="580" y="450" fill="#94a3b8" font-size="15">Вендоры дают яйцо. Питомца нужно вырастить самому.</text>
+  <text x="580" y="476" fill="#94a3b8" font-size="15">Для этого нужны две роли: создателя и пользователя.</text>
+  <text x="580" y="502" fill="#94a3b8" font-size="15">Большинство застревают в одной из них.</text>
+
+  <!-- Hashtags -->
+  <text x="580" y="560" fill="#4f46e5" font-size="13">#IWE  #ИИ  #личнаяпродуктивность  #экзокортекс  #AItools</text>
+
+</svg>
