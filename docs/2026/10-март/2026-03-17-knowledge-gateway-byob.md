@@ -7,7 +7,7 @@ created: 2026-03-17
 target: club
 source_knowledge: "PACK-digital-platform/DP.D.036, WP-73 §3.8"
 tags: [MCP, knowledge-management, архитектура, BYOB, local-first, IWE, context-engineering]
-content_plan: "WP-73"
+content_plan: "WP-167"
 ---
 
 # Чьи знания — на чьём сервере?
