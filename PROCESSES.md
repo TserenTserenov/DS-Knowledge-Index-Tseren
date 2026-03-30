@@ -1,6 +1,6 @@
 # PROCESSES.md — DS-Knowledge-Index-Tseren
 
-> **Сценарий:** [DP.SC.005 Публикация контента](../PACK-digital-platform/pack/digital-platform/08-use-cases/DP.SC.005-content-publishing.md)
+> **Сценарий:** [DP.SC.005 Публикация контента](../PACK-digital-platform/pack/digital-platform/08-service-clauses/DP.SC.005-content-publishing.md)
 > **Каталог сервисов:** [DP.MAP.002](../PACK-digital-platform/pack/digital-platform/07-map/DP.MAP.002-iwe-service-catalog.md)
 
 ---
