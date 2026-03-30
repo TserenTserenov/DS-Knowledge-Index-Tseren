@@ -2,7 +2,7 @@
 type: post
 title: "Extensibility: когда система готова расти: W13, 24-30 мар"
 audience: community
-status: ready
+status: published
 created: 2026-03-30
 target: club
 channel_number: 1
