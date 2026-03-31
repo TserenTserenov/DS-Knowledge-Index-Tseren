@@ -2,7 +2,7 @@
 type: post
 title: "Чьи знания — на чьём сервере?"
 audience: community
-status: ready
+status: published
 created: 2026-03-17
 target: club
 source_knowledge: "PACK-digital-platform/DP.D.036, WP-73 §3.8"
