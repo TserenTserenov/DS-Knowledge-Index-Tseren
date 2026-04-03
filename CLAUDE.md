@@ -362,7 +362,7 @@ habr_is_translation: false  # переведённый материал?
 |---------|--------|
 | **Формат** | PNG (предпочтительно) или JPG. **Не SVG** — Discourse проигнорирует |
 | **Конвертация** | `rsvg-convert -w 800 -h 500 illustration.svg -o illustration.png` |
-| **Вставка в пост** | `![Alt-текст](имя-файла.png)` — обязательно в markdown, иначе Публикатор не подхватит |
+| **Вставка в пост** | `![Alt-текст](https://raw.githubusercontent.com/TserenTserenov/DS-Knowledge-Index-Tseren/main/docs/...путь.../имя-файла.png)` — **абсолютный URL** через raw.githubusercontent.com. Discourse не разрешает относительные пути |
 | **Где размещать** | В папке поста рядом с `.md` файлом |
 | **Чеклист** | Перед `status: ready`: (1) PNG создан, (2) `![...](...)` вставлен в текст, (3) визуально проверен |
 
