@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="iwe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="comp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#475569"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="20" font-weight="700">68 проектов, 10 параметров, ноль полных аналогов</text>
+  <text x="400" y="66" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Ландшафт персональных AI-помощников в 2026</text>
+
+  <!-- Radar/Matrix area -->
+  <!-- Column headers -->
+  <text x="185" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Ядро</text>
+  <text x="235" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Культ.</text>
+  <text x="285" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Маст.</text>
+  <text x="335" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Сообщ.</text>
+  <text x="385" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">ЦД</text>
+  <text x="435" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Дистр.</text>
+  <text x="485" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">V-agn.</text>
+  <text x="535" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Экзо.</text>
+  <text x="585" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Онб.</text>
+  <text x="635" y="102" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Зрел.</text>
+  <text x="710" y="102" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Итого</text>
+
+  <!-- IWE row -->
+  <rect x="40" y="110" width="730" height="32" rx="6" fill="#1e3a5f" opacity="0.8"/>
+  <text x="100" y="131" text-anchor="middle" fill="#3b82f6" font-family="system-ui, sans-serif" font-size="13" font-weight="700">IWE</text>
+  <!-- Scores: 2 2 2 1 2 2 1 2 0 0 = 14 -->
+  <rect x="175" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="185" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="225" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="235" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="275" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="285" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="325" y="118" width="20" height="16" rx="3" fill="#eab308"/><text x="335" y="130" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="375" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="385" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="425" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="435" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="475" y="118" width="20" height="16" rx="3" fill="#eab308"/><text x="485" y="130" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="525" y="118" width="20" height="16" rx="3" fill="#22c55e"/><text x="535" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="575" y="118" width="20" height="16" rx="3" fill="#ef4444"/><text x="585" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">0</text>
+  <rect x="625" y="118" width="20" height="16" rx="3" fill="#ef4444"/><text x="635" y="130" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">0</text>
+  <text x="710" y="131" text-anchor="middle" fill="#3b82f6" font-family="system-ui, sans-serif" font-size="14" font-weight="700">14/20</text>
+
+  <!-- PAI row -->
+  <rect x="40" y="148" width="730" height="32" rx="6" fill="#1e293b" opacity="0.6"/>
+  <text x="100" y="169" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600">PAI</text>
+  <!-- 1 1 1 1 1 2 2 2 1 2 = 14 -->
+  <rect x="175" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="185" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="225" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="235" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="275" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="285" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="325" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="335" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="375" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="385" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="425" y="156" width="20" height="16" rx="3" fill="#22c55e"/><text x="435" y="168" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="475" y="156" width="20" height="16" rx="3" fill="#22c55e"/><text x="485" y="168" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="525" y="156" width="20" height="16" rx="3" fill="#22c55e"/><text x="535" y="168" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="575" y="156" width="20" height="16" rx="3" fill="#eab308"/><text x="585" y="168" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="625" y="156" width="20" height="16" rx="3" fill="#22c55e"/><text x="635" y="168" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <text x="710" y="169" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14" font-weight="700">14/20</text>
+
+  <!-- Fabric row -->
+  <rect x="40" y="186" width="730" height="32" rx="6" fill="#1e293b" opacity="0.4"/>
+  <text x="100" y="207" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="13">Fabric</text>
+  <!-- 0 1 0 2 0 2 2 1 1 2 = 11 -->
+  <rect x="175" y="194" width="20" height="16" rx="3" fill="#ef4444"/><text x="185" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">0</text>
+  <rect x="225" y="194" width="20" height="16" rx="3" fill="#eab308"/><text x="235" y="206" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="275" y="194" width="20" height="16" rx="3" fill="#ef4444"/><text x="285" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">0</text>
+  <rect x="325" y="194" width="20" height="16" rx="3" fill="#22c55e"/><text x="335" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="375" y="194" width="20" height="16" rx="3" fill="#ef4444"/><text x="385" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">0</text>
+  <rect x="425" y="194" width="20" height="16" rx="3" fill="#22c55e"/><text x="435" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="475" y="194" width="20" height="16" rx="3" fill="#22c55e"/><text x="485" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <rect x="525" y="194" width="20" height="16" rx="3" fill="#eab308"/><text x="535" y="206" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="575" y="194" width="20" height="16" rx="3" fill="#eab308"/><text x="585" y="206" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="system-ui">1</text>
+  <rect x="625" y="194" width="20" height="16" rx="3" fill="#22c55e"/><text x="635" y="206" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="system-ui">2</text>
+  <text x="710" y="207" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="14" font-weight="600">11/20</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="235" x2="740" y2="235" stroke="#334155" stroke-width="1"/>
+
+  <!-- Bottom section: two columns -->
+  <!-- Left: unique IWE -->
+  <text x="220" y="262" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="14" font-weight="700">9 уникальных элементов IWE</text>
+
+  <text x="60" y="286" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Иерархия ZP-FPF-SPF-Pack-DS</text>
+  <text x="60" y="306" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">ОРЗ-фрактал (3 масштаба)</text>
+  <text x="60" y="326" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Gate-протоколы</text>
+  <text x="60" y="346" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Модель мастерства</text>
+  <text x="60" y="366" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">ЦД с автообновлением</text>
+  <text x="60" y="386" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Pack = source-of-truth</text>
+  <text x="60" y="406" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Capture-to-Pack</text>
+  <text x="60" y="426" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">L1/L2/L3 + staging</text>
+  <text x="60" y="446" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11">Экзоскелет != автопилот</text>
+
+  <!-- Green dots -->
+  <circle cx="50" cy="282" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="302" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="322" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="342" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="362" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="382" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="402" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="422" r="3" fill="#22c55e"/>
+  <circle cx="50" cy="442" r="3" fill="#22c55e"/>
+
+  <!-- Right: weaknesses -->
+  <text x="590" y="262" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="14" font-weight="700">3 слабости (план)</text>
+
+  <rect x="430" y="274" width="320" height="54" rx="8" fill="#1c1917" stroke="#ef4444" stroke-width="1" opacity="0.7"/>
+  <text x="445" y="293" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Онбординг = 0</text>
+  <text x="445" y="311" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">/onboard за 15 мин (WP-188)</text>
+
+  <rect x="430" y="338" width="320" height="54" rx="8" fill="#1c1917" stroke="#ef4444" stroke-width="1" opacity="0.7"/>
+  <text x="445" y="357" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Зрелость = 0</text>
+  <text x="445" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Публичный шаблон + документация (WP-167)</text>
+
+  <rect x="430" y="402" width="320" height="54" rx="8" fill="#1c1917" stroke="#eab308" stroke-width="1" opacity="0.7"/>
+  <text x="445" y="421" fill="#fde68a" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Vendor-agnostic = 1</text>
+  <text x="445" y="439" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">LLM Proxy + абстракция скиллов (WP-200)</text>
+
+  <!-- Footer -->
+  <text x="400" y="485" text-anchor="middle" fill="#475569" font-family="system-ui, sans-serif" font-size="10">68 проектов | 4 категории | 37 малоизвестных | 10 параметров | верификация независимой моделью</text>
+</svg>
