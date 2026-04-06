@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12"/>
+      <stop offset="100%" style="stop-color:#e67e22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="40" fill="#ecf0f1" font-size="20" font-weight="bold" text-anchor="middle">Три паттерна: что на самом деле происходит</text>
+
+  <!-- Column 1: Multitasking (bad) -->
+  <rect x="30" y="65" width="230" height="400" rx="10" fill="rgba(231,76,60,0.1)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="145" y="92" fill="#e74c3c" font-size="15" font-weight="bold" text-anchor="middle">Многозадачность</text>
+  <text x="145" y="110" fill="#e74c3c" font-size="11" text-anchor="middle">мозг = исполнитель + диспетчер</text>
+
+  <!-- Person doing everything -->
+  <circle cx="145" cy="170" r="25" fill="url(#red)" opacity="0.8"/>
+  <text x="145" y="175" fill="white" font-size="20" text-anchor="middle">🧠</text>
+
+  <!-- Tasks scattered -->
+  <rect x="50" y="220" width="60" height="30" rx="5" fill="rgba(231,76,60,0.3)" stroke="#e74c3c"/>
+  <text x="80" y="240" fill="#ecf0f1" font-size="10" text-anchor="middle">Задача 1</text>
+
+  <rect x="130" y="230" width="60" height="30" rx="5" fill="rgba(231,76,60,0.3)" stroke="#e74c3c"/>
+  <text x="160" y="250" fill="#ecf0f1" font-size="10" text-anchor="middle">Задача 2</text>
+
+  <rect x="85" y="275" width="60" height="30" rx="5" fill="rgba(231,76,60,0.3)" stroke="#e74c3c"/>
+  <text x="115" y="295" fill="#ecf0f1" font-size="10" text-anchor="middle">Задача 3</text>
+
+  <!-- Zigzag arrows showing switching -->
+  <path d="M145,195 L80,220 L160,230 L115,275" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowRed)"/>
+
+  <!-- Cost -->
+  <rect x="50" y="330" width="180" height="55" rx="8" fill="rgba(231,76,60,0.15)"/>
+  <text x="140" y="350" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">23 мин на переключение</text>
+  <text x="140" y="368" fill="#e74c3c" font-size="11" text-anchor="middle">-40% продуктивности</text>
+  <text x="140" y="383" fill="#e74c3c" font-size="11" text-anchor="middle">-10 IQ</text>
+
+  <!-- Verdict -->
+  <text x="145" y="430" fill="#e74c3c" font-size="28" text-anchor="middle">✗</text>
+  <text x="145" y="450" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">Не работает</text>
+
+  <!-- Column 2: Cognitive offloading (good but risky) -->
+  <rect x="285" y="65" width="230" height="400" rx="10" fill="rgba(243,156,18,0.1)" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="400" y="92" fill="#f39c12" font-size="15" font-weight="bold" text-anchor="middle">Когнитивная разгрузка</text>
+  <text x="400" y="110" fill="#f39c12" font-size="11" text-anchor="middle">мозг = мыслитель, ИИ = исполнитель</text>
+
+  <!-- Person thinking + AI doing -->
+  <circle cx="360" cy="170" r="25" fill="url(#yellow)" opacity="0.8"/>
+  <text x="360" y="175" fill="white" font-size="20" text-anchor="middle">🧠</text>
+
+  <circle cx="440" cy="170" r="20" fill="rgba(243,156,18,0.4)" stroke="#f39c12"/>
+  <text x="440" y="176" fill="white" font-size="16" text-anchor="middle">🤖</text>
+
+  <!-- Single task, deep -->
+  <rect x="310" y="220" width="180" height="40" rx="5" fill="rgba(243,156,18,0.3)" stroke="#f39c12"/>
+  <text x="400" y="245" fill="#ecf0f1" font-size="12" text-anchor="middle">Одна задача, глубоко</text>
+
+  <!-- Arrow down -->
+  <path d="M400,260 L400,310" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+
+  <!-- Cost -->
+  <rect x="305" y="315" width="190" height="70" rx="8" fill="rgba(243,156,18,0.15)"/>
+  <text x="400" y="337" fill="#f39c12" font-size="12" font-weight="bold" text-anchor="middle">Мультипликатор</text>
+  <text x="400" y="355" fill="#2ecc71" font-size="11" text-anchor="middle">Рутина на ИИ, думаешь сам</text>
+  <text x="400" y="373" fill="#e74c3c" font-size="11" text-anchor="middle">Риск: когнитивный долг</text>
+
+  <!-- Verdict -->
+  <text x="400" y="430" fill="#f39c12" font-size="28" text-anchor="middle">⚠</text>
+  <text x="400" y="450" fill="#f39c12" font-size="12" font-weight="bold" text-anchor="middle">Работает, но следи</text>
+
+  <!-- Column 3: Parallel orchestration (works with structure) -->
+  <rect x="540" y="65" width="230" height="400" rx="10" fill="rgba(46,204,113,0.1)" stroke="#2ecc71" stroke-width="1.5"/>
+  <text x="655" y="92" fill="#2ecc71" font-size="15" font-weight="bold" text-anchor="middle">Параллельная оркестрация</text>
+  <text x="655" y="110" fill="#2ecc71" font-size="11" text-anchor="middle">мозг = диспетчер, N ИИ = исполнители</text>
+
+  <!-- Person as dispatcher -->
+  <circle cx="655" cy="160" r="22" fill="url(#green)" opacity="0.8"/>
+  <text x="655" y="165" fill="white" font-size="18" text-anchor="middle">🧠</text>
+
+  <!-- Multiple AI agents -->
+  <circle cx="580" cy="220" r="16" fill="rgba(46,204,113,0.4)" stroke="#2ecc71"/>
+  <text x="580" y="225" fill="white" font-size="13" text-anchor="middle">🤖</text>
+
+  <circle cx="625" cy="240" r="16" fill="rgba(46,204,113,0.4)" stroke="#2ecc71"/>
+  <text x="625" y="245" fill="white" font-size="13" text-anchor="middle">🤖</text>
+
+  <circle cx="685" cy="240" r="16" fill="rgba(46,204,113,0.4)" stroke="#2ecc71"/>
+  <text x="685" y="245" fill="white" font-size="13" text-anchor="middle">🤖</text>
+
+  <circle cx="730" cy="220" r="16" fill="rgba(46,204,113,0.4)" stroke="#2ecc71"/>
+  <text x="730" y="225" fill="white" font-size="13" text-anchor="middle">🤖</text>
+
+  <!-- Lines from person to agents -->
+  <line x1="640" y1="175" x2="580" y2="205" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+  <line x1="648" y1="178" x2="625" y2="225" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+  <line x1="662" y1="178" x2="685" y2="225" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+  <line x1="670" y1="175" x2="730" y2="205" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+
+  <!-- Cost -->
+  <rect x="560" y="280" width="190" height="105" rx="8" fill="rgba(46,204,113,0.15)"/>
+  <text x="655" y="300" fill="#2ecc71" font-size="12" font-weight="bold" text-anchor="middle">2-3 мин на переключение</text>
+  <text x="655" y="318" fill="#2ecc71" font-size="11" text-anchor="middle">Контекст в файле, не в голове</text>
+  <text x="655" y="340" fill="#f39c12" font-size="11" text-anchor="middle">Лимит: ≤4 (сложные)</text>
+  <text x="655" y="355" fill="#f39c12" font-size="11" text-anchor="middle">≤6 (простые)</text>
+  <text x="655" y="373" fill="#e74c3c" font-size="11" text-anchor="middle">Риск: decision fatigue</text>
+
+  <!-- Verdict -->
+  <text x="655" y="420" fill="#2ecc71" font-size="28" text-anchor="middle">✓</text>
+  <text x="655" y="440" fill="#2ecc71" font-size="12" font-weight="bold" text-anchor="middle">Работает при структуре</text>
+  <text x="655" y="455" fill="#2ecc71" font-size="10" text-anchor="middle">+ лимит решений</text>
+</svg>
