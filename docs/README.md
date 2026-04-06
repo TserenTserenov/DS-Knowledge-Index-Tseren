@@ -11,7 +11,7 @@
 
 ## Апрель
 
-- [Knowledge Gateway: IWE теперь доступен из браузера](2026/09-апрель/2026-04-06-104-knowledge-gateway-iwe-iz-brauzera/104-1-club-2026-04-06.md) — 6 апр (**club**)
+- [Knowledge Gateway: скоро IWE будет доступен из браузера](2026/09-апрель/2026-04-06-104-knowledge-gateway-iwe-iz-brauzera/104-1-club-2026-04-06.md) — 6 апр (**club**)
 - [Я работаю в шести окнах одновременно. Это не многозадачность](2026/09-апрель/2026-04-06-103-parallel-orchestration-not-multitasking/103-1-club-2026-04-06.md) — 6 апр (**club**)
 - [560 коммитов и Knowledge Gateway: W14, 30 мар -- 5 апр](2026/09-апрель/2026-04-05-102-week-review-w14.md) -- 5 апр (**club**)
 - [Встреча 5 (СС): роль, ролевое мастерство и метод](2026/09-апрель/2026-04-05-101-ss-practicum-lesson-5-role-mastery/101-1-club-2026-04-05.md) -- 5 апр (**club**)
