@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23"/>
+      <stop offset="100%" style="stop-color:#1a1a3e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="780" height="440" fill="url(#bg)" rx="0"/>
+
+  <!-- Decorative circles (parallel sessions) -->
+  <circle cx="620" cy="100" r="45" fill="rgba(46,204,113,0.15)" stroke="#2ecc71" stroke-width="1"/>
+  <circle cx="700" cy="160" r="35" fill="rgba(46,204,113,0.12)" stroke="#2ecc71" stroke-width="1"/>
+  <circle cx="580" cy="180" r="30" fill="rgba(46,204,113,0.1)" stroke="#2ecc71" stroke-width="1"/>
+  <circle cx="660" cy="230" r="25" fill="rgba(46,204,113,0.08)" stroke="#2ecc71" stroke-width="1"/>
+  <circle cx="720" cy="80" r="20" fill="rgba(46,204,113,0.06)" stroke="#2ecc71" stroke-width="1"/>
+  <circle cx="550" cy="110" r="22" fill="rgba(46,204,113,0.06)" stroke="#2ecc71" stroke-width="1"/>
+
+  <!-- Connection lines between circles -->
+  <line x1="620" y1="100" x2="700" y2="160" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+  <line x1="620" y1="100" x2="580" y2="180" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+  <line x1="700" y1="160" x2="660" y2="230" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+  <line x1="580" y1="180" x2="660" y2="230" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+  <line x1="620" y1="100" x2="720" y2="80" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+  <line x1="620" y1="100" x2="550" y2="110" stroke="#2ecc71" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Agent icons in circles -->
+  <text x="620" y="108" fill="#2ecc71" font-size="22" text-anchor="middle" opacity="0.7">AI</text>
+  <text x="700" y="168" fill="#2ecc71" font-size="18" text-anchor="middle" opacity="0.6">AI</text>
+  <text x="580" y="187" fill="#2ecc71" font-size="15" text-anchor="middle" opacity="0.5">AI</text>
+  <text x="660" y="237" fill="#2ecc71" font-size="13" text-anchor="middle" opacity="0.5">AI</text>
+  <text x="720" y="86" fill="#2ecc71" font-size="11" text-anchor="middle" opacity="0.4">AI</text>
+  <text x="550" y="116" fill="#2ecc71" font-size="12" text-anchor="middle" opacity="0.4">AI</text>
+
+  <!-- Title -->
+  <text x="50" y="120" fill="#ecf0f1" font-size="32" font-weight="bold">
+    <tspan x="50" dy="0">Я работаю в шести</tspan>
+    <tspan x="50" dy="42">окнах одновременно</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="50" y="210" fill="#2ecc71" font-size="22" font-weight="600">Это не многозадачность</text>
+
+  <!-- Key insight -->
+  <rect x="50" y="250" width="460" height="1" fill="#2ecc71" opacity="0.3"/>
+  <text x="50" y="285" fill="#95a5a6" font-size="15">
+    <tspan x="50" dy="0">Параллельная оркестрация ИИ-агентов:</tspan>
+    <tspan x="50" dy="22">когнитивные ограничения, техника безопасности</tspan>
+    <tspan x="50" dy="22">и 14 элементов культуры работы</tspan>
+  </text>
+
+  <!-- Bottom stats -->
+  <rect x="50" y="370" width="130" height="45" rx="6" fill="rgba(231,76,60,0.15)" stroke="#e74c3c" stroke-width="1"/>
+  <text x="115" y="390" fill="#e74c3c" font-size="11" text-anchor="middle" font-weight="bold">МНОГОЗАДАЧНОСТЬ</text>
+  <text x="115" y="407" fill="#e74c3c" font-size="13" text-anchor="middle">-40%</text>
+
+  <rect x="200" y="370" width="130" height="45" rx="6" fill="rgba(243,156,18,0.15)" stroke="#f39c12" stroke-width="1"/>
+  <text x="265" y="390" fill="#f39c12" font-size="11" text-anchor="middle" font-weight="bold">РАЗГРУЗКА</text>
+  <text x="265" y="407" fill="#f39c12" font-size="13" text-anchor="middle">риск долга</text>
+
+  <rect x="350" y="370" width="130" height="45" rx="6" fill="rgba(46,204,113,0.15)" stroke="#2ecc71" stroke-width="1"/>
+  <text x="415" y="390" fill="#2ecc71" font-size="11" text-anchor="middle" font-weight="bold">ОРКЕСТРАЦИЯ</text>
+  <text x="415" y="407" fill="#2ecc71" font-size="13" text-anchor="middle">2.68x</text>
+</svg>
