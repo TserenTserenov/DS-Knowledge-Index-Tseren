@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="amberGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.05" stroke="#94a3b8" stroke-width="0.5">
+    <line x1="0" y1="100" x2="900" y2="100"/>
+    <line x1="0" y1="200" x2="900" y2="200"/>
+    <line x1="0" y1="300" x2="900" y2="300"/>
+    <line x1="0" y1="400" x2="900" y2="400"/>
+    <line x1="0" y1="500" x2="900" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="450" y1="0" x2="450" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="750" y1="0" x2="750" y2="600"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="52" text-anchor="middle" fill="#f1f5f9" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="1">ИИ-ПОМОЩНИК: МОЩНОСТЬ И ЗАЩИТА</text>
+  <line x1="200" y1="65" x2="700" y2="65" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+
+  <!-- LEFT SIDE: Current AI tools (no protection) -->
+  <text x="225" y="105" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="16" font-weight="600">ТИПИЧНЫЙ ИИ-ПОМОЩНИК</text>
+
+  <!-- Car without seatbelts metaphor -->
+  <rect x="75" y="125" width="300" height="340" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Power meter (high) -->
+  <text x="100" y="160" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Мощность</text>
+  <rect x="185" y="147" width="170" height="18" rx="9" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="187" y="149" width="166" height="14" rx="7" fill="url(#redGlow)" filter="url(#glow)"/>
+  <text x="270" y="160" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">МАКСИМУМ</text>
+
+  <!-- Protection meter (low) -->
+  <text x="100" y="195" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Защита</text>
+  <rect x="185" y="182" width="170" height="18" rx="9" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="187" y="184" width="25" height="14" rx="7" fill="#991b1b"/>
+  <text x="222" y="195" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">МИНИМУМ</text>
+
+  <!-- Problems list -->
+  <g transform="translate(95, 225)">
+    <text fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Нет оценки риска предложений</text>
+
+    <text y="32" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" y="32" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Не знает уровень пользователя</text>
+
+    <text y="64" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" y="64" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Эскалация сложности при ошибке</text>
+
+    <text y="96" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" y="96" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Интерфейс меняется каждый месяц</text>
+
+    <text y="128" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" y="128" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Все советы одинаково уверенны</text>
+
+    <text y="160" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="600">x</text>
+    <text x="20" y="160" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Пользователь рискует один</text>
+  </g>
+
+  <!-- Quote -->
+  <rect x="95" y="420" width="260" height="32" rx="6" fill="#7f1d1d" opacity="0.5"/>
+  <text x="105" y="441" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-style="italic">"Ощущаю себя обезьяной с гранатой"</text>
+
+  <!-- Arrow -->
+  <g filter="url(#softGlow)">
+    <line x1="400" y1="300" x2="475" y2="300" stroke="#3b82f6" stroke-width="3"/>
+    <polygon points="475,293 490,300 475,307" fill="#3b82f6"/>
+  </g>
+  <text x="445" y="285" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="12" font-weight="600">IWE</text>
+
+  <!-- RIGHT SIDE: IWE (with protection) -->
+  <text x="675" y="105" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="16" font-weight="600">IWE: ЭКЗОСКЕЛЕТ</text>
+
+  <rect x="525" y="125" width="300" height="340" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Power meter (high) -->
+  <text x="550" y="160" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Мощность</text>
+  <rect x="635" y="147" width="170" height="18" rx="9" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="637" y="149" width="166" height="14" rx="7" fill="url(#blueGlow)" filter="url(#glow)"/>
+  <text x="720" y="160" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">МАКСИМУМ</text>
+
+  <!-- Protection meter (high) -->
+  <text x="550" y="195" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Защита</text>
+  <rect x="635" y="182" width="170" height="18" rx="9" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="637" y="184" width="120" height="14" rx="7" fill="url(#greenGlow)" filter="url(#glow)"/>
+  <rect x="760" y="184" width="40" height="14" rx="7" fill="#334155" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="720" y="195" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="10" font-weight="600">РАСТЁТ</text>
+
+  <!-- Features: existing (green) and planned (amber) -->
+  <g transform="translate(545, 225)">
+    <!-- Existing -->
+    <text fill="#4ade80" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#10003;</text>
+    <text x="22" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Стандартный ритуал (ОРЗ)</text>
+
+    <text y="32" fill="#4ade80" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#10003;</text>
+    <text x="22" y="32" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Автоматические gates</text>
+
+    <text y="64" fill="#4ade80" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#10003;</text>
+    <text x="22" y="64" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Диагностика уровня (R28)</text>
+
+    <text y="96" fill="#4ade80" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#10003;</text>
+    <text x="22" y="96" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Принцип экзоскелета</text>
+
+    <!-- Planned -->
+    <text y="140" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#9675;</text>
+    <text x="22" y="140" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Маркировка риска предложений</text>
+
+    <text y="172" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#9675;</text>
+    <text x="22" y="172" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Авто-адаптация под пользователя</text>
+
+    <text y="204" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="13" font-weight="700">&#9675;</text>
+    <text x="22" y="204" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Эскалация к человеку</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(545, 440)">
+    <rect width="8" height="8" rx="2" fill="#22c55e"/>
+    <text x="14" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" dy="8">Уже работает</text>
+    <rect x="130" width="8" height="8" rx="2" fill="#f59e0b"/>
+    <text x="144" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" dy="8">В разработке</text>
+  </g>
+
+  <!-- Bottom: Auto analogy -->
+  <rect x="50" y="490" width="800" height="80" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="518" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="14" font-weight="600">АНАЛОГИЯ С АВТОПРОМОМ</text>
+  <text x="170" y="545" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Руль и педали</text>
+  <text x="170" y="560" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">= Протокол ОРЗ</text>
+  <text x="370" y="545" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">ABS и подушки</text>
+  <text x="370" y="560" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">= Gates (АрхГейт, SC)</text>
+  <text x="570" y="545" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Зеркала под водителя</text>
+  <text x="570" y="560" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">= Диагност (R28)</text>
+  <text x="750" y="545" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Лампа «в сервис»</text>
+  <text x="750" y="560" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">= Эскалация к человеку</text>
+</svg>
