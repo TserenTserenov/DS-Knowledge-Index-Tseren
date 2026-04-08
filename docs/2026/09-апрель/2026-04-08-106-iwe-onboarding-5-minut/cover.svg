@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="440" viewBox="0 0 780 440">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f9b8e"/>
+      <stop offset="100%" style="stop-color:#44bd9e"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f9b8e;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#0f9b8e;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="780" height="440" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="110" x2="780" y2="110"/>
+    <line x1="0" y1="220" x2="780" y2="220"/>
+    <line x1="0" y1="330" x2="780" y2="330"/>
+    <line x1="195" y1="0" x2="195" y2="440"/>
+    <line x1="390" y1="0" x2="390" y2="440"/>
+    <line x1="585" y1="0" x2="585" y2="440"/>
+  </g>
+
+  <!-- Glow circle behind icon -->
+  <circle cx="390" cy="175" r="80" fill="url(#glow)"/>
+
+  <!-- Browser icon -->
+  <g transform="translate(350, 130)">
+    <!-- Browser window -->
+    <rect x="0" y="0" width="80" height="60" rx="6" fill="none" stroke="url(#accent)" stroke-width="2"/>
+    <!-- Browser bar -->
+    <line x1="0" y1="14" x2="80" y2="14" stroke="url(#accent)" stroke-width="1.5" opacity="0.5"/>
+    <!-- Dots -->
+    <circle cx="10" cy="7" r="2" fill="#e74c3c" opacity="0.7"/>
+    <circle cx="18" cy="7" r="2" fill="#f39c12" opacity="0.7"/>
+    <circle cx="26" cy="7" r="2" fill="#2ecc71" opacity="0.7"/>
+    <!-- URL bar -->
+    <rect x="34" y="4" width="40" height="6" rx="3" fill="#ffffff" opacity="0.1"/>
+    <!-- Content: checkmark -->
+    <g transform="translate(30, 28)">
+      <circle cx="10" cy="10" r="10" fill="url(#accent)" opacity="0.2"/>
+      <polyline points="5,10 9,14 16,6" fill="none" stroke="#44bd9e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Arrow: 5 min -->
+  <g transform="translate(440, 150)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#44bd9e" opacity="0.8">5 мин</text>
+    <line x1="-10" y1="-5" x2="-3" y2="-5" stroke="#44bd9e" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Title -->
+  <text x="390" y="260" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Подключи ИИ-помощника</text>
+  <text x="390" y="295" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" fill="#ffffff">за 5 минут</text>
+
+  <!-- Subtitle -->
+  <text x="390" y="330" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8899aa">Пошаговая инструкция для claude.ai</text>
+
+  <!-- Accent line -->
+  <rect x="300" y="350" width="180" height="3" rx="1.5" fill="url(#accent)" opacity="0.6"/>
+
+  <!-- Steps icons at bottom -->
+  <g transform="translate(0, 380)" opacity="0.5">
+    <!-- Step 1 -->
+    <g transform="translate(175, 0)">
+      <circle cx="15" cy="15" r="12" fill="none" stroke="#44bd9e" stroke-width="1.5"/>
+      <text x="15" y="20" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#44bd9e">1</text>
+      <text x="15" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#667788">Подписка</text>
+    </g>
+    <!-- Arrow -->
+    <line x1="210" y1="15" x2="270" y2="15" stroke="#44bd9e" stroke-width="1" opacity="0.3"/>
+    <!-- Step 2 -->
+    <g transform="translate(285, 0)">
+      <circle cx="15" cy="15" r="12" fill="none" stroke="#44bd9e" stroke-width="1.5"/>
+      <text x="15" y="20" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#44bd9e">2</text>
+      <text x="15" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#667788">Settings</text>
+    </g>
+    <!-- Arrow -->
+    <line x1="320" y1="15" x2="380" y2="15" stroke="#44bd9e" stroke-width="1" opacity="0.3"/>
+    <!-- Step 3 -->
+    <g transform="translate(395, 0)">
+      <circle cx="15" cy="15" r="12" fill="none" stroke="#44bd9e" stroke-width="1.5"/>
+      <text x="15" y="20" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#44bd9e">3</text>
+      <text x="15" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#667788">URL</text>
+    </g>
+    <!-- Arrow -->
+    <line x1="430" y1="15" x2="490" y2="15" stroke="#44bd9e" stroke-width="1" opacity="0.3"/>
+    <!-- Step 4 -->
+    <g transform="translate(505, 0)">
+      <circle cx="15" cy="15" r="12" fill="none" stroke="#44bd9e" stroke-width="1.5"/>
+      <text x="15" y="20" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#44bd9e">4</text>
+      <text x="15" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#667788">Готово</text>
+    </g>
+  </g>
+</svg>
