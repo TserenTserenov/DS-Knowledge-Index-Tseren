@@ -2,7 +2,7 @@
 type: post
 title: "Гейты, семиотика и 67 часов: W15, 6–12 апр"
 audience: community
-status: ready
+status: published
 created: 2026-04-13
 target: club
 channel_number: 1
