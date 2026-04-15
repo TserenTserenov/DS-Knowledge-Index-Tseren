@@ -139,19 +139,19 @@
   <!-- IWE cycle: сессия → формализованный опыт → сессия -->
   <rect x="824" y="538" width="295" height="1" fill="#059669"/>
 
-  <rect x="830" y="548" width="70" height="30" rx="7" fill="#059669"/>
-  <text x="865" y="568" font-family="'SF Mono','Fira Code',monospace" font-size="12" fill="#ffffff" text-anchor="middle">сессия</text>
+  <rect x="828" y="550" width="58" height="26" rx="6" fill="#059669"/>
+  <text x="857" y="567" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#ffffff" text-anchor="middle">сессия</text>
 
-  <text x="907" y="568" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="18" fill="#6ee7b7" text-anchor="middle">→</text>
+  <text x="892" y="567" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#6ee7b7" text-anchor="middle">→</text>
 
-  <rect x="924" y="542" width="160" height="42" rx="7" fill="#047857"/>
-  <text x="1004" y="560" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#a7f3d0" text-anchor="middle">формализованный</text>
-  <text x="1004" y="576" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#a7f3d0" text-anchor="middle">опыт</text>
+  <rect x="906" y="544" width="120" height="38" rx="6" fill="#047857"/>
+  <text x="966" y="561" font-family="'SF Mono','Fira Code',monospace" font-size="10" fill="#a7f3d0" text-anchor="middle">формализован-</text>
+  <text x="966" y="575" font-family="'SF Mono','Fira Code',monospace" font-size="10" fill="#a7f3d0" text-anchor="middle">ный опыт</text>
 
-  <text x="1091" y="568" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="18" fill="#6ee7b7" text-anchor="middle">→</text>
+  <text x="1032" y="567" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#6ee7b7" text-anchor="middle">→</text>
 
-  <rect x="1104" y="548" width="70" height="30" rx="7" fill="#059669"/>
-  <text x="1139" y="568" font-family="'SF Mono','Fira Code',monospace" font-size="12" fill="#ffffff" text-anchor="middle">сессия</text>
+  <rect x="1047" y="550" width="58" height="26" rx="6" fill="#059669"/>
+  <text x="1076" y="567" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#ffffff" text-anchor="middle">сессия</text>
 
   <!-- ═══ Bottom dark banner (y=642) ═══ -->
   <rect x="0" y="642" width="1200" height="110" fill="#0f172a"/>
