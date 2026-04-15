@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1d4ed8"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="cardgrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Белый фон -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#topbar)"/>
+
+  <!-- Заголовок -->
+  <text x="600" y="70" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="38" font-weight="bold" fill="#0f172a" text-anchor="middle">IWE из браузера</text>
+  <text x="600" y="102" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="19" fill="#475569" text-anchor="middle">Knowledge Gateway открыт для всех подписчиков «Бесконечного развития»</text>
+
+  <rect x="60" y="120" width="1080" height="1.5" fill="#e2e8f0"/>
+
+  <!-- ═══ ЛЕВАЯ КАРТОЧКА: Что внутри ═══ -->
+  <rect x="60" y="138" width="490" height="380" rx="16" fill="url(#cardgrad)"/>
+
+  <text x="305" y="178" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Что получает Claude</text>
+  <text x="305" y="198" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#93c5fd" text-anchor="middle">после подключения mcp.aisystant.com</text>
+
+  <rect x="80" y="212" width="450" height="1" fill="#2563eb"/>
+
+  <!-- Пункт 1 -->
+  <rect x="90" y="228" width="6" height="52" rx="3" fill="#60a5fa"/>
+  <text x="110" y="248" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="bold" fill="#ffffff">5 000+ документов платформы</text>
+  <text x="110" y="268" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#bfdbfe">Методология, руководства, курсы МИМ</text>
+
+  <!-- Пункт 2 -->
+  <rect x="90" y="296" width="6" height="52" rx="3" fill="#60a5fa"/>
+  <text x="110" y="316" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Твой цифровой двойник</text>
+  <text x="110" y="336" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#bfdbfe">Профиль, уровень, цели, прогресс</text>
+
+  <!-- Пункт 3 -->
+  <rect x="90" y="364" width="6" height="52" rx="3" fill="#60a5fa"/>
+  <text x="110" y="384" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Твои личные знания</text>
+  <text x="110" y="404" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#bfdbfe">Заметки, стратегия, черновики из GitHub</text>
+
+  <rect x="80" y="432" width="450" height="1" fill="#3b82f6"/>
+
+  <text x="305" y="458" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#93c5fd" text-anchor="middle">Один URL · Стандартный MCP-протокол · OAuth-авторизация</text>
+
+  <!-- Badge -->
+  <rect x="160" y="472" width="290" height="34" rx="17" fill="#1d4ed8"/>
+  <text x="305" y="494" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">mcp.aisystant.com/mcp</text>
+
+  <!-- ═══ ПРАВАЯ КАРТОЧКА: Как подключить ═══ -->
+  <rect x="650" y="138" width="490" height="380" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+
+  <text x="895" y="178" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="bold" fill="#0f172a" text-anchor="middle">Подключить за 5 минут</text>
+  <text x="895" y="198" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Нужны: Claude Pro + подписка «Бесконечное развитие»</text>
+
+  <rect x="670" y="212" width="450" height="1" fill="#e2e8f0"/>
+
+  <!-- Шаг 1 -->
+  <circle cx="695" cy="248" r="14" fill="#1d4ed8"/>
+  <text x="695" y="254" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="720" y="244" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">claude.ai → Settings → Connectors</text>
+  <text x="720" y="261" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#64748b">Add custom connector</text>
+
+  <!-- Шаг 2 -->
+  <circle cx="695" cy="306" r="14" fill="#1d4ed8"/>
+  <text x="695" y="312" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="720" y="302" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Вставить URL</text>
+  <text x="720" y="319" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1d4ed8">https://mcp.aisystant.com/mcp</text>
+
+  <!-- Шаг 3 -->
+  <circle cx="695" cy="364" r="14" fill="#1d4ed8"/>
+  <text x="695" y="370" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="720" y="360" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Connect → войти через system-school.ru</text>
+  <text x="720" y="377" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#64748b">Стандартная форма OAuth</text>
+
+  <!-- Шаг 4 -->
+  <circle cx="695" cy="422" r="14" fill="#059669"/>
+  <text x="695" y="428" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="720" y="418" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#0f172a">Новый чат → «С чего мне начать?»</text>
+  <text x="720" y="435" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#64748b">IWE загружает контекст и отвечает</text>
+
+  <rect x="670" y="462" width="450" height="1" fill="#e2e8f0"/>
+
+  <rect x="720" y="474" width="350" height="32" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="895" y="495" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#166534" text-anchor="middle">Открыт для подписчиков «Бесконечного развития»</text>
+
+  <!-- Нижняя полоска -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#topbar)"/>
+</svg>
