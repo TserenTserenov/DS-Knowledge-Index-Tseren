@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760">
   <defs>
     <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#1d4ed8"/>
@@ -8,7 +8,7 @@
   </defs>
 
   <!-- Layer 1: белый фон -->
-  <rect width="1200" height="700" fill="#ffffff"/>
+  <rect width="1200" height="760" fill="#ffffff"/>
 
   <!-- Top accent bar -->
   <rect x="0" y="0" width="1200" height="8" fill="url(#topbar)"/>
@@ -19,8 +19,8 @@
 
   <rect x="60" y="100" width="1080" height="1.5" fill="#cbd5e1"/>
 
-  <!-- ═══ CARD 1: gstack (x=60, y=114, w=335, h=464) ═══ -->
-  <rect x="60" y="114" width="335" height="464" rx="14" fill="#1e3a8a"/>
+  <!-- ═══ CARD 1: gstack (x=60, y=114, w=335, h=510) ═══ -->
+  <rect x="60" y="114" width="335" height="510" rx="14" fill="#1e3a8a"/>
 
   <text x="227" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">gstack</text>
   <text x="227" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#93c5fd" text-anchor="middle">Гэрри Тан · CEO Y Combinator</text>
@@ -60,8 +60,8 @@
   <rect x="90" y="490" width="158" height="28" rx="14" fill="#1d4ed8"/>
   <text x="169" y="509" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">пайплайн спринта</text>
 
-  <!-- ═══ CARD 2: Agency Agents (x=432, y=114, w=335, h=464) ═══ -->
-  <rect x="432" y="114" width="335" height="464" rx="14" fill="#3b0764"/>
+  <!-- ═══ CARD 2: Agency Agents (x=432, y=114, w=335, h=510) ═══ -->
+  <rect x="432" y="114" width="335" height="510" rx="14" fill="#3b0764"/>
 
   <text x="599" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Agency Agents</text>
   <text x="599" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#c4b5fd" text-anchor="middle">Марк Ситаржевский</text>
@@ -97,8 +97,8 @@
   <rect x="462" y="500" width="182" height="28" rx="14" fill="#6d28d9"/>
   <text x="553" y="519" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">каталог специалистов</text>
 
-  <!-- ═══ CARD 3: IWE (x=804, y=114, w=335, h=464) ═══ -->
-  <rect x="804" y="114" width="335" height="464" rx="14" fill="#064e3b"/>
+  <!-- ═══ CARD 3: IWE (x=804, y=114, w=335, h=510) ═══ -->
+  <rect x="804" y="114" width="335" height="510" rx="14" fill="#064e3b"/>
 
   <text x="971" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">IWE</text>
   <text x="971" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#6ee7b7" text-anchor="middle">дистрибутив · 3-way merge</text>
@@ -136,11 +136,11 @@
   <text x="834" y="522" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
   <text x="858" y="522" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">накопление корпуса</text>
 
-  <!-- ═══ Bottom dark banner (y=596) ═══ -->
-  <rect x="0" y="596" width="1200" height="96" fill="#0f172a"/>
-  <text x="600" y="634" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="600" fill="#f8fafc" text-anchor="middle">gstack и Agency Agents ускоряют работу внутри сессии</text>
-  <text x="600" y="660" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">IWE накапливает знание между сессиями — разные горизонты, разные ставки</text>
+  <!-- ═══ Bottom dark banner (y=642) ═══ -->
+  <rect x="0" y="642" width="1200" height="110" fill="#0f172a"/>
+  <text x="600" y="682" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="600" fill="#f8fafc" text-anchor="middle">gstack и Agency Agents ускоряют работу внутри сессии</text>
+  <text x="600" y="708" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">IWE накапливает знание между сессиями — разные горизонты, разные ставки</text>
 
   <!-- Bottom accent bar -->
-  <rect x="0" y="692" width="1200" height="8" fill="url(#topbar)"/>
+  <rect x="0" y="752" width="1200" height="8" fill="url(#topbar)"/>
 </svg>
