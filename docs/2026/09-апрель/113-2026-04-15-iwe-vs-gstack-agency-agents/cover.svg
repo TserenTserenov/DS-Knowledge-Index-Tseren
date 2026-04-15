@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
   <defs>
     <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#1d4ed8"/>
@@ -8,145 +8,139 @@
   </defs>
 
   <!-- Layer 1: белый фон -->
-  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="700" fill="#ffffff"/>
 
   <!-- Top accent bar -->
   <rect x="0" y="0" width="1200" height="8" fill="url(#topbar)"/>
 
-  <!-- Page title — тёмный текст на белом -->
-  <text x="600" y="62" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="bold" fill="#0f172a" text-anchor="middle">Три системы для ИИ-работы</text>
-  <text x="600" y="88" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#475569" text-anchor="middle">gstack · Agency Agents · IWE — разные архитектурные ставки</text>
+  <!-- Page title -->
+  <text x="600" y="58" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="30" font-weight="bold" fill="#0f172a" text-anchor="middle">Три системы для ИИ-работы</text>
+  <text x="600" y="82" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#475569" text-anchor="middle">gstack · Agency Agents · IWE — разные архитектурные ставки</text>
 
-  <rect x="60" y="106" width="1080" height="1.5" fill="#cbd5e1"/>
+  <rect x="60" y="100" width="1080" height="1.5" fill="#cbd5e1"/>
 
-  <!-- ═══ CARD 1: gstack — Layer 2: тёмная карточка ═══ -->
-  <rect x="60" y="120" width="335" height="388" rx="14" fill="#1e3a8a"/>
+  <!-- ═══ CARD 1: gstack (x=60, y=114, w=335, h=464) ═══ -->
+  <rect x="60" y="114" width="335" height="464" rx="14" fill="#1e3a8a"/>
 
-  <!-- header светлый на тёмном -->
-  <text x="227" y="156" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">gstack</text>
-  <text x="227" y="174" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#93c5fd" text-anchor="middle">Гэрри Тан · CEO Y Combinator</text>
+  <text x="227" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">gstack</text>
+  <text x="227" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#93c5fd" text-anchor="middle">Гэрри Тан · CEO Y Combinator</text>
 
-  <rect x="80" y="186" width="295" height="1" fill="#2563eb"/>
+  <rect x="80" y="180" width="295" height="1" fill="#2563eb"/>
 
-  <!-- badge -->
-  <rect x="120" y="194" width="214" height="28" rx="14" fill="#2563eb"/>
-  <text x="227" y="213" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">★ 57 000  ·  март 2026</text>
+  <rect x="120" y="188" width="214" height="28" rx="14" fill="#2563eb"/>
+  <text x="227" y="207" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">★ 57 000  ·  март 2026</text>
 
-  <!-- pipeline — светлый код на тёмном -->
-  <text x="88" y="252" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/investigate</text>
-  <text x="213" y="254" font-family="'SF Mono','Fira Code',monospace" font-size="20" fill="#93c5fd">→</text>
-  <text x="232" y="252" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/build</text>
-  <text x="291" y="254" font-family="'SF Mono','Fira Code',monospace" font-size="20" fill="#93c5fd">→</text>
-  <text x="310" y="252" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/ship</text>
+  <!-- pipeline -->
+  <text x="88" y="248" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/investigate</text>
+  <text x="213" y="250" font-family="'SF Mono','Fira Code',monospace" font-size="20" fill="#93c5fd">→</text>
+  <text x="232" y="248" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/build</text>
+  <text x="291" y="250" font-family="'SF Mono','Fira Code',monospace" font-size="20" fill="#93c5fd">→</text>
+  <text x="310" y="248" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#60a5fa">/ship</text>
 
-  <rect x="80" y="266" width="295" height="1" fill="#2563eb"/>
+  <rect x="80" y="262" width="295" height="1" fill="#2563eb"/>
 
-  <text x="90" y="292" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#93c5fd">Ставка:</text>
-  <text x="162" y="292" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#e0f2fe">дисциплина через артефакты</text>
+  <text x="90" y="288" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#93c5fd">Ставка:</text>
+  <text x="162" y="288" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#e0f2fe">дисциплина через артефакты</text>
 
-  <text x="90" y="318" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#bfdbfe">Шкала качества 0–10</text>
-  <text x="90" y="338" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#bfdbfe">Проверка на «AI Slop»</text>
+  <text x="90" y="314" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#bfdbfe">Шкала качества 0–10</text>
+  <text x="90" y="336" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#bfdbfe">Проверка на «AI Slop»</text>
   <text x="90" y="358" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#bfdbfe">Кросс-модельный ревью</text>
 
   <rect x="80" y="372" width="295" height="1" fill="#2563eb"/>
 
-  <!-- metrics — светлые символы на тёмном -->
-  <text x="90" y="396" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="114" y="396" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#e0f2fe">знание внутри сессии</text>
-  <text x="90" y="418" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
-  <text x="114" y="418" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">между сессиями</text>
-  <text x="90" y="440" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
-  <text x="114" y="440" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">обновление без потерь</text>
-  <text x="90" y="462" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
-  <text x="114" y="462" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">накопление корпуса</text>
+  <text x="90" y="398" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="114" y="398" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#e0f2fe">знание внутри сессии</text>
+  <text x="90" y="422" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
+  <text x="114" y="422" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">между сессиями</text>
+  <text x="90" y="446" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
+  <text x="114" y="446" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">обновление без потерь</text>
+  <text x="90" y="470" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
+  <text x="114" y="470" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">накопление корпуса</text>
 
-  <rect x="90" y="478" width="158" height="26" rx="13" fill="#1d4ed8"/>
-  <text x="169" y="496" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">пайплайн спринта</text>
+  <rect x="90" y="490" width="158" height="28" rx="14" fill="#1d4ed8"/>
+  <text x="169" y="509" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">пайплайн спринта</text>
 
-  <!-- ═══ CARD 2: Agency Agents — тёмная карточка ═══ -->
-  <rect x="432" y="120" width="335" height="388" rx="14" fill="#3b0764"/>
+  <!-- ═══ CARD 2: Agency Agents (x=432, y=114, w=335, h=464) ═══ -->
+  <rect x="432" y="114" width="335" height="464" rx="14" fill="#3b0764"/>
 
-  <text x="599" y="156" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Agency Agents</text>
-  <text x="599" y="174" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#c4b5fd" text-anchor="middle">Марк Ситаржевский</text>
+  <text x="599" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Agency Agents</text>
+  <text x="599" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#c4b5fd" text-anchor="middle">Марк Ситаржевский</text>
 
-  <rect x="452" y="186" width="295" height="1" fill="#7c3aed"/>
+  <rect x="452" y="180" width="295" height="1" fill="#7c3aed"/>
 
-  <rect x="486" y="194" width="226" height="28" rx="14" fill="#7c3aed"/>
-  <text x="599" y="213" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">★ 66 000  ·  конец 2025</text>
+  <rect x="486" y="188" width="226" height="28" rx="14" fill="#7c3aed"/>
+  <text x="599" y="207" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">★ 66 000  ·  конец 2025</text>
 
-  <!-- vibe card — чуть светлее тёмного -->
-  <rect x="452" y="232" width="295" height="58" rx="8" fill="#4c1d95"/>
-  <text x="466" y="253" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#a78bfa">vibe:</text>
-  <text x="466" y="274" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#e9d5ff">"I ship first, optimize later."</text>
+  <!-- vibe -->
+  <rect x="452" y="228" width="295" height="58" rx="8" fill="#4c1d95"/>
+  <text x="466" y="250" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#a78bfa">vibe:</text>
+  <text x="466" y="272" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#e9d5ff">"I ship first, optimize later."</text>
 
-  <rect x="452" y="300" width="295" height="1" fill="#7c3aed"/>
+  <rect x="452" y="298" width="295" height="1" fill="#7c3aed"/>
 
-  <text x="462" y="326" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#c4b5fd">Ставка:</text>
-  <text x="534" y="326" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#f3e8ff">personality как anti-drift</text>
+  <text x="462" y="324" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#c4b5fd">Ставка:</text>
+  <text x="534" y="324" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#f3e8ff">personality как anti-drift</text>
 
-  <text x="462" y="352" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ddd6fe">100+ агентов-специалистов</text>
+  <text x="462" y="350" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ddd6fe">100+ агентов-специалистов</text>
   <text x="462" y="372" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ddd6fe">Cursor · Aider · Windsurf</text>
-  <text x="462" y="392" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ddd6fe">Низкий порог, широкий охват</text>
+  <text x="462" y="394" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ddd6fe">Низкий порог, широкий охват</text>
 
-  <rect x="452" y="406" width="295" height="1" fill="#7c3aed"/>
+  <rect x="452" y="410" width="295" height="1" fill="#7c3aed"/>
 
-  <text x="462" y="430" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="486" y="430" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#f3e8ff">знание внутри сессии</text>
-  <text x="462" y="452" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
-  <text x="486" y="452" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">между сессиями</text>
-  <text x="462" y="474" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
-  <text x="486" y="474" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">обновление без потерь</text>
+  <text x="462" y="436" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="486" y="436" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#f3e8ff">знание внутри сессии</text>
+  <text x="462" y="460" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
+  <text x="486" y="460" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">между сессиями</text>
+  <text x="462" y="484" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#f87171">✗</text>
+  <text x="486" y="484" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8">обновление без потерь</text>
 
-  <rect x="462" y="488" width="182" height="26" rx="13" fill="#6d28d9"/>
-  <text x="553" y="506" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">каталог специалистов</text>
+  <rect x="462" y="500" width="182" height="28" rx="14" fill="#6d28d9"/>
+  <text x="553" y="519" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">каталог специалистов</text>
 
-  <!-- ═══ CARD 3: IWE — тёмная карточка ═══ -->
-  <rect x="804" y="120" width="335" height="388" rx="14" fill="#064e3b"/>
+  <!-- ═══ CARD 3: IWE (x=804, y=114, w=335, h=464) ═══ -->
+  <rect x="804" y="114" width="335" height="464" rx="14" fill="#064e3b"/>
 
-  <text x="971" y="156" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">IWE</text>
-  <text x="971" y="174" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#6ee7b7" text-anchor="middle">дистрибутив · 3-way merge</text>
+  <text x="971" y="150" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">IWE</text>
+  <text x="971" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#6ee7b7" text-anchor="middle">дистрибутив · 3-way merge</text>
 
-  <rect x="824" y="186" width="295" height="1" fill="#059669"/>
+  <rect x="824" y="180" width="295" height="1" fill="#059669"/>
 
-  <rect x="864" y="194" width="214" height="28" rx="14" fill="#059669"/>
-  <text x="971" y="213" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Pack · memory/ · ОРЗ-фрактал</text>
+  <rect x="864" y="188" width="214" height="28" rx="14" fill="#059669"/>
+  <text x="971" y="207" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Pack · memory/ · ОРЗ-фрактал</text>
 
-  <!-- layers — светлее тёмного фона -->
-  <rect x="824" y="232" width="295" height="22" rx="4" fill="#065f46"/>
-  <text x="971" y="248" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L3 · авторское  §9</text>
-  <rect x="836" y="258" width="271" height="22" rx="4" fill="#065f46" stroke="#059669" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="971" y="274" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L2 · расширения  extensions/</text>
-  <rect x="848" y="284" width="247" height="22" rx="4" fill="#065f46"/>
-  <text x="971" y="300" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L1 · платформа  update.sh</text>
+  <!-- layers -->
+  <rect x="824" y="228" width="295" height="22" rx="4" fill="#065f46"/>
+  <text x="971" y="244" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L3 · авторское  §9</text>
+  <rect x="836" y="254" width="271" height="22" rx="4" fill="#065f46" stroke="#059669" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="971" y="270" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L2 · расширения  extensions/</text>
+  <rect x="848" y="280" width="247" height="22" rx="4" fill="#065f46"/>
+  <text x="971" y="296" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L1 · платформа  update.sh</text>
 
-  <rect x="824" y="316" width="295" height="1" fill="#059669"/>
+  <rect x="824" y="314" width="295" height="1" fill="#059669"/>
 
-  <text x="834" y="342" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#6ee7b7">Ставка:</text>
-  <text x="906" y="342" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">среда, которая накапливает</text>
+  <text x="834" y="340" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#6ee7b7">Ставка:</text>
+  <text x="906" y="340" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">среда, которая накапливает</text>
 
-  <text x="834" y="368" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a7f3d0">3-way merge при обновлении</text>
+  <text x="834" y="366" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a7f3d0">3-way merge при обновлении</text>
   <text x="834" y="388" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a7f3d0">Capture знаний на рубежах</text>
-  <text x="834" y="408" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a7f3d0">Знание между сессиями</text>
+  <text x="834" y="410" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#a7f3d0">Знание между сессиями</text>
 
-  <rect x="824" y="422" width="295" height="1" fill="#059669"/>
+  <rect x="824" y="424" width="295" height="1" fill="#059669"/>
 
-  <text x="834" y="446" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="858" y="446" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">знание внутри сессии</text>
-  <text x="834" y="468" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="858" y="468" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">знание между сессиями</text>
-  <text x="834" y="490" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="858" y="490" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">обновление без потерь</text>
-  <text x="834" y="512" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
-  <text x="858" y="512" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">накопление корпуса</text>
+  <text x="834" y="450" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="858" y="450" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">знание внутри сессии</text>
+  <text x="834" y="474" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="858" y="474" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">знание между сессиями</text>
+  <text x="834" y="498" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="858" y="498" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">обновление без потерь</text>
+  <text x="834" y="522" font-family="'SF Mono','Fira Code',monospace" font-size="16" fill="#4ade80">✓</text>
+  <text x="858" y="522" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#d1fae5">накопление корпуса</text>
 
-  <!-- no tag row needed, fits nicely -->
-
-  <!-- ═══ Bottom dark banner — Layer 2: тёмный ═══ -->
-  <rect x="0" y="524" width="1200" height="98" fill="#0f172a"/>
-  <!-- светлый текст на тёмном -->
-  <text x="600" y="562" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="600" fill="#f8fafc" text-anchor="middle">gstack и Agency Agents ускоряют работу внутри сессии</text>
-  <text x="600" y="588" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">IWE накапливает знание между сессиями — разные горизонты, разные ставки</text>
+  <!-- ═══ Bottom dark banner (y=596) ═══ -->
+  <rect x="0" y="596" width="1200" height="96" fill="#0f172a"/>
+  <text x="600" y="634" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="600" fill="#f8fafc" text-anchor="middle">gstack и Agency Agents ускоряют работу внутри сессии</text>
+  <text x="600" y="660" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">IWE накапливает знание между сессиями — разные горизонты, разные ставки</text>
 
   <!-- Bottom accent bar -->
-  <rect x="0" y="622" width="1200" height="8" fill="url(#topbar)"/>
+  <rect x="0" y="692" width="1200" height="8" fill="url(#topbar)"/>
 </svg>
