@@ -108,13 +108,22 @@
   <rect x="864" y="188" width="214" height="28" rx="14" fill="#059669"/>
   <text x="971" y="207" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Pack · memory/ · ОРЗ-фрактал</text>
 
-  <!-- layers -->
-  <rect x="824" y="228" width="295" height="22" rx="4" fill="#065f46"/>
-  <text x="971" y="244" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L3 · авторское  §9</text>
-  <rect x="836" y="254" width="271" height="22" rx="4" fill="#065f46" stroke="#059669" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="971" y="270" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L2 · расширения  extensions/</text>
-  <rect x="848" y="280" width="247" height="22" rx="4" fill="#065f46"/>
-  <text x="971" y="296" font-family="'SF Mono','Fira Code',monospace" font-size="13" fill="#6ee7b7" text-anchor="middle">L1 · платформа  update.sh</text>
+  <!-- cycle: сессия → формализованный опыт → сессия -->
+  <!-- Всё по центру карточки IWE: центр x=971, ширина блока 295 → 824..1119 -->
+  <!-- node 1: сессия (x=824, w=66) -->
+  <rect x="828" y="228" width="70" height="36" rx="7" fill="#059669"/>
+  <text x="863" y="251" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">сессия</text>
+  <!-- arrow 1 -->
+  <text x="901" y="254" font-family="'SF Mono','Fira Code',monospace" font-size="22" fill="#6ee7b7">→</text>
+  <!-- node 2: формализованный опыт (центр 971, w=116) -->
+  <rect x="922" y="222" width="116" height="48" rx="7" fill="#047857"/>
+  <text x="980" y="242" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="700" fill="#6ee7b7" text-anchor="middle">формализованный</text>
+  <text x="980" y="260" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="700" fill="#6ee7b7" text-anchor="middle">опыт</text>
+  <!-- arrow 2 -->
+  <text x="1041" y="254" font-family="'SF Mono','Fira Code',monospace" font-size="22" fill="#6ee7b7">→</text>
+  <!-- node 3: сессия (x=1063, w=66) -->
+  <rect x="1063" y="228" width="70" height="36" rx="7" fill="#059669"/>
+  <text x="1098" y="251" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">сессия</text>
 
   <rect x="824" y="314" width="295" height="1" fill="#059669"/>
 
