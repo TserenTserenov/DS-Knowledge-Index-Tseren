@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent)"/>
+
+  <!-- Title -->
+  <text x="600" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="30" fill="#0f172a" text-anchor="middle" font-weight="bold">1180 понятий, 4200 связей, 7 типов смысловых поломок</text>
+  <text x="600" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#475569" text-anchor="middle">Как мы навели порядок в базе знаний IWE</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="96" x2="1140" y2="96" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- ========== COLUMN 1: ГРАФ ПОНЯТИЙ ========== -->
+  <rect x="40" y="108" width="545" height="430" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="40" y="108" width="545" height="60" rx="14" fill="#2563eb"/>
+  <rect x="40" y="152" width="545" height="16" fill="#2563eb"/>
+
+  <text x="312" y="138" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Граф понятий</text>
+  <text x="312" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">Диагностика, починка, двуязычность</text>
+
+  <!-- Before/After boxes -->
+  <rect x="66" y="186" width="230" height="160" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="181" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle" font-weight="bold">БЫЛО</text>
+  <text x="181" y="238" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">1126 понятий, 2616 связей</text>
+  <text x="181" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">20 orphan-узлов</text>
+  <text x="181" y="286" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">U.System вне топ-10</text>
+  <text x="181" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">Парсер не читал nested YAML</text>
+  <text x="181" y="334" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">0% двуязычных</text>
+
+  <!-- Arrow -->
+  <line x1="306" y1="266" x2="332" y2="266" stroke="#2563eb" stroke-width="3"/>
+  <polygon points="332,258 348,266 332,274" fill="#2563eb"/>
+
+  <rect x="358" y="186" width="210" height="160" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+  <text x="463" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#059669" text-anchor="middle" font-weight="bold">СТАЛО</text>
+  <text x="463" y="238" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">1189 понятий, 4199 связей</text>
+  <text x="463" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#059669" text-anchor="middle">Orphans (баг) = 0</text>
+  <text x="463" y="286" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#059669" text-anchor="middle">U.System = 15, U.Role = 32</text>
+  <text x="463" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#059669" text-anchor="middle">Frontmatter: 536 рёбер</text>
+  <text x="463" y="334" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#059669" text-anchor="middle">64% двуязычных</text>
+
+  <!-- Pipeline label -->
+  <rect x="66" y="366" width="502" height="54" rx="10" fill="#2563eb" opacity="0.08"/>
+  <text x="312" y="386" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Конвейер: pre-commit lint в 7 Pack-репо</text>
+  <text x="312" y="406" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">Терминологический метод (DP.METHOD.030-031)</text>
+
+  <!-- Status -->
+  <rect x="66" y="434" width="160" height="28" rx="14" fill="#059669"/>
+  <text x="146" y="453" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">Ф0-Ф5 выполнены</text>
+
+  <text x="312" y="502" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="bold">WP-242 Граф понятий</text>
+  <text x="312" y="520" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">knowledge-mcp, Pack, FPF-онтология</text>
+
+  <!-- ========== COLUMN 2: СЕМИОТИКА ========== -->
+  <rect x="615" y="108" width="545" height="430" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="615" y="108" width="545" height="60" rx="14" fill="#7c3aed"/>
+  <rect x="615" y="152" width="545" height="16" fill="#7c3aed"/>
+
+  <text x="887" y="138" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Семиотическая архитектура</text>
+  <text x="887" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#ddd6fe" text-anchor="middle">Инженерия смысловой инфраструктуры</text>
+
+  <!-- 4 components -->
+  <g transform="translate(887, 230)">
+    <!-- Top: Данные -->
+    <rect x="-60" y="-38" width="120" height="36" rx="8" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="0" y="-16" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764" text-anchor="middle" font-weight="bold">Данные</text>
+
+    <!-- Right: Контекст -->
+    <rect x="80" y="10" width="120" height="36" rx="8" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="140" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764" text-anchor="middle" font-weight="bold">Контекст</text>
+
+    <!-- Bottom: Свидетельства -->
+    <rect x="-60" y="58" width="120" height="36" rx="8" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="0" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764" text-anchor="middle" font-weight="bold">Свидетельства</text>
+
+    <!-- Left: Полномочия -->
+    <rect x="-200" y="10" width="120" height="36" rx="8" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="-140" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764" text-anchor="middle" font-weight="bold">Полномочия</text>
+
+    <!-- Centre circle: Семиозис -->
+    <circle cx="0" cy="28" r="30" fill="#7c3aed" opacity="0.08" stroke="#7c3aed" stroke-width="2"/>
+    <text x="0" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#3b0764" text-anchor="middle" font-weight="bold">Семи-</text>
+    <text x="0" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#3b0764" text-anchor="middle" font-weight="bold">озис</text>
+
+    <!-- Connecting lines -->
+    <line x1="0" y1="-2" x2="0" y2="0" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+    <line x1="60" y1="28" x2="80" y2="28" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+    <line x1="0" y1="56" x2="0" y2="58" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-60" y1="28" x2="-80" y2="28" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Details -->
+  <text x="643" y="316" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764">▸ SC-шаблон: 4 компонента семиозиса</text>
+  <text x="643" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764">▸ Kinds-First + Owner Roles (ISO 15926)</text>
+  <text x="643" y="364" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764">▸ PROPOSE-only: автомердж запрещён</text>
+  <text x="643" y="388" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764">▸ 7 типов смысловых поломок (Семиревью)</text>
+  <text x="643" y="412" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764">▸ Failure modes: DP.FM.012, DP.FM.013</text>
+
+  <!-- Status -->
+  <rect x="643" y="434" width="140" height="28" rx="14" fill="#059669"/>
+  <text x="713" y="453" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">Все фазы DONE</text>
+
+  <text x="887" y="502" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="bold">WP-230 Семиотическая архитектура Pack</text>
+  <text x="887" y="520" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b5cf6" text-anchor="middle">Левенчук «Зачем вам семиотика» 12 апр 2026</text>
+
+  <!-- ========== BOTTOM BANNER ========== -->
+  <rect x="120" y="548" width="960" height="42" rx="12" fill="#0f172a"/>
+  <text x="600" y="575" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold">Хаотичный граф = агент, который угадывает. Структурированный = агент, который знает.</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#accent)"/>
+</svg>
