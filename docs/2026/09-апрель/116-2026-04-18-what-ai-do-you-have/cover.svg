@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- White background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent)"/>
+
+  <!-- Title -->
+  <text x="600" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#0f172a" text-anchor="middle" font-weight="bold">Какой у меня ИИ?</text>
+  <text x="600" y="82" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#475569" text-anchor="middle">«GPT-5» — такой же неполный ответ, как «MacBook»</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="102" x2="1140" y2="102" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- ========== COLUMN 1: КОМПЬЮТЕР ========== -->
+  <rect x="40" y="118" width="545" height="420" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="40" y="118" width="545" height="60" rx="14" fill="#2563eb"/>
+  <rect x="40" y="162" width="545" height="16" fill="#2563eb"/>
+
+  <text x="312" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Какой у меня компьютер?</text>
+  <text x="312" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">«MacBook» не говорит почти ничего</text>
+
+  <!-- Layers list -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#1e3a8a">
+    <rect x="66" y="200" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="224" font-weight="bold">Железо</text>
+    <text x="200" y="224" fill="#475569">какой процессор, сколько памяти</text>
+
+    <rect x="66" y="244" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="268" font-weight="bold">ОС</text>
+    <text x="200" y="268" fill="#475569">macOS, Linux, Windows — разная среда</text>
+
+    <rect x="66" y="288" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="312" font-weight="bold">Программы</text>
+    <text x="200" y="312" fill="#475569">что установлено, как настроено</text>
+
+    <rect x="66" y="332" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="356" font-weight="bold">Файлы</text>
+    <text x="200" y="356" fill="#475569">структура, синхронизации, облако</text>
+
+    <rect x="66" y="376" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="400" font-weight="bold">Привычки</text>
+    <text x="200" y="400" fill="#475569">шорткаты, рабочий поток</text>
+
+    <rect x="66" y="420" width="493" height="36" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="84" y="444" font-weight="bold">Периферия</text>
+    <text x="200" y="444" fill="#475569">что подключено, чем работаешь</text>
+  </g>
+
+  <!-- Conclusion -->
+  <rect x="66" y="472" width="493" height="50" rx="10" fill="#2563eb" opacity="0.1"/>
+  <text x="312" y="493" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Один MacBook — верстальщик.</text>
+  <text x="312" y="513" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#1e3a8a" text-anchor="middle">Другой — пролистывает ленту. Разница в 20×.</text>
+
+  <!-- ========== COLUMN 2: ИИ ========== -->
+  <rect x="615" y="118" width="545" height="420" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="615" y="118" width="545" height="60" rx="14" fill="#7c3aed"/>
+  <rect x="615" y="162" width="545" height="16" fill="#7c3aed"/>
+
+  <text x="887" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">Какой у меня ИИ?</text>
+  <text x="887" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#ddd6fe" text-anchor="middle">«Claude Opus» — только один слой из семи</text>
+
+  <!-- 7 layers -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#3b0764">
+    <rect x="641" y="200" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="222" font-weight="bold">Модель</text>
+    <text x="775" y="222" fill="#475569">vendor и версия — только потолок</text>
+
+    <rect x="641" y="240" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="262" font-weight="bold">Интерфейс</text>
+    <text x="775" y="262" fill="#475569">веб, терминал, IDE, мобильный</text>
+
+    <rect x="641" y="280" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="302" font-weight="bold">Контекст</text>
+    <text x="775" y="302" fill="#475569">что ИИ знает про меня и проект</text>
+
+    <rect x="641" y="320" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="342" font-weight="bold">Роль</text>
+    <text x="775" y="342" fill="#475569">оракул, собеседник, критик, рутинщик</text>
+
+    <rect x="641" y="360" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="382" font-weight="bold">Память</text>
+    <text x="775" y="382" fill="#475569">что остаётся между сессиями</text>
+
+    <rect x="641" y="400" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="422" font-weight="bold">Норма</text>
+    <text x="775" y="422" fill="#475569">правила работы с ИИ, human gate</text>
+
+    <rect x="641" y="440" width="493" height="34" rx="8" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+    <text x="659" y="462" font-weight="bold">Среда</text>
+    <text x="775" y="462" fill="#475569">инструменты, методология, сообщество</text>
+  </g>
+
+  <!-- Conclusion -->
+  <rect x="641" y="486" width="493" height="40" rx="10" fill="#7c3aed" opacity="0.1"/>
+  <text x="887" y="511" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#3b0764" text-anchor="middle" font-weight="bold">Два человека с одним ChatGPT — разный ИИ</text>
+
+  <!-- ========== BOTTOM BANNER ========== -->
+  <rect x="120" y="552" width="960" height="42" rx="12" fill="#0f172a"/>
+  <text x="600" y="579" font-family="system-ui, -apple-system, sans-serif" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="bold">В 90-е компьютер стал личным. Сейчас ИИ проходит тот же путь.</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#accent)"/>
+</svg>
