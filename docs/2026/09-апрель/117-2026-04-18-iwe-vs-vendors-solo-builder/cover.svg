@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Белый фон -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Верхняя акцентная полоса -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent)"/>
+
+  <!-- Заголовок -->
+  <text x="60" y="75" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="32" font-weight="bold" fill="#0f172a">
+    Почему IWE выдержит конкуренцию с вендорами
+  </text>
+  <text x="60" y="108" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="17" fill="#475569">
+    Одиночка с правильной конфигурацией сегодня делает production быстрее команды из двадцати
+  </text>
+
+  <!-- Разделитель -->
+  <line x1="60" y1="130" x2="1140" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Три карточки-различения -->
+
+  <!-- Карточка 1: Горизонталь vs Вертикаль -->
+  <g>
+    <rect x="60" y="155" width="340" height="340" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="60" y="155" width="340" height="58" rx="12" fill="#2563eb"/>
+    <rect x="60" y="195" width="340" height="18" fill="#2563eb"/>
+    <text x="80" y="189" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+      Горизонталь и вертикаль
+    </text>
+    <text x="80" y="208" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13" fill="#dbeafe">
+      На каком слое работает игрок
+    </text>
+
+    <text x="80" y="245" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">
+      Вендор
+    </text>
+    <text x="80" y="268" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      Модель, API, tool use,
+    </text>
+    <text x="80" y="287" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      память, каналы
+    </text>
+
+    <text x="80" y="330" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">
+      IWE
+    </text>
+    <text x="80" y="353" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      Вертикаль на вендорской
+    </text>
+    <text x="80" y="372" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      платформе: русскоязычный
+    </text>
+    <text x="80" y="391" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      системный мыслитель,
+    </text>
+    <text x="80" y="410" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a">
+      ИП, СБП, Школа СМ
+    </text>
+
+    <text x="80" y="470" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#2563eb">
+      ЛОКАЛЬНОСТЬ ДОМЕНА
+    </text>
+  </g>
+
+  <!-- Карточка 2: Продукт vs Среда -->
+  <g>
+    <rect x="430" y="155" width="340" height="340" rx="12" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <rect x="430" y="155" width="340" height="58" rx="12" fill="#7c3aed"/>
+    <rect x="430" y="195" width="340" height="18" fill="#7c3aed"/>
+    <text x="450" y="189" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+      Продукт и среда
+    </text>
+    <text x="450" y="208" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13" fill="#ede9fe">
+      Ценность или инструмент
+    </text>
+
+    <text x="450" y="245" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#3b0764">
+      Вендор
+    </text>
+    <text x="450" y="268" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      Продаёт инструменты:
+    </text>
+    <text x="450" y="287" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      модель, чат, агента
+    </text>
+
+    <text x="450" y="330" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#3b0764">
+      IWE
+    </text>
+    <text x="450" y="353" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      Продаёт ценность:
+    </text>
+    <text x="450" y="372" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      сильный системный
+    </text>
+    <text x="450" y="391" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      интеллект у выпускника.
+    </text>
+    <text x="450" y="410" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#3b0764">
+      Среда — способ вырастить
+    </text>
+
+    <text x="450" y="470" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#7c3aed">
+      МЕТОДОЛОГИЯ ПРОТИВ SDK
+    </text>
+  </g>
+
+  <!-- Карточка 3: Экзоскелет vs Автопилот -->
+  <g>
+    <rect x="800" y="155" width="340" height="340" rx="12" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <rect x="800" y="155" width="340" height="58" rx="12" fill="#059669"/>
+    <rect x="800" y="195" width="340" height="18" fill="#059669"/>
+    <text x="820" y="189" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+      Экзоскелет и автопилот
+    </text>
+    <text x="820" y="208" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13" fill="#d1fae5">
+      Куда ведёт пользователя
+    </text>
+
+    <text x="820" y="245" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#064e3b">
+      ИИ-стартапы
+    </text>
+    <text x="820" y="268" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      ИИ думает, решает,
+    </text>
+    <text x="820" y="287" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      отвечает за пользователя
+    </text>
+
+    <text x="820" y="330" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#064e3b">
+      IWE
+    </text>
+    <text x="820" y="353" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      ИИ усиливает мышление,
+    </text>
+    <text x="820" y="372" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      решение принимает
+    </text>
+    <text x="820" y="391" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      человек. Тест: «объясню
+    </text>
+    <text x="820" y="410" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="14" fill="#064e3b">
+      без фразы ИИ подсказал»
+    </text>
+
+    <text x="820" y="470" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">
+      ДЕЯТЕЛЬ, НЕ ПОТРЕБИТЕЛЬ
+    </text>
+  </g>
+
+  <!-- Нижний баннер -->
+  <rect x="0" y="540" width="1200" height="82" fill="#0f172a"/>
+  <text x="60" y="578" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+    Конфигурация: математик + методолог + экзоскелет + Pack + локальный домен
+  </text>
+  <text x="60" y="604" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="15" fill="#94a3b8">
+    Именно она сегодня делает production быстрее команды из двадцати разработчиков пять лет назад
+  </text>
+
+  <!-- Нижняя акцентная полоса -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#accent)"/>
+</svg>
