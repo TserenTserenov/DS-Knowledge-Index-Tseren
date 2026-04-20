@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="stagesgrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <rect x="0" y="0" width="1200" height="8" fill="url(#topbar)"/>
+
+  <text x="600" y="62" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="bold" fill="#0f172a" text-anchor="middle">Каскад ВДВ v9 — 7 стадий</text>
+  <text x="600" y="92" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" fill="#475569" text-anchor="middle">Стратегирование · Встреча 8 · Практикум «Методы саморазвития»</text>
+
+  <rect x="60" y="112" width="1080" height="1.5" fill="#e2e8f0"/>
+
+  <!-- ═══ ЛЕВАЯ КАРТОЧКА: 7 стадий ═══ -->
+  <rect x="60" y="130" width="620" height="450" rx="16" fill="url(#stagesgrad)"/>
+
+  <text x="370" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Семь стадий каскада</text>
+  <text x="370" y="188" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#93c5fd" text-anchor="middle">Вход → Действие → Выход. Выход стадии = вход следующей</text>
+
+  <rect x="80" y="202" width="580" height="1" fill="#2563eb"/>
+
+  <!-- Стадия 1 -->
+  <circle cx="100" cy="232" r="13" fill="#60a5fa"/>
+  <text x="100" y="237" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="125" y="228" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Потребление сигналов</text>
+  <text x="125" y="245" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">непрерывно · мимолётные заметки</text>
+
+  <!-- Стадия 2 -->
+  <circle cx="100" cy="280" r="13" fill="#60a5fa"/>
+  <text x="100" y="285" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="125" y="276" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Сессия стратегирования</text>
+  <text x="125" y="293" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">еженедельно (пн) · план недели</text>
+
+  <!-- Стадия 3 -->
+  <circle cx="100" cy="328" r="13" fill="#60a5fa"/>
+  <text x="100" y="333" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="125" y="324" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Открытие дня + разбор входящих</text>
+  <text x="125" y="341" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">ежедневно утром · план дня</text>
+
+  <!-- Стадия 4 -->
+  <circle cx="100" cy="376" r="13" fill="#7c3aed"/>
+  <text x="100" y="381" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="125" y="372" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Исполнение</text>
+  <text x="125" y="389" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">в течение дня · коммиты, артефакты</text>
+
+  <!-- Стадия 5 -->
+  <circle cx="100" cy="424" r="13" fill="#059669"/>
+  <text x="100" y="429" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="125" y="420" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Закрытие дня</text>
+  <text x="125" y="437" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">ежедневно вечером · отчёт + 3 варианта</text>
+
+  <!-- Стадия 6 -->
+  <circle cx="100" cy="472" r="13" fill="#059669"/>
+  <text x="100" y="477" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+  <text x="125" y="468" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Закрытие недели</text>
+  <text x="125" y="485" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">вс/пн до сессии · план недели с итогами</text>
+
+  <!-- Стадия 7 -->
+  <circle cx="100" cy="520" r="13" fill="#059669"/>
+  <text x="100" y="525" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+  <text x="125" y="516" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#ffffff">Закрытие месяца</text>
+  <text x="125" y="533" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#bfdbfe">первый пн месяца · новый фокус месяца</text>
+
+  <rect x="80" y="552" width="580" height="1" fill="#3b82f6"/>
+
+  <text x="370" y="572" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">Цикл, а не разовое мероприятие</text>
+
+  <!-- ═══ ПРАВАЯ КАРТОЧКА: Инварианты ═══ -->
+  <rect x="700" y="130" width="440" height="450" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+
+  <text x="920" y="168" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="bold" fill="#0f172a" text-anchor="middle">Три инварианта</text>
+  <text x="920" y="188" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Что держит каскад в целости</text>
+
+  <rect x="720" y="202" width="400" height="1" fill="#e2e8f0"/>
+
+  <!-- Инвариант 1 -->
+  <rect x="720" y="220" width="400" height="100" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <rect x="720" y="220" width="6" height="100" rx="3" fill="#2563eb"/>
+  <text x="740" y="246" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">Инвариант входа</text>
+  <text x="740" y="268" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">Каждый вход помечен источником:</text>
+  <text x="740" y="286" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">(стадия N) · (внешний) · (стабильный) ·</text>
+  <text x="740" y="304" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">(carry-over). Непомечен — пропуск стадии.</text>
+
+  <!-- Инвариант 2 -->
+  <rect x="720" y="332" width="400" height="100" rx="10" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+  <rect x="720" y="332" width="6" height="100" rx="3" fill="#7c3aed"/>
+  <text x="740" y="358" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#5b21b6">Инвариант carry-over</text>
+  <text x="740" y="380" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">В пределах одного контура (день,</text>
+  <text x="740" y="398" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">неделя, месяц) незакрытые элементы</text>
+  <text x="740" y="416" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">переносятся на следующую итерацию.</text>
+
+  <!-- Инвариант 3 -->
+  <rect x="720" y="444" width="400" height="100" rx="10" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+  <rect x="720" y="444" width="6" height="100" rx="3" fill="#059669"/>
+  <text x="740" y="470" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="bold" fill="#064e3b">Сигнал сбоя</text>
+  <text x="740" y="492" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">Не удаётся привязать РП → результат</text>
+  <text x="740" y="510" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">месяца → проект? Каскад сломан.</text>
+  <text x="740" y="528" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#334155">Объявить новый результат или проект.</text>
+
+  <rect x="720" y="556" width="400" height="1" fill="#e2e8f0"/>
+
+  <text x="920" y="576" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" fill="#64748b" text-anchor="middle">12 артефактов · мимолётная заметка → архив</text>
+
+  <rect x="0" y="622" width="1200" height="8" fill="url(#topbar)"/>
+</svg>
