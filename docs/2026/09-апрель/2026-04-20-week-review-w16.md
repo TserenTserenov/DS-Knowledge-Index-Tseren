@@ -2,7 +2,7 @@
 type: post
 title: "Цивилизация = интеллект × ИИ: W16, 13–19 апр"
 audience: community
-status: ready
+status: published
 created: 2026-04-20
 target: club
 source_knowledge: null
