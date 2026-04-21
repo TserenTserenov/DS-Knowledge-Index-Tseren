@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <style>
+      .page-title { fill: #0f172a; font-size: 32px; font-weight: 700; }
+      .page-subtitle { fill: #475569; font-size: 17px; font-weight: 500; }
+      .divider { stroke: #e2e8f0; stroke-width: 1; }
+
+      .card-header-skills { fill: #2563eb; }
+      .card-bg-skills { fill: #eff6ff; stroke: #bfdbfe; stroke-width: 1; }
+      .card-tag-skills { fill: #2563eb; font-size: 12px; font-weight: 600; letter-spacing: 1px; }
+
+      .card-header-thinking { fill: #7c3aed; }
+      .card-bg-thinking { fill: #f5f3ff; stroke: #ddd6fe; stroke-width: 1; }
+      .card-tag-thinking { fill: #7c3aed; font-size: 12px; font-weight: 600; letter-spacing: 1px; }
+
+      .card-title { fill: #ffffff; font-size: 20px; font-weight: 700; }
+      .card-sub { fill: #ffffff; font-size: 13px; font-weight: 500; opacity: 0.9; letter-spacing: 1px; }
+      .card-item { fill: #0f172a; font-size: 14px; font-weight: 500; }
+      .arrow { fill: #94a3b8; }
+
+      .banner-bg { fill: #0f172a; }
+      .banner-text { fill: #ffffff; font-size: 16px; font-weight: 500; }
+      .banner-accent { fill: #94a3b8; font-size: 12px; font-weight: 500; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <!-- Верхняя акцентная полоса -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentBar)"/>
+
+  <!-- Фон -->
+  <rect x="0" y="8" width="1200" height="622" fill="#ffffff"/>
+
+  <!-- Заголовок -->
+  <text class="page-title" x="600" y="60" text-anchor="middle">Новая грамотность в эпоху ИИ</text>
+  <text class="page-subtitle" x="600" y="90" text-anchor="middle">ИИ забирает навыки. У человека остаётся мышление.</text>
+
+  <!-- Разделитель -->
+  <line class="divider" x1="80" y1="120" x2="1120" y2="120"/>
+
+  <!-- Левая карточка: НАВЫКИ → ИИ -->
+  <rect class="card-bg-skills" x="80" y="150" width="480" height="350" rx="10"/>
+  <rect class="card-header-skills" x="80" y="150" width="480" height="70" rx="10"/>
+  <rect class="card-header-skills" x="80" y="200" width="480" height="20"/>
+
+  <text class="card-sub" x="320" y="180" text-anchor="middle">ЧТО АВТОМАТИЗИРУЕТСЯ</text>
+  <text class="card-title" x="320" y="205" text-anchor="middle">Навыки → ИИ</text>
+
+  <text class="card-item" x="110" y="260">✓ Чтение и пересказ текста</text>
+  <text class="card-item" x="110" y="290">✓ Письмо, составление документов</text>
+  <text class="card-item" x="110" y="320">✓ Перевод с языка на язык</text>
+  <text class="card-item" x="110" y="350">✓ Подсчёт и работа с таблицами</text>
+  <text class="card-item" x="110" y="380">✓ Написание кода</text>
+  <text class="card-item" x="110" y="410">✓ Иллюстрации, презентации</text>
+  <text class="card-item" x="110" y="440">✓ Составление отчётов</text>
+
+  <text class="card-tag-skills" x="110" y="480">КОНЕЧНАЯ ПРОЦЕДУРА → АВТОМАТИЗИРУЕТСЯ</text>
+
+  <!-- Стрелка между карточками -->
+  <polygon class="arrow" points="580,305 620,325 620,345 580,365 600,345 570,345 570,325 600,325"/>
+
+  <!-- Правая карточка: МЫШЛЕНИЕ → Человек -->
+  <rect class="card-bg-thinking" x="640" y="150" width="480" height="350" rx="10"/>
+  <rect class="card-header-thinking" x="640" y="150" width="480" height="70" rx="10"/>
+  <rect class="card-header-thinking" x="640" y="200" width="480" height="20"/>
+
+  <text class="card-sub" x="880" y="180" text-anchor="middle">ЧТО ОСТАЁТСЯ ЧЕЛОВЕКУ</text>
+  <text class="card-title" x="880" y="205" text-anchor="middle">Мышление → Человек</text>
+
+  <text class="card-item" x="670" y="260">✓ Постановка задачи</text>
+  <text class="card-item" x="670" y="290">✓ Различение настоящей проблемы от симптома</text>
+  <text class="card-item" x="670" y="320">✓ Удержание цели на горизонте</text>
+  <text class="card-item" x="670" y="350">✓ Построение моделей</text>
+  <text class="card-item" x="670" y="380">✓ Проверка результата</text>
+  <text class="card-item" x="670" y="410">✓ Ответственность за выбор</text>
+  <text class="card-item" x="670" y="440">✓ Использование ИИ как инструмента</text>
+
+  <text class="card-tag-thinking" x="670" y="480">РАБОТА НАД НАВЫКАМИ → НЕ АВТОМАТИЗИРУЕТСЯ</text>
+
+  <!-- Нижний баннер -->
+  <rect class="banner-bg" x="0" y="540" width="1200" height="82"/>
+  <text class="banner-accent" x="600" y="568" text-anchor="middle">ОТ ГРАМОТНОСТИ К СИСТЕМНОМУ МЫШЛЕНИЮ</text>
+  <text class="banner-text" x="600" y="595" text-anchor="middle">Печатный станок и школа дали массовый доступ к чтению и письму.</text>
+  <text class="banner-text" x="600" y="615" text-anchor="middle">IWE — массовый доступ к системному мышлению в эпоху ИИ.</text>
+
+  <!-- Нижняя акцентная полоса -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#accentBar)"/>
+</svg>
