@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .bg { fill: #f5f1ea; }
+      .center-circle { fill: #1a1a1a; }
+      .center-text { fill: #f5f1ea; font-size: 32px; font-weight: 700; letter-spacing: 1.5px; }
+      .center-sub { fill: #d4b483; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; }
+      .practice-circle { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+      .practice-text { fill: #1a1a1a; font-size: 18px; font-weight: 600; }
+      .practice-sub { fill: #666; font-size: 13px; font-weight: 400; }
+      .link { stroke: #1a1a1a; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.35; fill: none; }
+      .title { fill: #1a1a1a; font-size: 22px; font-weight: 700; }
+      .subtitle { fill: #999; font-size: 13px; font-weight: 500; letter-spacing: 2px; }
+      .accent-dot { fill: #d4b483; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="630"/>
+
+  <!-- Заголовок -->
+  <text class="subtitle" x="600" y="38" text-anchor="middle">ПРАКТИКУМ СИСТЕМНОЕ САМОРАЗВИТИЕ</text>
+  <text class="title" x="600" y="66" text-anchor="middle">Все практики это формы одного движения</text>
+
+  <!-- Соединительные линии (от центра к каждой практике) -->
+  <!-- Центр (600, 335), r=105 -->
+  <!-- Практики r=78, расстояние от центра = 205 -->
+
+  <!-- 0°: right (805, 335) -->
+  <line class="link" x1="705" y1="335" x2="727" y2="335"/>
+  <!-- 60°: lower-right (702, 513) -->
+  <line class="link" x1="651" y1="426" x2="681" y2="478"/>
+  <!-- 120°: lower-left (498, 513) -->
+  <line class="link" x1="549" y1="426" x2="519" y2="478"/>
+  <!-- 180°: left (395, 335) -->
+  <line class="link" x1="495" y1="335" x2="473" y2="335"/>
+  <!-- 240°: upper-left (498, 157) -->
+  <line class="link" x1="549" y1="244" x2="519" y2="192"/>
+  <!-- 300°: upper-right (702, 157) -->
+  <line class="link" x1="651" y1="244" x2="681" y2="192"/>
+
+  <!-- Центральный круг -->
+  <circle class="center-circle" cx="600" cy="335" r="105"/>
+  <text class="center-sub" x="600" y="318" text-anchor="middle">ЦЕНТР ПРАКТИК</text>
+  <text class="center-text" x="600" y="353" text-anchor="middle">ВНИМАНИЕ</text>
+  <circle class="accent-dot" cx="600" cy="373" r="3"/>
+
+  <!-- Практика 1: Помидорка (right, 0°) -->
+  <circle class="practice-circle" cx="805" cy="335" r="78"/>
+  <text class="practice-text" x="805" y="326" text-anchor="middle">Помидорка</text>
+  <text class="practice-sub" x="805" y="350" text-anchor="middle">стоп-момент</text>
+  <text class="practice-sub" x="805" y="368" text-anchor="middle">перед работой</text>
+
+  <!-- Практика 2: Досуг (lower-right, 60°) -->
+  <circle class="practice-circle" cx="702" cy="513" r="78"/>
+  <text class="practice-text" x="702" y="503" text-anchor="middle">Досуг</text>
+  <text class="practice-sub" x="702" y="525" text-anchor="middle">внимание к телу</text>
+  <text class="practice-sub" x="702" y="543" text-anchor="middle">и впечатлениям</text>
+
+  <!-- Практика 3: Разбор заметок (lower-left, 120°) -->
+  <circle class="practice-circle" cx="498" cy="513" r="78"/>
+  <text class="practice-text" x="498" y="503" text-anchor="middle">Разбор заметок</text>
+  <text class="practice-sub" x="498" y="525" text-anchor="middle">переписывание</text>
+  <text class="practice-sub" x="498" y="543" text-anchor="middle">своего кода</text>
+
+  <!-- Практика 4: Стратегирование (left, 180°) -->
+  <circle class="practice-circle" cx="395" cy="335" r="78"/>
+  <text class="practice-text" x="395" y="326" text-anchor="middle">Стратегирование</text>
+  <text class="practice-sub" x="395" y="350" text-anchor="middle">встреча</text>
+  <text class="practice-sub" x="395" y="368" text-anchor="middle">с собой</text>
+
+  <!-- Практика 5: ОРЗ (upper-left, 240°) -->
+  <circle class="practice-circle" cx="498" cy="157" r="78"/>
+  <text class="practice-text" x="498" y="148" text-anchor="middle">ОРЗ дня</text>
+  <text class="practice-sub" x="498" y="170" text-anchor="middle">открытие и</text>
+  <text class="practice-sub" x="498" y="188" text-anchor="middle">закрытие дня</text>
+
+  <!-- Практика 6: Триггеры (upper-right, 300°) -->
+  <circle class="practice-circle" cx="702" cy="157" r="78"/>
+  <text class="practice-text" x="702" y="148" text-anchor="middle">Триггеры</text>
+  <text class="practice-sub" x="702" y="170" text-anchor="middle">ловить мимолётное</text>
+  <text class="practice-sub" x="702" y="188" text-anchor="middle">и записывать</text>
+
+  <!-- Футер -->
+  <text class="title" x="600" y="610" text-anchor="middle" font-size="18" font-weight="500" font-style="italic" fill="#555">У всех одинаковый компьютер в голове. Разница во внимании.</text>
+</svg>
