@@ -1,0 +1,32 @@
+flowchart TB
+    subgraph Persona["🟢 ПЕРСОНА — мой слой"]
+        direction TB
+        P_writer["<b>Writer:</b> я сам<br/>(или агент с моим согласием)"]
+        P_owner["<b>Owner:</b> моё<br/>(Git-репо, личные заметки)"]
+        P_ex["Заметки, чек-листы,<br/>ценности, цели, Личный устав"]
+    end
+
+    subgraph Memory["🟡 ПАМЯТЬ — слой системы"]
+        direction TB
+        M_writer["<b>Writer:</b> система<br/>(не я в момент действия)"]
+        M_owner["<b>Owner:</b> носитель системы<br/>(может быть где угодно)"]
+        M_ex["События моих действий,<br/>агрегаты, история взаимодействия,<br/>расчёты-индикаторы"]
+        M_note["💡 Носителем может быть:<br/>платформа, локальная БД,<br/>vector store, память ИИ-агента,<br/>биологическая память человека.<br/><b>НЕ привязано к платформе.</b>"]
+    end
+
+    subgraph Context["🔵 КОНТЕКСТ — слой runtime"]
+        direction TB
+        C_writer["<b>Writer:</b> агент в runtime"]
+        C_owner["<b>Owner:</b> никому,<br/>не хранится долго"]
+        C_ex["Промпт-сборка под один LLM-вызов:<br/>что подобрано из Персоны и Памяти<br/>именно сейчас"]
+    end
+
+    Persona -.->|"подаёт явные<br/>ценности и заметки"| Context
+    Memory -.->|"подаёт релевантную<br/>историю и агрегаты"| Context
+
+    classDef persona fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#000
+    classDef memory fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:#000
+    classDef context fill:#cce5ff,stroke:#007bff,stroke-width:2px,color:#000
+    class Persona persona
+    class Memory memory
+    class Context context

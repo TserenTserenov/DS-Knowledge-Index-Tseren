@@ -1,7 +1,7 @@
 ---
 type: draft-notes
 post: 121
-status: draft
+status: promoted  # 26 апр: club-пост 121-1-club-2026-04-26.md написан, выбран вариант названия #1
 created: 2026-04-26
 audience: community
 target: club
@@ -9,6 +9,9 @@ source_knowledge: "PACK-digital-platform/DP.D.050, ~/IWE/.claude/rules/distincti
 related_wp: 245
 related_post: 110  # «Работа с ИИ: на что обращать внимание» — три слоя ИИ-системы
 ---
+
+> **UPDATE 26 апр:** club-черновик готов: `121-1-club-2026-04-26.md`. Выбран вариант названия **#1** «Не "второй мозг", а три слоя: Персона / Память / Контекст» — самый прямой и точный. cover.png сгенерирован из cover.mmd через `mmdc` (1600×1200, transparent). Адаптации для linkedin/telegram/x не сделаны — отдельный шаг. Тон проверен по §9 CLAUDE.md (от первого лица, не «3 шага», финальный вопрос вместо императива).
+
 
 # Заметки к посту 121: Не «второй мозг», а три слоя
 
