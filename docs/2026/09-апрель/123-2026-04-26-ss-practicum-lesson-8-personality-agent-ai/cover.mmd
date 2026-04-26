@@ -1,0 +1,31 @@
+flowchart TB
+    Title["<b>Модель агента — 2×2</b><br/>две оси: что × как"]
+
+    subgraph Bio["🧬 Биологическое тело"]
+        direction TB
+        Bio_HW["<b>Hardware:</b><br/>ОРГАНИЗМ<br/>тело · мозг · моторика · восприятие"]
+        Bio_SW["<b>Software:</b><br/>ЛИЧНОСТЬ<br/>мастерства · мировоззрение · эмоции"]
+    end
+
+    subgraph Exo["🛠️ Экзотело"]
+        direction TB
+        Exo_HW["<b>Hardware:</b><br/>ЭКЗООРГАНИЗМ<br/>одежда · квартира · деньги · инструменты · автомобиль"]
+        Exo_SW["<b>Software:</b><br/>ЭКЗОКОРТЕКС<br/>компьютер · заметки · ИИ-агенты · приложения"]
+    end
+
+    Title --> Bio
+    Title --> Exo
+
+    Note["<b>Различение:</b><br/>биологическое тело — то, что с тобой при рождении, не передаётся.<br/>экзотело — то, что получено технологически: можно купить, продать, подарить.<br/>Экзокортекс — software-часть экзотела."]
+
+    Bio --> Note
+    Exo --> Note
+
+    classDef title fill:#0f172a,stroke:#0f172a,stroke-width:2px,color:#fff
+    classDef bio fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#000
+    classDef exo fill:#cce5ff,stroke:#007bff,stroke-width:2px,color:#000
+    classDef note fill:#fff3cd,stroke:#ffc107,stroke-width:1px,color:#000
+    class Title title
+    class Bio bio
+    class Exo exo
+    class Note note
