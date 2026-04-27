@@ -2,7 +2,7 @@
 type: post
 title: "Платформа поехала: W17, 20–26 апр"
 audience: community
-status: ready
+status: published
 created: 2026-04-27
 target: club
 source_knowledge: null
