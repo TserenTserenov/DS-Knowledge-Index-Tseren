@@ -1,0 +1,47 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontSize: 14px
+---
+flowchart BT
+    L1["<b>1. Я</b><br/><b>Личный устав</b><br/>цикл ревизии: квартал<br/><i>← старт после защиты практикума</i>"]
+    L2["<b>2. Ближний круг</b> (1-15 чел)<br/>документ уровня 2<br/>квартал-год"]
+    L3["<b>3. Дальний круг</b> (15-150)<br/>документ уровня 3<br/>год"]
+    L4["<b>4. Сообщество</b> (150-1500)<br/>Манифест направления<br/>2-3 года"]
+    L5["<b>5. Общество</b> (миллионы)<br/><b>Миссия</b> — публичная одностраничная рамка<br/>5-10 лет"]
+    L6["<b>6. Человечество и поколения</b><br/><b>Конституция Дела</b><br/>+ опц. Защита Дела, Устав экосистемы<br/>10-30 лет"]
+
+    Title["<b>Lifework-пакет: 6 уровней охвата</b><br/>от Личного устава к Конституции Дела"]
+    Gate["<b>Подъём через gate ≥6 мес устойчивой практики уровня N-1.</b><br/>Имитация подъёма = «писать Конституцию» с уровня 1.<br/>Время жизни документа растёт вместе с уровнем."]
+    Note["Защита практикума = старт уровня 1.<br/>Программа ЛР целится в устойчивый уровень 1 — это уже большая работа.<br/>Некоторые созидатели всю жизнь работают на уровнях 1-3 — и это завершённая работа."]
+
+    Title -.-> L6
+    L1 ==>|≥6 мес| L2
+    L2 ==>|≥6 мес| L3
+    L3 ==>|≥6 мес| L4
+    L4 ==>|≥6 мес| L5
+    L5 ==>|≥6 мес| L6
+
+    L6 --- Gate
+    L1 --- Note
+
+    classDef title fill:#0f172a,stroke:#0f172a,stroke-width:2px,color:#fff
+    classDef base fill:#10b981,stroke:#059669,stroke-width:3px,color:#fff
+    classDef near fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+    classDef far fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    classDef community fill:#6366f1,stroke:#4f46e5,stroke-width:2px,color:#fff
+    classDef society fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+    classDef apex fill:#6d28d9,stroke:#5b21b6,stroke-width:3px,color:#fff
+    classDef note fill:#fff3cd,stroke:#ffc107,stroke-width:1px,color:#000
+    classDef gate fill:#fee2e2,stroke:#ef4444,stroke-width:1px,color:#000
+
+    class Title title
+    class L1 base
+    class L2 near
+    class L3 far
+    class L4 community
+    class L5 society
+    class L6 apex
+    class Note note
+    class Gate gate
