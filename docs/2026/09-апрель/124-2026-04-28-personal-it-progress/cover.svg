@@ -64,46 +64,53 @@
   <text x="895" y="155" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#93c5fd" text-anchor="middle">АПРЕЛЬ 2026</text>
   <text x="895" y="178" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">«Это уже рабочая среда»</text>
 
-  <!-- Технологический стек, сетка 2 колонки × 5 строк -->
+  <!-- Технологический стек, сетка 2 колонки × 6 строк -->
   <!-- ряд 1 -->
-  <rect x="675" y="208" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="231" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Neon · 12 БД доменов</text>
+  <rect x="675" y="208" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="229" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Neon · 12 БД доменов</text>
 
-  <rect x="899" y="208" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="911" y="231" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Cloudflare Workers</text>
+  <rect x="899" y="208" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="229" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Cloudflare Workers</text>
 
   <!-- ряд 2 -->
-  <rect x="675" y="252" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="275" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">MCP-серверы</text>
+  <rect x="675" y="246" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="267" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">MCP-серверы</text>
 
-  <rect x="899" y="252" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="911" y="275" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Ory Hydra · OAuth</text>
+  <rect x="899" y="246" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="267" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Ory Hydra · OAuth</text>
 
   <!-- ряд 3 -->
-  <rect x="675" y="296" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="319" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Railway · бот, Directus</text>
+  <rect x="675" y="284" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="305" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Railway · бот, Directus</text>
 
-  <rect x="899" y="296" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="911" y="319" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Telegram Bot API</text>
+  <rect x="899" y="284" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="305" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Telegram Bot API</text>
 
   <!-- ряд 4 -->
-  <rect x="675" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Hetzner · pre-prod, бэкапы</text>
+  <rect x="675" y="322" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="343" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Hetzner · pre-prod, бэкапы</text>
 
-  <rect x="899" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="911" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Discourse · форум</text>
+  <rect x="899" y="322" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="343" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Discourse · форум</text>
 
   <!-- ряд 5 -->
-  <rect x="675" y="384" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="407" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Python · projection-workers</text>
+  <rect x="675" y="360" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="381" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Redis · FSM-state бота</text>
 
-  <rect x="899" y="384" width="216" height="36" rx="6" fill="#059669" stroke="#10b981" stroke-width="1.5"/>
-  <text x="911" y="407" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">NixOS · следующий шаг</text>
+  <rect x="899" y="360" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="381" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Langfuse · LLM-трассы</text>
 
-  <rect x="670" y="436" width="450" height="1" fill="#3b82f6"/>
+  <!-- ряд 6 -->
+  <rect x="675" y="398" width="216" height="32" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="419" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Python · projection-workers</text>
 
-  <text x="895" y="468" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#bfdbfe" text-anchor="middle">Та же голова. Тот же я.</text>
-  <text x="895" y="490" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#bfdbfe" text-anchor="middle">Просто страшные слова стали рабочими.</text>
+  <rect x="899" y="398" width="216" height="32" rx="6" fill="#059669" stroke="#10b981" stroke-width="1.5"/>
+  <text x="911" y="419" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">NixOS · следующий шаг</text>
+
+  <rect x="670" y="446" width="450" height="1" fill="#3b82f6"/>
+
+  <text x="895" y="472" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">Та же голова. Тот же я.</text>
+  <text x="895" y="492" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" fill="#bfdbfe" text-anchor="middle">Просто страшные слова стали рабочими.</text>
 
   <!-- Нижний баннер -->
   <rect x="60" y="548" width="1080" height="56" rx="12" fill="#0f172a"/>
