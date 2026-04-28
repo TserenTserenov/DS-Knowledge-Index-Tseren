@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1d4ed8"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="leftcard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#475569"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    <linearGradient id="rightcard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Белый фон -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#topbar)"/>
+
+  <!-- Заголовок -->
+  <text x="600" y="62" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="bold" fill="#0f172a" text-anchor="middle">От нуля до техстека за два месяца</text>
+  <text x="600" y="92" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="17" fill="#475569" text-anchor="middle">Декабрь 2025 → Апрель 2026 · Личный отчёт методолога в команде архитектора</text>
+
+  <rect x="60" y="110" width="1080" height="1.5" fill="#e2e8f0"/>
+
+  <!-- ═══ ЛЕВАЯ КАРТОЧКА: Декабрь ═══ -->
+  <rect x="60" y="128" width="490" height="400" rx="16" fill="url(#leftcard)"/>
+
+  <!-- Header label -->
+  <rect x="60" y="128" width="490" height="58" rx="16" fill="#1e293b"/>
+  <rect x="60" y="170" width="490" height="16" fill="#1e293b"/>
+  <text x="305" y="155" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#94a3b8" text-anchor="middle">ДЕКАБРЬ 2025</text>
+  <text x="305" y="178" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">«Я не думал, что смогу делать что-то в ИТ»</text>
+
+  <!-- Floating gibberish (опт. полупрозрачные слова) -->
+  <text x="120" y="240" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="22" fill="#64748b" opacity="0.9">MCP?</text>
+  <text x="380" y="232" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="20" fill="#64748b" opacity="0.7">Cloudflare?</text>
+  <text x="220" y="278" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="24" fill="#94a3b8" opacity="0.85">edge-worker?</text>
+  <text x="100" y="316" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="18" fill="#64748b" opacity="0.7">projection?</text>
+  <text x="340" y="318" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="18" fill="#64748b" opacity="0.6">Ory?</text>
+  <text x="160" y="354" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="22" fill="#94a3b8" opacity="0.85">cross-DB lookup?</text>
+  <text x="120" y="392" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="18" fill="#64748b" opacity="0.7">event-driven?</text>
+  <text x="340" y="394" font-family="'SF Mono','Monaco','Courier New',monospace" font-size="18" fill="#64748b" opacity="0.55">Hydra?</text>
+
+  <rect x="80" y="430" width="450" height="1" fill="#475569"/>
+
+  <text x="305" y="464" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#cbd5e1" text-anchor="middle">Чужой язык. Чужой ритм.</text>
+  <text x="305" y="486" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#cbd5e1" text-anchor="middle">«Пусть айтишники делают айтишное.»</text>
+
+  <!-- Стрелка между карточками -->
+  <path d="M 568 320 L 632 320" stroke="#7c3aed" stroke-width="4" fill="none"/>
+  <path d="M 622 310 L 638 320 L 622 330 Z" fill="#7c3aed"/>
+  <text x="600" y="295" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="bold" fill="#7c3aed" text-anchor="middle">2 МЕСЯЦА</text>
+
+  <!-- ═══ ПРАВАЯ КАРТОЧКА: Апрель ═══ -->
+  <rect x="650" y="128" width="490" height="400" rx="16" fill="url(#rightcard)"/>
+
+  <rect x="650" y="128" width="490" height="58" rx="16" fill="#1e3a8a"/>
+  <rect x="650" y="170" width="490" height="16" fill="#1e3a8a"/>
+  <text x="895" y="155" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#93c5fd" text-anchor="middle">АПРЕЛЬ 2026</text>
+  <text x="895" y="178" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">«Это уже рабочая среда»</text>
+
+  <!-- Технологический стек, сетка 2 колонки × 5 строк -->
+  <!-- ряд 1 -->
+  <rect x="675" y="208" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="231" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Neon · 12 БД доменов</text>
+
+  <rect x="899" y="208" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="231" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Cloudflare Workers</text>
+
+  <!-- ряд 2 -->
+  <rect x="675" y="252" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="275" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">MCP-серверы</text>
+
+  <rect x="899" y="252" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="275" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Ory Hydra · OAuth</text>
+
+  <!-- ряд 3 -->
+  <rect x="675" y="296" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="319" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Railway · бот, Directus</text>
+
+  <rect x="899" y="296" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="319" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Telegram Bot API</text>
+
+  <!-- ряд 4 -->
+  <rect x="675" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Directus · CRM</text>
+
+  <rect x="899" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="911" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Discourse · форум</text>
+
+  <!-- ряд 5 -->
+  <rect x="675" y="384" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
+  <text x="687" y="407" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Python · projection-workers</text>
+
+  <rect x="899" y="384" width="216" height="36" rx="6" fill="#059669" stroke="#10b981" stroke-width="1.5"/>
+  <text x="911" y="407" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">NixOS · следующий шаг</text>
+
+  <rect x="670" y="436" width="450" height="1" fill="#3b82f6"/>
+
+  <text x="895" y="468" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#bfdbfe" text-anchor="middle">Та же голова. Тот же я.</text>
+  <text x="895" y="490" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#bfdbfe" text-anchor="middle">Просто страшные слова стали рабочими.</text>
+
+  <!-- Нижний баннер -->
+  <rect x="60" y="548" width="1080" height="56" rx="12" fill="#0f172a"/>
+  <text x="600" y="582" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">
+    <tspan font-weight="bold" fill="#7c3aed">Команда</tspan>
+    <tspan fill="#94a3b8">  +  </tspan>
+    <tspan font-weight="bold" fill="#3b82f6">Экзоскелет (IWE)</tspan>
+    <tspan fill="#94a3b8">  +  </tspan>
+    <tspan font-weight="bold" fill="#10b981">Системное мышление</tspan>
+    <tspan fill="#cbd5e1">  =  </tspan>
+    <tspan font-weight="bold" fill="#ffffff">прогресс без переучивания</tspan>
+  </text>
+
+  <!-- Нижняя полоска -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#topbar)"/>
+</svg>
