@@ -88,7 +88,7 @@
 
   <!-- ряд 4 -->
   <rect x="675" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
-  <text x="687" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Directus · CRM</text>
+  <text x="687" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="bold" fill="#ffffff">Hetzner · pre-prod, бэкапы</text>
 
   <rect x="899" y="340" width="216" height="36" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1"/>
   <text x="911" y="363" font-family="'SF Pro Display','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Discourse · форум</text>
