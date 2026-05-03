@@ -1,0 +1,132 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Top accent stripe -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#topGrad)"/>
+
+  <!-- Title -->
+  <text x="600" y="56" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#0f172a" text-anchor="middle">12 вопросов для личной рефлексии</text>
+  <text x="600" y="90" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569" text-anchor="middle">Системное мировоззрение · Практикум «Системное саморазвитие» · Занятие 9</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="108" x2="1176" y2="108" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === COLUMN 1: Системное мировоззрение (blue) === -->
+  <!-- Header -->
+  <rect x="24" y="120" width="276" height="54" rx="6" fill="#1d4ed8"/>
+  <text x="162" y="142" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Системное</text>
+  <text x="162" y="162" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">мировоззрение</text>
+  <!-- Body -->
+  <rect x="24" y="174" width="276" height="372" rx="6" fill="#eff6ff"/>
+  <!-- Q1 -->
+  <rect x="36" y="186" width="252" height="108" rx="4" fill="#dbeafe"/>
+  <text x="50" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af" font-weight="bold">1. Что такое системное</text>
+  <text x="50" y="224" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af" font-weight="bold">мировоззрение?</text>
+  <text x="50" y="246" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">Что я начал видеть, чего</text>
+  <text x="50" y="263" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">не видел раньше?</text>
+  <text x="50" y="282" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#3b82f6">вопросы 1–3</text>
+  <!-- Q2 -->
+  <rect x="36" y="302" width="252" height="108" rx="4" fill="#dbeafe"/>
+  <text x="50" y="323" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af" font-weight="bold">2. Какие объяснения</text>
+  <text x="50" y="340" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af" font-weight="bold">меняют мир?</text>
+  <text x="50" y="362" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">Какое различение</text>
+  <text x="50" y="379" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">перевернуло картину?</text>
+  <!-- Q3 -->
+  <rect x="36" y="418" width="252" height="116" rx="4" fill="#dbeafe"/>
+  <text x="50" y="439" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1e40af" font-weight="bold">3. Что даёт ясность?</text>
+  <text x="50" y="461" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">Из чтения, из действий</text>
+  <text x="50" y="478" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1e40af">или из разговора?</text>
+
+  <!-- === COLUMN 2: Смысл и предназначение (purple) === -->
+  <!-- Header -->
+  <rect x="316" y="120" width="276" height="54" rx="6" fill="#7c3aed"/>
+  <text x="454" y="142" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Смысл</text>
+  <text x="454" y="162" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">и предназначение</text>
+  <!-- Body -->
+  <rect x="316" y="174" width="276" height="372" rx="6" fill="#f5f3ff"/>
+  <!-- Q4 -->
+  <rect x="328" y="186" width="252" height="108" rx="4" fill="#ede9fe"/>
+  <text x="342" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#5b21b6" font-weight="bold">4. Зачем нужен смысл?</text>
+  <text x="342" y="229" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">Можно ли работать</text>
+  <text x="342" y="246" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">без смысла?</text>
+  <text x="342" y="282" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7c3aed">вопросы 4–6</text>
+  <!-- Q5 -->
+  <rect x="328" y="302" width="252" height="108" rx="4" fill="#ede9fe"/>
+  <text x="342" y="323" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#5b21b6" font-weight="bold">5. Что такое</text>
+  <text x="342" y="340" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#5b21b6" font-weight="bold">предназначение?</text>
+  <text x="342" y="362" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">Находят или</text>
+  <text x="342" y="379" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">создают?</text>
+  <!-- Q6 -->
+  <rect x="328" y="418" width="252" height="116" rx="4" fill="#ede9fe"/>
+  <text x="342" y="439" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#5b21b6" font-weight="bold">6. Чего хотеть?</text>
+  <text x="342" y="461" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">Конечная игра или</text>
+  <text x="342" y="478" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5b21b6">бесконечная?</text>
+
+  <!-- === COLUMN 3: Развитие и ИИ (amber/orange) === -->
+  <!-- Header -->
+  <rect x="608" y="120" width="276" height="54" rx="6" fill="#b45309"/>
+  <text x="746" y="142" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Развитие</text>
+  <text x="746" y="162" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">и эпоха ИИ</text>
+  <!-- Body -->
+  <rect x="608" y="174" width="276" height="372" rx="6" fill="#fffbeb"/>
+  <!-- Q7 -->
+  <rect x="620" y="186" width="252" height="108" rx="4" fill="#fef3c7"/>
+  <text x="634" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#92400e" font-weight="bold">7. Зачем и как</text>
+  <text x="634" y="224" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#92400e" font-weight="bold">развиваться?</text>
+  <text x="634" y="246" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">Baseline или</text>
+  <text x="634" y="263" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">потенциал?</text>
+  <text x="634" y="282" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#d97706">вопросы 7–9</text>
+  <!-- Q8 -->
+  <rect x="620" y="302" width="252" height="108" rx="4" fill="#fef3c7"/>
+  <text x="634" y="323" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#92400e" font-weight="bold">8. Кем быть</text>
+  <text x="634" y="340" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#92400e" font-weight="bold">в эпоху ИИ?</text>
+  <text x="634" y="362" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">Экзоскелет или</text>
+  <text x="634" y="379" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">автопилот?</text>
+  <!-- Q9 -->
+  <rect x="620" y="418" width="252" height="116" rx="4" fill="#fef3c7"/>
+  <text x="634" y="439" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#92400e" font-weight="bold">9. Моя траектория</text>
+  <text x="634" y="461" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">Какой сейчас фокус</text>
+  <text x="634" y="478" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#92400e">инвестиций в роли?</text>
+
+  <!-- === COLUMN 4: Сообщество и рост (green) === -->
+  <!-- Header -->
+  <rect x="900" y="120" width="276" height="54" rx="6" fill="#047857"/>
+  <text x="1038" y="142" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Сообщество</text>
+  <text x="1038" y="162" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">и рост</text>
+  <!-- Body -->
+  <rect x="900" y="174" width="276" height="372" rx="6" fill="#ecfdf5"/>
+  <!-- Q10 -->
+  <rect x="912" y="186" width="252" height="108" rx="4" fill="#d1fae5"/>
+  <text x="926" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#064e3b" font-weight="bold">10. Зачем сообщество?</text>
+  <text x="926" y="229" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">Что даёт партнёр,</text>
+  <text x="926" y="246" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">чего не даёт ИИ?</text>
+  <text x="926" y="282" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#059669">вопросы 10–12</text>
+  <!-- Q11 -->
+  <rect x="912" y="302" width="252" height="108" rx="4" fill="#d1fae5"/>
+  <text x="926" y="323" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#064e3b" font-weight="bold">11. Как меняться</text>
+  <text x="926" y="340" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#064e3b" font-weight="bold">устойчиво?</text>
+  <text x="926" y="362" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">Пропитка, не</text>
+  <text x="926" y="379" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">рывки</text>
+  <!-- Q12 -->
+  <rect x="912" y="418" width="252" height="116" rx="4" fill="#d1fae5"/>
+  <text x="926" y="439" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#064e3b" font-weight="bold">12. Дуга мировоззрения</text>
+  <text x="926" y="461" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">На какой фазе я</text>
+  <text x="926" y="478" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#064e3b">сейчас?</text>
+
+  <!-- Bottom banner -->
+  <rect x="0" y="558" width="1200" height="64" fill="#0f172a"/>
+  <text x="600" y="583" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Вопросы, к которым стоит возвращаться по мере роста.</text>
+  <text x="600" y="608" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Ответы будут меняться — это и есть системное мировоззрение в действии.</text>
+
+  <!-- Bottom accent stripe -->
+  <rect x="0" y="622" width="1200" height="8" fill="url(#topGrad)"/>
+</svg>
