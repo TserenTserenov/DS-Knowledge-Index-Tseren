@@ -2,7 +2,7 @@
 type: post
 title: "Правило без теста — намерение: W18, 27 апр – 3 мая"
 audience: community
-status: ready
+status: published
 created: 2026-05-04
 target: club
 source_knowledge: null
