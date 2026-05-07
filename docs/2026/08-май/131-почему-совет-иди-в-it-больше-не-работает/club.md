@@ -1,3 +1,17 @@
+---
+type: post
+title: "Почему совет «иди в IT» больше не работает — и что говорить детям вместо"
+audience: community
+status: ready
+created: 2026-05-07
+target: club
+channel_number: 1
+post_number: 131
+source_knowledge: null
+tags: [развитие, IT, мировоззрение, системное-мышление, карьера]
+content_plan: WP-167
+---
+
 # Почему совет «иди в IT» больше не работает — и что говорить детям вместо
 
 ## Эпоха простых сценариев закончилась
