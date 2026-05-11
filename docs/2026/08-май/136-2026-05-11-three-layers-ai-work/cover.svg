@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <defs>
+    <linearGradient id="strip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="8" fill="url(#strip)"/>
+
+  <!-- Title -->
+  <text x="600" y="66" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#0f172a" text-anchor="middle">Три слоя работы с ИИ</text>
+  <text x="600" y="102" font-family="Arial, sans-serif" font-size="20" fill="#475569" text-anchor="middle">Почему большинство застряло на первом — и как перейти на второй за день</text>
+
+  <line x1="60" y1="122" x2="1140" y2="122" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Layer 1 -->
+  <rect x="60" y="142" width="1080" height="96" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="60" y="142" width="8" height="96" rx="4" fill="#94a3b8"/>
+  <text x="88" y="178" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#334155">Слой 1: Разовый запрос</text>
+  <text x="88" y="204" font-family="Arial, sans-serif" font-size="15" fill="#64748b">ИИ не знает вас, вашу работу, контекст. Ответы обобщённые. Потолок — написать черновик письма.</text>
+  <rect x="960" y="158" width="160" height="32" rx="6" fill="#e2e8f0"/>
+  <text x="1040" y="179" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle" font-weight="bold">95% людей здесь</text>
+
+  <!-- Arrow down -->
+  <text x="600" y="264" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#7c3aed">↓ 20 минут</text>
+
+  <!-- Layer 2 -->
+  <rect x="60" y="282" width="1080" height="96" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="60" y="282" width="8" height="96" rx="4" fill="#2563eb"/>
+  <text x="88" y="318" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e3a8a">Слой 2: Роль и инструкция</text>
+  <text x="88" y="344" font-family="Arial, sans-serif" font-size="15" fill="#1e40af">Один раз описали: кто вы, для кого работаете, что важно. ИИ начинает отвечать в вашем контексте.</text>
+  <rect x="960" y="298" width="160" height="32" rx="6" fill="#bfdbfe"/>
+  <text x="1040" y="319" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" text-anchor="middle" font-weight="bold">+100–200%</text>
+
+  <!-- Arrow down -->
+  <text x="600" y="404" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#7c3aed">↓ накапливается со временем</text>
+
+  <!-- Layer 3 -->
+  <rect x="60" y="420" width="1080" height="96" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5"/>
+  <rect x="60" y="420" width="8" height="96" rx="4" fill="#7c3aed"/>
+  <text x="88" y="456" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#4c1d95">Слой 3: Накопленная среда</text>
+  <text x="88" y="482" font-family="Arial, sans-serif" font-size="15" fill="#6d28d9">ИИ знает ваши проекты, решения, историю. Работает как партнёр, который всегда в теме.</text>
+  <rect x="960" y="436" width="160" height="32" rx="6" fill="#ddd6fe"/>
+  <text x="1040" y="457" font-family="Arial, sans-serif" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold">кратный рост</text>
+
+  <!-- Bottom banner -->
+  <rect x="0" y="536" width="1200" height="86" fill="#0f172a"/>
+  <text x="600" y="572" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Новая модель даёт +10-20%. Переход с 1-го на 2-й уровень — +100-200%.</text>
+  <text x="600" y="604" font-family="Arial, sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle">systemsworld.club</text>
+
+  <rect y="622" width="1200" height="8" fill="url(#strip)"/>
+</svg>
