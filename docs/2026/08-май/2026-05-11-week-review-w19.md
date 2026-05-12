@@ -2,7 +2,7 @@
 type: post
 title: "Reliability gate пройден — пилот стартует: W19, 4–10 мая"
 audience: community
-status: ready
+status: draft
 created: 2026-05-11
 target: club
 source_knowledge: null
