@@ -2,7 +2,7 @@
 type: post
 title: "Почему совет «иди в IT» больше не работает — и что говорить детям вместо"
 audience: community
-status: ready
+status: published
 created: 2026-05-07
 target: club
 channel_number: 1
