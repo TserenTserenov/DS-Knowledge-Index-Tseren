@@ -2,7 +2,7 @@
 type: post
 title: "Надёжность ≠ наблюдение: уроки недели пилота — W20, 11–17 мая"
 audience: community
-status: ready
+status: published
 created: 2026-05-18
 target: club
 source_knowledge: null
