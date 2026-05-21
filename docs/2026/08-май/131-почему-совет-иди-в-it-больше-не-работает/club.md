@@ -10,6 +10,8 @@ post_number: 131
 source_knowledge: null
 tags: [развитие, IT, мировоззрение, системное-мышление, карьера]
 content_plan: WP-167
+discourse_url: "https://systemsworld.club/t/-/39115"
+published_at: 2026-05-15 07:07:02+03:00
 ---
 
 # Почему совет «иди в IT» больше не работает — и что говорить детям вместо

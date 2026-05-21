@@ -8,6 +8,8 @@ target: club
 source_knowledge: null
 tags: [итоги-недели, W20]
 content_plan: null
+discourse_url: "https://systemsworld.club/t/-/39173"
+published_at: 2026-05-18 02:37:06+03:00
 ---
 
 # Надёжность ≠ наблюдение: уроки недели пилота — W20, 11–17 мая
