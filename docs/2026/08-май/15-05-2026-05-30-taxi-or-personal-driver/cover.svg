@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- White background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Upper gradient strip -->
+  <defs>
+    <linearGradient id="topStrip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="8" fill="url(#topStrip)"/>
+
+  <!-- Title -->
+  <text x="600" y="72" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#0f172a" text-anchor="middle">Такси или личный водитель</text>
+  <text x="600" y="108" font-family="Arial, sans-serif" font-size="18" fill="#475569" text-anchor="middle">Почему лучшие ИИ не справляются с настоящей работой</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="128" x2="1140" y2="128" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Left column: Такси (чат-ИИ) -->
+  <rect x="60" y="148" width="330" height="44" rx="6" fill="#2563eb"/>
+  <text x="225" y="176" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Такси (чат-ИИ)</text>
+
+  <rect x="60" y="204" width="330" height="88" rx="6" fill="#eff6ff"/>
+  <text x="75" y="228" font-family="Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="bold">Контекст обнуляется</text>
+  <text x="75" y="250" font-family="Arial, sans-serif" font-size="14" fill="#374151">Каждая поездка — новый адрес</text>
+  <text x="75" y="270" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Всё объясняете заново</text>
+
+  <rect x="60" y="304" width="330" height="88" rx="6" fill="#eff6ff"/>
+  <text x="75" y="328" font-family="Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="bold">Реагирует на запрос</text>
+  <text x="75" y="350" font-family="Arial, sans-serif" font-size="14" fill="#374151">Ждёт, пока вызовут</text>
+  <text x="75" y="370" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Первым не позвонит</text>
+
+  <rect x="60" y="404" width="330" height="88" rx="6" fill="#eff6ff"/>
+  <text x="75" y="428" font-family="Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="bold">Один на всё</text>
+  <text x="75" y="450" font-family="Arial, sans-serif" font-size="14" fill="#374151">Универсальный водитель</text>
+  <text x="75" y="470" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Не знает вашу жизнь</text>
+
+  <!-- Middle: цифра бенчмарка -->
+  <rect x="430" y="148" width="340" height="344" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="84" font-weight="bold" text-anchor="middle" fill="#7c3aed">47%</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">лучшая модель в замере</text>
+  <line x1="470" y1="306" x2="730" y2="306" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="600" y="338" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">ITBench-AA, май 2026</text>
+  <text x="600" y="362" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Artificial Analysis × IBM</text>
+  <text x="600" y="386" font-family="Arial, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">59 задач SRE</text>
+  <text x="600" y="432" font-family="Arial, sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Олимпиады — обгоняют</text>
+  <text x="600" y="454" font-family="Arial, sans-serif" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="bold">Офисная работа — спотыкаются</text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Разница не в IQ, а в контексте</text>
+
+  <!-- Right column: Водитель (среда) -->
+  <rect x="810" y="148" width="330" height="44" rx="6" fill="#059669"/>
+  <text x="975" y="176" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Водитель (среда)</text>
+
+  <rect x="810" y="204" width="330" height="88" rx="6" fill="#ecfdf5"/>
+  <text x="825" y="228" font-family="Arial, sans-serif" font-size="15" fill="#065f46" font-weight="bold">Знает вашу жизнь</text>
+  <text x="825" y="250" font-family="Arial, sans-serif" font-size="14" fill="#374151">Расписание, правила, история</text>
+  <text x="825" y="270" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Контекст постоянный</text>
+
+  <rect x="810" y="304" width="330" height="88" rx="6" fill="#ecfdf5"/>
+  <text x="825" y="328" font-family="Arial, sans-serif" font-size="15" fill="#065f46" font-weight="bold">Звонит первым</text>
+  <text x="825" y="350" font-family="Arial, sans-serif" font-size="14" fill="#374151">«Дождь, забрать сына раньше?»</text>
+  <text x="825" y="370" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Инициирует, напоминает</text>
+
+  <rect x="810" y="404" width="330" height="88" rx="6" fill="#ecfdf5"/>
+  <text x="825" y="428" font-family="Arial, sans-serif" font-size="15" fill="#065f46" font-weight="bold">Команда специалистов</text>
+  <text x="825" y="450" font-family="Arial, sans-serif" font-size="14" fill="#374151">Под каждый домен своя роль</text>
+  <text x="825" y="470" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Стратег, экстрактор, проводник</text>
+
+  <!-- Bottom banner -->
+  <rect x="0" y="512" width="1200" height="90" fill="#0f172a"/>
+  <text x="600" y="548" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">Это требует не более умной модели, а собранной среды вокруг неё</text>
+  <text x="600" y="584" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">systemsworld.club</text>
+
+  <!-- Lower gradient strip -->
+  <rect y="622" width="1200" height="8" fill="url(#topStrip)"/>
+</svg>
