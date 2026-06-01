@@ -2,7 +2,7 @@
 type: post
 title: "Дренаж зонтиков вместо спринта: уроки недели W22, 25–31 мая"
 audience: community
-status: ready
+status: published
 created: 2026-06-01
 target: club
 source_knowledge: null
