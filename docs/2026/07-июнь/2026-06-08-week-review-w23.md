@@ -2,7 +2,7 @@
 type: post
 title: "Меньше часов, больше peer-сессий: операционная модель сменилась — W23, 1–7 июня"
 audience: community
-status: ready
+status: published
 created: 2026-06-08
 target: club
 source_knowledge: null
