@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Pre-commit guard for the knowledge index.
+# Blocks a commit only when IT introduces a publication folder whose name
+# violates the convention. See scripts/new-post.py (scaffold) and
+# scripts/check-publish-naming.py (checker). Install via scripts/install-hooks.sh.
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+exec python3 "$repo_root/scripts/check-publish-naming.py" --staged
