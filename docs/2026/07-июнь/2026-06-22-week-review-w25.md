@@ -2,7 +2,7 @@
 type: post
 title: "Первая когорта IWE достигнута; парадокс закрытий и переоткрытий — W25, 15–21 июня"
 audience: community
-status: ready
+status: published
 created: 2026-06-22
 target: club
 source_knowledge: null
