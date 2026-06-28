@@ -2,7 +2,7 @@
 type: post
 title: "Занятие 2 «Системного саморазвития» обрело мост к личному руководству"
 audience: community
-status: ready
+status: published
 created: 2026-06-28
 target: club
 source_knowledge: https://github.com/aisystant/DS-ecosystem-development/blob/main/A.Systems-Builder/A2.Systems-Builder/A2.3.Operations/Practicum-Lessons-S1/ss-lesson-02.md
