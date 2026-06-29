@@ -2,7 +2,7 @@
 type: post
 title: "Рекорд платформенного потока и связывающее ограничение, которое не сдалось — W26, 22–28 июня"
 audience: community
-status: ready
+status: published
 created: 2026-06-29
 target: club
 source_knowledge: null
