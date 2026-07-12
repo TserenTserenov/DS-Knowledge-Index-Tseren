@@ -192,6 +192,9 @@ API key: `~/IWE/.secrets/openai-api-key` или `OPENAI_API_KEY` env var
 ```
 Идея / заметка / черновик
        ↓
+  [0] Claude: сборка контент-брифа (если тема из topic-log.yaml, WP-480)
+      сегмент/тон из карты ЦА + мем P-NNN/M-NNN из SA.CAT.001 → блок brief: в topic-log.yaml
+       ↓
   [1] Автор + Claude: лонгрид для клуба (club)
        ↓
   [2] Пользователь: согласование club-версии
