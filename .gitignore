@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+# flock target for scripts/new-post.py post_number allocation (WP-502) —
+# an empty marker file, never meaningful content, must never be committed.
+scripts/.new-post.lock
