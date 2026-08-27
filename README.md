@@ -35,15 +35,32 @@
 
 Весь контент (заметки, эссе, посты) хранится в `docs/` и организован по годам. Индексируются только `docs/2025/` и `docs/2026/`.
 
-**Конвенция имён:** `YYYY-MM-DD-slug.md`
+Новые публикации с мая 2026 года лежат в месячных папках:
+
+```text
+docs/{YYYY}/{NN}-{месяц}/{PP}-{MM}-{YYYY-MM-DD}-{slug}/
+└── {PP}-{MM}-{channel_number}-{channel}-{YYYY-MM-DD}.md
+```
+
+`NN` — обратный номер месяца для сортировки свежих месяцев сверху, `MM` — календарный номер месяца, `PP` — порядковый номер публикации внутри месяца. Исторический сквозной номер хранится в поле `post_number`.
+
+Папку публикации и канальные файлы создаёт только штатный scaffold:
+
+```bash
+python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club --dry-run
+python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club
+```
+
+Скрипт сам вычисляет номера и проверяет коллизии. Не создавайте публикацию вручную и не задавайте `--post-number`, кроме осознанного backfill.
 
 **Frontmatter для постов:**
 ```yaml
 ---
 type: post
-status: draft | published
+status: draft | ready | published
 created: YYYY-MM-DD
-target: club | blog | other
+target: club | facebook | linkedin | telegram | tenchat | x | youtube | habr | dzen
+post_number: 123  # сквозной номер, назначает new-post.py
 source_knowledge: <ссылка на Pack/Framework, откуда взято знание>
 ---
 ```
