@@ -59,7 +59,7 @@ python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<загол
 type: post
 status: draft | ready | published
 created: YYYY-MM-DD
-target: club | facebook | linkedin | telegram | tenchat | x | youtube | habr | dzen
+target: club | facebook | linkedin | telegram | tenchat | x | youtube | dzen
 post_number: 123  # сквозной номер, назначает new-post.py
 source_knowledge: <ссылка на Pack/Framework, откуда взято знание>
 ---
