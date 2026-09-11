@@ -22,15 +22,25 @@ Usage:
       [--source-knowledge PACK-personal/PD.METHOD.001] [--dry-run]
 
 post_number allocation (frontmatter "post_number", the historical cross-
-channel counter) is automatic and atomic: the script scans every existing
-club file for its highest post_number and claims max+1, all under a file
-lock (see _allocation_lock below). Do NOT compute it yourself and pass it
-in — that "read max elsewhere, then call the script" pattern is exactly
-what produced duplicate post_number 190/191/196/197 (two agents each
-computed "next" from a snapshot that was already stale by the time either
-one wrote a file). --post-number remains available for a deliberate
-backfill/override, but the script still validates occupancy under the
-same lock and refuses to hand out a number that is already taken.
+channel counter): if you have an MCP session (Claude/ChatGPT/Kimi via
+personal_write), call personal_new_post FIRST and pass the number it
+returns via --post-number below — that call is the atomic allocator
+(WP-560 Ф12, an append-only log in knowledge-mcp), not a local guess.
+Do NOT scan the repo yourself to compute "next" and pass that in instead —
+that "read max elsewhere, then call the script" pattern is exactly what
+produced duplicate post_number 190/191/196/197 (two agents each computed
+"next" from a snapshot that was already stale by the time either one
+wrote a file).
+
+Without an MCP session (e.g. this script run directly from a shell with no
+agent attached), the script still falls back to scanning every existing
+club file for its highest post_number and claiming max+1 under a file lock
+(see _allocation_lock below) — safe for a single local invocation, not
+safe against a concurrent agent-driven one racing the same number.
+
+Either way, --post-number (whether it came from personal_new_post or a
+manual override) is re-validated for occupancy under the same lock before
+being handed out, and refused if already taken.
 """
 
 import argparse
@@ -177,10 +187,12 @@ def parse_args(argv):
     p.add_argument("--channels", default="club",
                    help="Каналы через запятую (по умолчанию club)")
     p.add_argument("--post-number", type=int, default=None,
-                   help="Только для ручного backfill/override — по умолчанию "
-                        "номер выделяется сам (сквозной исторический номер, "
-                        "frontmatter). Если номер уже занят — ошибка, не "
-                        "тихий дубль.")
+                   help="Сквозной номер (frontmatter post_number). Если пишешь из "
+                        "агентской сессии с MCP — сначала вызови personal_new_post и "
+                        "передай сюда то, что он вернул (WP-560 Ф12). Без агента — "
+                        "не указывай, скрипт сам просканирует и выделит следующий "
+                        "(безопасно для одного локального запуска). Занятый номер — "
+                        "ошибка, не тихий дубль.")
     p.add_argument("--related-wp", type=int, default=None)
     p.add_argument("--content-plan", default=None, help='Например WP-406')
     p.add_argument("--source-knowledge", default=None)
