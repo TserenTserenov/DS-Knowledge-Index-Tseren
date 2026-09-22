@@ -311,9 +311,11 @@ def main(argv=None):
     print()
     print("Дальше по Exit Protocol (CLAUDE.md §5):")
     print("  1. Написать club-лонгрид (source-of-truth), затем адаптации")
-    print("  2. Обложка: python generate_post_image.py <путь к club .md>")
-    print(f"  3. Обновить docs/README.md (строка сверху в месяце «{month_name.capitalize()}»)")
-    print("  4. git add docs/ && commit && push")
+    print("  2. Обновить docs/README.md "
+          f"(строка сверху в месяце «{month_name.capitalize()}»)")
+    print("  3. git add docs/ && commit && push")
+    print("  (Обложка не обязательна и не блокирует status: ready; "
+          "генератор — внешний скрипт в DS-IT-systems, см. PROCESSES.md S48 / CLAUDE.md §5)")
     return 0
 
 

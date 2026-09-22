@@ -146,6 +146,8 @@ python social_publish.py channels
 3. Вызвать DALL-E 3 API → получить PNG (1792x1024 — горизонтальная обложка)
 4. Сохранить `cover.png` рядом с постом
 
+> **Внешний скрипт.** `generate_post_image.py` живёт в `DS-IT-systems/DS-ai-systems/publisher/scripts/` (см. «Реализация» ниже), а не в этом репозитории. Команды ниже запускаются из того репо. Обложка опциональна и **не** обязательна для `status: ready` club-постов (CLAUDE.md §5).
+
 ### CLI
 
 ```bash
