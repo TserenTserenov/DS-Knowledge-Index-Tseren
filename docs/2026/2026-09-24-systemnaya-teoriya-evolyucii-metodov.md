@@ -1230,13 +1230,13 @@ FPF также содержит эволюционные паттерны, ра�
 
 # Научные источники и точки опоры
 
-[^1]: Brewer, J. et al. / обзор теоретических вызовов культурной эволюции: *Cultural evolution: A review of theoretical challenges*, Evolutionary Human Sciences, 2024. https://doi.org/10.1017/ehs.2023.30
+[^1]: Nichols, R., Charbonneau, M., Chellappoo, A., et al. *Cultural evolution: A review of theoretical challenges*, Evolutionary Human Sciences 6:e12 (2024). https://doi.org/10.1017/ehs.2024.2
 
-[^2]: Legros, S., Cislaghi, B. *Mapping the Social-Norms Literature: An Overview of Reviews*. Дополнительно: обзор динамики норм, Annual Review of Psychology. https://doi.org/10.1146/annurev-psych-033020-013319
+[^2]: *Norm Dynamics: Interdisciplinary Perspectives on Social Norm Emergence, Persistence, and Change*, Annual Review of Psychology. https://doi.org/10.1146/annurev-psych-033020-013319
 
-[^3]: Bentley, R. A. et al. *Modelling Drift and Selection in Cultural Evolution*, Oxford Handbook of Cultural Evolution, 2023. https://doi.org/10.1093/oxfordhb/9780198869252.013.3 ; Acerbi et al., исследования prestige bias: https://doi.org/10.1098/rsos.230650
+[^3]: Bentley, R. A. et al. *Modelling Drift and Selection in Cultural Evolution*, Oxford Handbook of Cultural Evolution, 2023. https://doi.org/10.1093/oxfordhb/9780198869252.013.3 ; *Prestige bias in cultural evolutionary dynamics*, Royal Society Open Science, 2024. https://doi.org/10.1098/rsos.230650
 
-[^4]: Smith, D. *Cultural group selection and human cooperation: a conceptual and empirical review*, Evolutionary Human Sciences. https://doi.org/10.1017/ehs.2020.2 ; Wilson, D. S. et al. *Multilevel cultural evolution: From new theory to practical applications*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10120078/
+[^4]: Smith, D. *Cultural group selection and human cooperation: a conceptual and empirical review*, Evolutionary Human Sciences. https://doi.org/10.1017/ehs.2020.2 ; *Multilevel cultural evolution: From new theory to practical applications*. https://pmc.ncbi.nlm.nih.gov/articles/PMC10120078/
 
 [^5]: Annosi, M. C. et al. *Learning in an agile setting: A multilevel research study on the evolution of organizational routines*, Journal of Business Research 110 (2020), 554-566. https://doi.org/10.1016/j.jbusres.2018.05.011 ; Feldman, M. S., Pentland, B. T. *Reconceptualizing Organizational Routines as a Source of Flexibility and Change*. https://doi.org/10.2307/3556620
 
