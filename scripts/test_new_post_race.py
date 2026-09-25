@@ -7,6 +7,7 @@ reservation, publication, network request or authentication store is used.
 """
 
 import base64
+import hashlib
 import json
 import os
 import shutil
@@ -20,6 +21,7 @@ from uuid import UUID
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REPOSITORY = "repos/example/posts"
 SNAPSHOT = "a" * 40
+TREE = "b" * 40
 DRAFT_ID = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa"
 OTHER_ID = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb"
 
@@ -53,6 +55,7 @@ class NewPostReservationTest(unittest.TestCase):
         self.gh.write_text(f"#!{sys.executable}\n" + '''import json
 import os
 import pathlib
+import re
 import sys
 
 fixture_dir = pathlib.Path(os.environ["GH_FIXTURE_DIR"])
@@ -62,7 +65,14 @@ with (fixture_dir / "calls.jsonl").open("a") as calls:
 if fixture.get("error"):
     print("sensitive-auth-sentinel", file=sys.stderr)
     raise SystemExit(1)
-response = fixture[sys.argv[-1]]
+endpoint = sys.argv[-1]
+if endpoint == "graphql" and endpoint not in fixture:
+    query = next(arg[6:] for arg in sys.argv if arg.startswith("query="))
+    fields = re.findall(r'b([0-9]+):object[(]oid:"([a-f0-9]+)"[)]', query)
+    response = {"data": {"repository": {"b" + alias: fixture["_blobs"].get(oid)
+                                       for alias, oid in fields}}}
+else:
+    response = fixture[endpoint]
 print(response if isinstance(response, str) else json.dumps(response))
 ''', encoding="utf-8")
         self.gh.chmod(0o755)
@@ -74,10 +84,13 @@ print(response if isinstance(response, str) else json.dumps(response))
         log = entries if isinstance(entries, str) else "\n".join(map(json.dumps, entries)) + "\n"
         self.responses = {
             REPOSITORY: {"default_branch": "main"},
-            f"{REPOSITORY}/commits/main": {"sha": SNAPSHOT},
+            f"{REPOSITORY}/commits/main": {"sha": SNAPSHOT, "commit": {"tree": {"sha": TREE}}},
             f"{REPOSITORY}/contents/docs/_allocator-log.jsonl?ref={SNAPSHOT}": {
                 "type": "file", "encoding": "base64",
                 "content": base64.b64encode(log.encode()).decode(),
+            },
+            f"{REPOSITORY}/git/trees/{TREE}?recursive=1": {
+                "sha": TREE, "truncated": False, "tree": [],
             },
         }
         self.save_responses()
@@ -85,8 +98,22 @@ print(response if isinstance(response, str) else json.dumps(response))
     def save_responses(self):
         (self.tmp / "responses.json").write_text(json.dumps(self.responses), encoding="utf-8")
 
-    def start_post(self, *, draft_id=DRAFT_ID, number=233, slug="test-post", extra=()):
-        cmd = [sys.executable, str(self.root / "scripts" / "new-post.py"),
+    def set_history(self, files):
+        entries = []
+        blobs = {}
+        for path, text in files.items():
+            content = text.encode("utf-8")
+            oid = hashlib.sha1(b"blob " + str(len(content)).encode() + b"\0" + content).hexdigest()
+            entries.append({"path": path, "mode": "100644", "type": "blob",
+                            "sha": oid, "size": len(content)})
+            blobs[oid] = {"oid": oid, "byteSize": len(content), "isBinary": False,
+                          "isTruncated": False, "text": text}
+        self.responses[f"{REPOSITORY}/git/trees/{TREE}?recursive=1"]["tree"] = entries
+        self.responses["_blobs"] = blobs
+        self.save_responses()
+
+    def start_post(self, *, draft_id=DRAFT_ID, number=233, slug="test-post", extra=(), python_flags=()):
+        cmd = [sys.executable, *python_flags, str(self.root / "scripts" / "new-post.py"),
                "--date", "2026-09-25", "--slug", slug, "--title", "Test post",
                "--channels", "club,telegram"]
         if draft_id is not None:
@@ -146,6 +173,140 @@ print(response if isinstance(response, str) else json.dumps(response))
         self.set_log([reservation(OTHER_ID, 233)])
         self.assert_rejected_without_writes()
         self.assert_rejected_without_writes(draft_id=None, number=None)
+
+    def test_old_valid_reservation_cannot_reuse_remote_legacy_number_missing_locally(self):
+        self.set_log([reservation(number=1)])
+        path = "docs/2025/001-1-club-2025-01-01.md"
+        self.set_history({path: "# Historic post without frontmatter\n"})
+        error = self.assert_rejected_without_writes(number=1)
+        self.assertIn(path, error)
+
+    def test_remote_same_uuid_is_never_overwritten_even_with_a_different_number(self):
+        path = "docs/2026/01-09-1-club-2026-09-01.md"
+        self.set_history({path: f"---\npost_number: 232\ndraft_id: '{DRAFT_ID.upper()}'\n---\nBody\n"})
+        error = self.assert_rejected_without_writes()
+        self.assertIn(path, error)
+
+    def test_monthly_prefix_and_body_citations_are_not_global_number_or_ownership(self):
+        self.set_log([reservation(number=1)])
+        citation = f"\n```yaml\npost_number: 1\ndraft_id: {DRAFT_ID}\n```\n"
+        files = {
+            "docs/2026/01-09-1-club-2026-09-01.md": "# Monthly folder prefix only\n",
+            "docs/2026/02-09-1-club-2026-09-02.md": "---\npost_number: 232\n---\n" + citation,
+            "docs/2026/03-09-1-club-2026-09-03.md": '---\ntitle: "Example\npost_number: 1\n"\n---\n',
+        }
+        self.set_history(files)
+        local = self.add_local_post(232)
+        local.write_text(local.read_text() + citation)
+        code, stdout, stderr = self.run_post(number=1)
+        self.assertEqual(code, 0, stdout + stderr)
+        self.assertEqual(len(list((self.root / "docs").glob("**/*-1-club-*.md"))), 2)
+
+    def test_quoted_yaml_number_keys_and_values_are_checked(self):
+        path = "docs/2026/01-09-1-club-2026-09-01.md"
+        self.set_history({path: '---\n"post_number": "233" # comment\n---\n'})
+        self.assertIn(path, self.assert_rejected_without_writes())
+
+    def test_yaml_null_is_absent_number_and_only_legacy_names_supply_fallback(self):
+        for scalar in ("null", "", "~", "NULL"):
+            with self.subTest(scalar=scalar):
+                monthly = "docs/2026/01-09-1-club-2026-09-01.md"
+                legacy = "docs/2026/233-1-club-2026-09-01.md"
+                self.set_history({monthly: f"---\npost_number: {scalar}\n---\n"})
+                code, stdout, stderr = self.run_post(slug=f"null-{len(scalar)}")
+                self.assertEqual(code, 0, stdout + stderr)
+                shutil.rmtree(self.root / "docs")
+                self.set_history({legacy: f"---\npost_number: {scalar}\n---\n"})
+                error = self.assert_rejected_without_writes()
+                self.assertIn(legacy, error)
+
+    def test_null_number_with_uuid_and_no_legacy_fallback_is_ambiguous(self):
+        path = "docs/2026/01-09-1-club-2026-09-01.md"
+        self.set_history({path: f"---\npost_number: null\ndraft_id: {OTHER_ID}\n---\n"})
+        error = self.assert_rejected_without_writes()
+        self.assertIn("не связан с глобальным номером", error)
+
+    def test_ambiguous_or_malformed_yaml_stops_before_writes(self):
+        path = "docs/2026/01-09-1-club-2026-09-01.md"
+        headers = [
+            'post_number: 232\n"post_number": 231',
+            f'draft_id: {OTHER_ID}\n"draft_id": {DRAFT_ID}',
+            'defaults: &base {post_number: 232}\n<<: *base',
+            "post_number: [232]", "post_number: 0", "post_number: true",
+            'post_number: "null"', "post_number: !!null 233",
+            "post_number: " + "1" * 5000,
+            "post_number: 232\ndraft_id: 123", "post_number: 232\ndraft_id: invalid",
+            'title: "unclosed', "[232]",
+        ]
+        for header in headers:
+            with self.subTest(header=header):
+                self.set_history({path: f"---\n{header}\n---\nBody\n"})
+                self.assert_rejected_without_writes()
+        self.set_history({path: "---\npost_number: 232\n"})
+        self.assert_rejected_without_writes()
+
+    def test_missing_yaml_dependency_is_actionable_and_never_writes(self):
+        error = self.assert_rejected_without_writes(python_flags=["-S"])
+        self.assertIn("PyYAML", error)
+        self.assertFalse((self.tmp / "calls.jsonl").exists())
+
+    def test_incomplete_graphql_or_wrong_blob_metadata_stops_before_writes(self):
+        path = "docs/2026/01-09-1-club-2026-09-01.md"
+        for response in ({"errors": [{"message": "sensitive-auth-sentinel"}]}, {},
+                         {"data": {"repository": None}},
+                         {"data": {"repository": {}}},
+                         {"data": {"repository": {"b0": None}}}):
+            with self.subTest(response=response):
+                self.set_history({path: "---\npost_number: 232\n---\n"})
+                self.responses["graphql"] = response
+                self.save_responses()
+                self.assert_rejected_without_writes()
+        self.responses.pop("graphql")
+        for change in ({"isBinary": True}, {"isTruncated": True}, {"oid": "c" * 40},
+                       {"text": None}, {"byteSize": 1}, {"byteSize": True}):
+            with self.subTest(change=change):
+                self.set_history({path: "---\npost_number: 232\n---\n"})
+                blob = next(iter(self.responses["_blobs"].values()))
+                blob.update(change)
+                self.save_responses()
+                self.assert_rejected_without_writes()
+
+    def test_incomplete_or_oversized_tree_stops_before_writes(self):
+        endpoint = f"{REPOSITORY}/git/trees/{TREE}?recursive=1"
+        for change in ({"truncated": True}, {"sha": "c" * 40}, {"tree": None},
+                       {"tree": [{"type": "blob"}]}):
+            with self.subTest(change=change):
+                self.set_log([reservation()])
+                self.responses[endpoint].update(change)
+                self.save_responses()
+                self.assert_rejected_without_writes()
+        for change in ({"size": 1024 * 1024 + 1}, {"size": None}, {"mode": "120000"},
+                       {"sha": "invalid"}, {"type": "tree"}):
+            with self.subTest(change=change):
+                self.set_log([reservation()])
+                self.set_history({"docs/232-1-club-2026-09-01.md": "Existing post\n"})
+                self.responses[endpoint]["tree"][0].update(change)
+                self.save_responses()
+                self.assert_rejected_without_writes()
+
+    def test_graphql_batches_read_immutable_blobs_with_a_maximum_of_40(self):
+        files = {f"docs/2026/{index:03d}-1-club-2026-09-01.md": f"# История {index}\n"
+                 for index in range(1, 82)}
+        self.set_history(files)
+        code, stdout, stderr = self.run_post()
+        self.assertEqual(code, 0, stdout + stderr)
+        calls = [json.loads(line) for line in (self.tmp / "calls.jsonl").read_text().splitlines()]
+        graphql = [call for call in calls if call[-1] == "graphql"]
+        self.assertEqual(len(graphql), 3)
+        queried_oids = []
+        for call, expected_size in zip(graphql, [40, 40, 1]):
+            self.assertEqual(call[call.index("--method") + 1], "POST")
+            query = next(arg[6:] for arg in call if arg.startswith("query="))
+            self.assertTrue(query.startswith("query {"))
+            self.assertNotIn("mutation", query)
+            self.assertEqual(query.count("object(oid:"), expected_size)
+            queried_oids.extend(oid for oid in self.responses["_blobs"] if oid in query)
+        self.assertCountEqual(queried_oids, self.responses["_blobs"])
 
     def test_entire_ledger_must_be_valid_and_unambiguous(self):
         bad_entries = [None, [], {}, {**reservation(OTHER_ID, 234), "artifact_type": "note"},

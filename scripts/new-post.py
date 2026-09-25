@@ -26,7 +26,12 @@ Reserve the historical cross-channel post_number through personal_new_post
 FIRST, retaining the same draft_id UUID for retries (WP-560 Ф12). Real writes
 require that UUID and the returned number. The existing authenticated gh CLI
 reads docs/_allocator-log.jsonl from an immutable commit on origin's current
-default branch; missing or ambiguous reservations stop creation. No local
+default branch; missing or ambiguous reservations stop creation. Canonical
+club posts from that same snapshot are read in GraphQL batches by immutable
+blob OIDs; an existing number or UUID always refuses creation. PyYAML is
+required to inspect only frontmatter, including quoted scalars, never body
+examples. Legacy NNN-1-club names supply numbers only when frontmatter does not.
+Incomplete trees/blobs, ambiguous YAML or verification limits fail closed. No local
 allocator or manual-number fallback exists. The local lock still protects
 monthly folder numbering and checks for existing files. Replays are refused
 with the existing path, without overwriting content.
@@ -44,6 +49,8 @@ import json
 import re
 import subprocess
 import sys
+import time
+from dataclasses import dataclass
 from datetime import date as date_cls
 from datetime import datetime
 from pathlib import Path
@@ -58,13 +65,17 @@ from _publish_convention import (  # noqa: E402
     CHANNELS, MONTHS_RU, NEW_POST_PREFIX_RE, SLUG_RE, reverse_month_number,
 )
 
-# Matches the frontmatter line in any club (source-of-truth) file, new-style
-# ("PP-MM-...-1-club-...md") or legacy ("NNN-1-club-...md") naming alike —
-# every post's canonical post_number lives there.
-POST_NUMBER_RE = re.compile(r"^post_number:\s*(\d+)\s*$", re.MULTILINE)
-DRAFT_ID_RE = re.compile(r"^draft_id:\s*[\"']?([0-9a-fA-F-]{36})[\"']?\s*$", re.MULTILINE)
+# Club files carry global ownership; monthly folder ordinals are not global numbers.
 UUID_RE = re.compile(r"[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}")
+OID_RE = re.compile(r"[0-9a-f]{40}")
+CLUB_POST_PATH = re.compile(r"docs/.*-1-club-[^/]+\.md")
+LEGACY_POST_NAME = re.compile(r"(\d+)-1-club-")
 MAX_POST_NUMBER = 2**53 - 1
+MAX_BLOB_BYTES = 1024 * 1024
+MAX_HISTORY_BYTES = 8 * MAX_BLOB_BYTES
+MAX_TREE_ENTRIES = 20_000
+MAX_POST_FILES = 1000
+BLOB_BATCH_SIZE = 40
 
 
 class ReservationError(ValueError):
@@ -82,11 +93,14 @@ def canonical_draft_id(value: str) -> str:
     return str(UUID(value))
 
 
-def read_command(args: list[str], root: Path) -> str:
+def read_command(args: list[str], root: Path, deadline: float | None = None) -> str:
     """Keep CLI diagnostics private: they may contain authentication data."""
     try:
+        timeout = min(30, deadline - time.monotonic()) if deadline is not None else 30
+        if timeout <= 0:
+            raise ReservationError("Истекло время проверки GitHub; создание остановлено.")
         result = subprocess.run(args, cwd=root, capture_output=True, text=True,
-                                timeout=30, check=True)
+                                timeout=timeout, check=True)
     except (OSError, subprocess.SubprocessError, UnicodeError) as exc:
         raise ReservationError(
             "Не удалось прочитать резервацию. Нужны доступный origin на GitHub, "
@@ -94,22 +108,38 @@ def read_command(args: list[str], root: Path) -> str:
     return result.stdout
 
 
-def github_json(root: Path, endpoint: str) -> dict:
-    response = read_command([
-        "gh", "api", "--hostname", "github.com", "--method", "GET",
+def github_json(root: Path, endpoint: str, *, deadline=None, query=None) -> dict:
+    command = [
+        "gh", "api", "--hostname", "github.com", "--method", "POST" if query else "GET",
         "-H", "Accept: application/vnd.github+json",
-        "-H", "Cache-Control: no-cache", endpoint,
-    ], root)
+        "-H", "Cache-Control: no-cache",
+    ]
+    if query:
+        command += ["-f", f"query={query}"]
+    response = read_command(command + [endpoint], root, deadline)
     try:
         payload = json.loads(response)
     except json.JSONDecodeError as exc:
         raise ReservationError("GitHub вернул некорректный ответ.") from exc
-    if not isinstance(payload, dict):
+    if not isinstance(payload, dict) or "errors" in payload:
         raise ReservationError("GitHub вернул некорректный ответ.")
     return payload
 
 
-def remote_allocator_log(root: Path) -> str:
+@dataclass(frozen=True)
+class RemoteSnapshot:
+    root: Path
+    repository: str
+    sha: str
+    tree_sha: str
+    deadline: float
+
+    def read(self, endpoint: str, *, query=None) -> dict:
+        return github_json(self.root, endpoint, deadline=self.deadline, query=query)
+
+
+def remote_snapshot(root: Path) -> RemoteSnapshot:
+    deadline = time.monotonic() + 60
     remote = read_command(["git", "remote", "get-url", "origin"], root).strip()
     match = re.fullmatch(
         r"(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)"
@@ -117,14 +147,24 @@ def remote_allocator_log(root: Path) -> str:
     if not match:
         raise ReservationError("origin должен указывать на репозиторий github.com.")
     endpoint = f"repos/{match.group(1)}"
-    branch = github_json(root, endpoint).get("default_branch")
+    branch = github_json(root, endpoint, deadline=deadline).get("default_branch")
     if not isinstance(branch, str) or not branch:
         raise ReservationError("Не удалось определить основную ветку GitHub.")
-    snapshot = github_json(root, f"{endpoint}/commits/{quote(branch, safe='')}")
+    snapshot = github_json(root, f"{endpoint}/commits/{quote(branch, safe='')}", deadline=deadline)
     sha = snapshot.get("sha")
-    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+    try:
+        tree_sha = snapshot["commit"]["tree"]["sha"]
+    except (KeyError, TypeError) as exc:
+        raise ReservationError("Не удалось определить дерево снимка GitHub.") from exc
+    if (not isinstance(sha, str) or not OID_RE.fullmatch(sha)
+            or not isinstance(tree_sha, str) or not OID_RE.fullmatch(tree_sha)):
         raise ReservationError("Не удалось определить снимок основной ветки GitHub.")
-    payload = github_json(root, f"{endpoint}/contents/docs/_allocator-log.jsonl?ref={sha}")
+    return RemoteSnapshot(root, match.group(1), sha, tree_sha, deadline)
+
+
+def remote_allocator_log(snapshot: RemoteSnapshot) -> str:
+    payload = snapshot.read(
+        f"repos/{snapshot.repository}/contents/docs/_allocator-log.jsonl?ref={snapshot.sha}")
     content = payload.get("content")
     if (payload.get("type") != "file" or payload.get("encoding") != "base64"
             or not isinstance(content, str)):
@@ -133,6 +173,139 @@ def remote_allocator_log(root: Path) -> str:
         return base64.b64decode("".join(content.split()), validate=True).decode("utf-8")
     except (binascii.Error, UnicodeError, ValueError) as exc:
         raise ReservationError("Не удалось прочитать журнал резерваций GitHub.") from exc
+
+
+def remote_club_files(snapshot: RemoteSnapshot) -> list[dict]:
+    payload = snapshot.read(f"repos/{snapshot.repository}/git/trees/{snapshot.tree_sha}?recursive=1")
+    entries = payload.get("tree")
+    if (payload.get("sha") != snapshot.tree_sha or payload.get("truncated") is not False
+            or not isinstance(entries, list) or len(entries) > MAX_TREE_ENTRIES):
+        raise ReservationError("GitHub не вернул полное дерево в пределах лимита проверки.")
+    posts = []
+    seen = set()
+    for entry in entries:
+        if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
+            raise ReservationError("GitHub вернул некорректную запись дерева.")
+        path = entry["path"]
+        if path in seen:
+            raise ReservationError("GitHub вернул неоднозначное дерево.")
+        seen.add(path)
+        if not CLUB_POST_PATH.fullmatch(path):
+            continue
+        size = entry.get("size")
+        oid = entry.get("sha")
+        if (entry.get("type") != "blob" or entry.get("mode") not in ("100644", "100755")
+                or not isinstance(oid, str) or not OID_RE.fullmatch(oid)
+                or type(size) is not int or not 0 <= size <= MAX_BLOB_BYTES):
+            raise ReservationError("Не удалось полностью проверить файл поста в дереве GitHub.")
+        posts.append(entry)
+    if len(posts) > MAX_POST_FILES or sum(post["size"] for post in posts) > MAX_HISTORY_BYTES:
+        raise ReservationError("История постов превышает лимит полной проверки.")
+    return posts
+
+
+def remote_post_texts(snapshot: RemoteSnapshot, posts: list[dict]):
+    owner, name = snapshot.repository.split("/")
+    for offset in range(0, len(posts), BLOB_BATCH_SIZE):
+        batch = posts[offset:offset + BLOB_BATCH_SIZE]
+        fields = " ".join(
+            f'b{index}:object(oid:"{post["sha"]}") '
+            "{ ... on Blob { oid byteSize isBinary isTruncated text } }"
+            for index, post in enumerate(batch))
+        query = (f"query {{ repository(owner:{json.dumps(owner)}, name:{json.dumps(name)}) "
+                 f"{{ {fields} }} }}")
+        payload = snapshot.read("graphql", query=query)
+        data = payload.get("data")
+        repository = data.get("repository") if isinstance(data, dict) else None
+        if not isinstance(repository, dict):
+            raise ReservationError("GitHub не вернул содержимое исторических постов.")
+        for index, post in enumerate(batch):
+            blob = repository.get(f"b{index}")
+            if not isinstance(blob, dict):
+                raise ReservationError("GitHub пропустил исторический пост при чтении.")
+            text = blob.get("text")
+            if (blob.get("oid") != post["sha"] or blob.get("isBinary") is not False
+                    or blob.get("isTruncated") is not False or not isinstance(text, str)
+                    or type(blob.get("byteSize")) is not int):
+                raise ReservationError("GitHub вернул неполный или нетекстовый пост.")
+            try:
+                size = len(text.encode("utf-8"))
+            except UnicodeError as exc:
+                raise ReservationError("GitHub вернул некорректный текст поста.") from exc
+            if size != post["size"] or size != blob["byteSize"]:
+                raise ReservationError("Размер полученного поста не совпал со снимком GitHub.")
+            yield post["path"], text
+
+
+def post_identity(text: str, path: str) -> tuple[int | None, str | None]:
+    """Read YAML nodes without constructing tagged objects or searching the body."""
+    yaml = yaml_parser()
+    fields = {}
+    lines = text.removeprefix("\ufeff").splitlines()
+    if lines and lines[0].strip() == "---":
+        end = next((i for i, line in enumerate(lines[1:], 1)
+                    if re.fullmatch(r"(?:---|\.\.\.)[ \t]*", line)), None)
+        if end is None:
+            raise ReservationError(f"Не закрыт frontmatter поста: {path}")
+        try:
+            document = yaml.compose("\n".join(lines[1:end]), Loader=yaml.SafeLoader)
+        except (yaml.YAMLError, RecursionError) as exc:
+            raise ReservationError(f"Не удалось разобрать frontmatter поста: {path}") from exc
+        if document is not None:
+            if not isinstance(document, yaml.MappingNode):
+                raise ReservationError(f"Frontmatter поста должен быть таблицей полей: {path}")
+            for key, value in document.value:
+                if (not isinstance(key, yaml.ScalarNode) or key.tag != "tag:yaml.org,2002:str"
+                        or key.value in fields):
+                    raise ReservationError(f"Неоднозначные поля frontmatter поста: {path}")
+                fields[key.value] = value
+    number = None
+    node = fields.get("post_number")
+    if node is not None and node.tag == "tag:yaml.org,2002:null":
+        if not isinstance(node, yaml.ScalarNode) or node.value.lower() not in ("", "~", "null"):
+            raise ReservationError(f"Некорректный null в post_number: {path}")
+        node = None
+    if node is not None:
+        if (not isinstance(node, yaml.ScalarNode)
+                or node.tag not in ("tag:yaml.org,2002:str", "tag:yaml.org,2002:int")
+                or not re.fullmatch(r"[0-9]{1,16}", node.value)):
+            raise ReservationError(f"Некорректный post_number в посте: {path}")
+        number = int(node.value)
+    elif match := LEGACY_POST_NAME.match(path.rsplit("/", 1)[-1]):
+        if len(match.group(1)) > 16:
+            raise ReservationError(f"Глобальный номер в имени поста слишком велик: {path}")
+        number = int(match.group(1))
+    if number is not None and not 1 <= number <= MAX_POST_NUMBER:
+        raise ReservationError(f"post_number вне допустимого диапазона: {path}")
+    draft_id = None
+    if "draft_id" in fields:
+        node = fields["draft_id"]
+        if not isinstance(node, yaml.ScalarNode) or node.tag != "tag:yaml.org,2002:str":
+            raise ReservationError(f"Некорректный draft_id в посте: {path}")
+        draft_id = canonical_draft_id(node.value)
+        if number is None:
+            raise ReservationError(f"draft_id поста не связан с глобальным номером: {path}")
+    return number, draft_id
+
+
+def yaml_parser():
+    try:
+        import yaml
+    except ImportError as exc:
+        raise ReservationError(
+            "Для проверки frontmatter нужен PyYAML. Установите в используемом "
+            "Python-окружении: python3 -m pip install PyYAML.") from exc
+    return yaml
+
+
+def verify_remote_ownership(snapshot: RemoteSnapshot, draft_id: str, post_number: int) -> None:
+    posts = remote_club_files(snapshot)
+    for path, text in remote_post_texts(snapshot, posts):
+        existing_number, existing_draft = post_identity(text, path)
+        if existing_number == post_number or existing_draft == draft_id:
+            raise ReservationError(
+                f"UUID или post_number уже записан на GitHub: {path}. "
+                "Создание остановлено; существующий пост не меняется.")
 
 
 def unique_json_object(pairs):
@@ -213,29 +386,12 @@ def next_post_number(month_dir: Path, mm: str) -> int:
     return (max(used) + 1) if used else 1
 
 
-def _all_club_post_numbers(root: Path):
-    """Yield (post_number, path) for every club file that declares one."""
+def local_post_owner(root: Path, number: int, draft_id: str) -> Path | None:
+    """Check both ownership fields under the caller's local allocation lock."""
     for path in (root / "docs").glob("**/*-1-club-*.md"):
-        m = POST_NUMBER_RE.search(path.read_text(encoding="utf-8"))
-        if m:
-            yield int(m.group(1)), path
-
-
-def post_number_owner(root: Path, n: int) -> Path | None:
-    """Return the club file already using post_number n, or None if free.
-
-    Caller must hold _allocation_lock() for the result to be race-safe.
-    """
-    for existing_n, path in _all_club_post_numbers(root):
-        if existing_n == n:
-            return path
-    return None
-
-
-def draft_owner(root: Path, draft_id: str) -> Path | None:
-    for path in (root / "docs").glob("**/*-1-club-*.md"):
-        match = DRAFT_ID_RE.search(path.read_text(encoding="utf-8"))
-        if match and match.group(1).lower() == draft_id:
+        existing_number, existing_draft = post_identity(
+            path.read_text(encoding="utf-8"), str(path.relative_to(root)))
+        if existing_number == number or existing_draft == draft_id:
             return path
     return None
 
@@ -358,7 +514,10 @@ def main(argv=None):
 
     # Fail before even creating the local lock file if verification is unavailable.
     try:
-        verify_reservation(remote_allocator_log(root), draft_id, args.post_number)
+        yaml_parser()
+        snapshot = remote_snapshot(root)
+        verify_reservation(remote_allocator_log(snapshot), draft_id, args.post_number)
+        verify_remote_ownership(snapshot, draft_id, args.post_number)
     except ReservationError as exc:
         print(f"❌ {exc}", file=sys.stderr)
         return 1
@@ -372,7 +531,11 @@ def main(argv=None):
                   file=sys.stderr)
             return 1
 
-        owner = draft_owner(root, draft_id) or post_number_owner(root, args.post_number)
+        try:
+            owner = local_post_owner(root, args.post_number, draft_id)
+        except ReservationError as exc:
+            print(f"❌ {exc}", file=sys.stderr)
+            return 1
         if owner is not None:
             print(f"❌ UUID или post_number {args.post_number} уже записан: "
                   f"{owner.relative_to(root)}. Повтор не меняет существующий пост.",
