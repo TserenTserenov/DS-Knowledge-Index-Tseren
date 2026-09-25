@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Scaffold a publication folder for the knowledge index, by convention.
 
-This is the single source of truth for folder/file names. Do NOT create post
+Folder/file names come from the shared _publish_convention.json. Do NOT create post
 folders by hand: the month-folder uses REVERSE numbering (13 - month) so the
 freshest month sorts to the top on GitHub, while the post folder uses the REAL
 calendar month. Computing both by hand is the source of recurring drift
@@ -61,9 +61,13 @@ from uuid import UUID
 # Validation failures and dry-run must not create even a bytecode cache.
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _publish_convention import (  # noqa: E402
-    CHANNELS, MONTHS_RU, NEW_POST_PREFIX_RE, SLUG_RE, reverse_month_number,
-)
+try:
+    from _publish_convention import (  # noqa: E402
+        CHANNELS, MONTHS_RU, NEW_POST_PREFIX_RE, SLUG_RE, ConventionError,
+        month_directory_name, render_post_names, reverse_month_number,
+    )
+except ValueError as exc:
+    raise SystemExit(f"❌ Конвенция публикаций недоступна: {exc}") from None
 
 # Club files carry global ownership; monthly folder ordinals are not global numbers.
 UUID_RE = re.compile(r"[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}")
@@ -484,12 +488,14 @@ def main(argv=None):
     # --- validate inputs ---
     try:
         d = date_cls.fromisoformat(args.date)
+        if d.isoformat() != args.date:
+            raise ValueError("noncanonical date")
     except ValueError:
         print(f"❌ Неверная дата: {args.date!r}. Нужен формат YYYY-MM-DD.",
               file=sys.stderr)
         return 2
 
-    if not SLUG_RE.match(args.slug):
+    if not SLUG_RE.fullmatch(args.slug):
         print(f"❌ slug {args.slug!r} должен быть английским, строчным, через "
               f"дефис (пример: dual-loop-reflexes).", file=sys.stderr)
         return 2
@@ -510,19 +516,29 @@ def main(argv=None):
     mm = f"{d.month:02d}"
     month_name = MONTHS_RU[d.month]
     root = repo_root()
-    month_dir = root / "docs" / str(d.year) / f"{nn:02d}-{month_name}"
+    try:
+        month_dir = root / "docs" / f"{d.year:04d}" / month_directory_name(d.month)
+        # Reject incompatible channel templates before network calls or the lock file.
+        render_post_names(d, args.slug, 1, channels)
+    except ConventionError as exc:
+        print(f"❌ {exc}", file=sys.stderr)
+        return 2
 
     if args.dry_run:
         # Preview does not verify or create a reservation, and never writes.
         pp = next_post_number(month_dir, mm)
-        post_dir = month_dir / f"{pp:02d}-{mm}-{args.date}-{args.slug}"
+        try:
+            names = render_post_names(d, args.slug, pp, channels)
+        except ConventionError as exc:
+            print(f"❌ {exc}", file=sys.stderr)
+            return 2
+        post_dir = month_dir / names.post_dir
         rel = post_dir.relative_to(root)
         print(f"[dry-run] Папка поста: {rel}/")
         print(f"[dry-run]   месяц: {month_name} → внешний {nn:02d} (обратный), "
               f"календарный {mm}; порядковый в месяце {pp:02d}; "
               f"post_number (превью, резервация не проверена): {args.post_number}")
-        for ch in channels:
-            fname = f"{pp:02d}-{mm}-{CHANNELS[ch]}-{ch}-{args.date}.md"
+        for fname in names.channel_files.values():
             print(f"[dry-run]   + {post_dir.relative_to(root)}/{fname}")
         print("[dry-run] Ничего не записано. Для создания нужны подтверждённые "
               "--draft-id и --post-number из personal_new_post.")
@@ -540,7 +556,12 @@ def main(argv=None):
 
     with _allocation_lock(root):
         pp = next_post_number(month_dir, mm)
-        post_dir = month_dir / f"{pp:02d}-{mm}-{args.date}-{args.slug}"
+        try:
+            names = render_post_names(d, args.slug, pp, channels)
+        except ConventionError as exc:
+            print(f"❌ {exc}", file=sys.stderr)
+            return 2
+        post_dir = month_dir / names.post_dir
 
         if post_dir.exists():
             print(f"❌ Папка уже существует: {post_dir.relative_to(root)}",
@@ -559,12 +580,11 @@ def main(argv=None):
             return 1
         post_number = args.post_number
 
-        club_filename = f"{pp:02d}-{mm}-{CHANNELS['club']}-club-{args.date}.md"
+        club_filename = names.channel_files["club"]
 
         # --- plan files ---
         planned = []
-        for ch in channels:
-            fname = f"{pp:02d}-{mm}-{CHANNELS[ch]}-{ch}-{args.date}.md"
+        for ch, fname in names.channel_files.items():
             source_post = None if ch == "club" else club_filename
             content = build_frontmatter(
                 title=args.title, audience=args.audience, created=args.date,
