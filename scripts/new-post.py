@@ -67,6 +67,9 @@ from _publish_convention import (  # noqa: E402
 
 # Club files carry global ownership; monthly folder ordinals are not global numbers.
 UUID_RE = re.compile(r"[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}")
+TIMESTAMP_RE = re.compile(
+    r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"
+    r"(?:\.[0-9]+)?(?:Z|[+-][0-9]{2}:[0-9]{2})")
 OID_RE = re.compile(r"[0-9a-f]{40}")
 CLUB_POST_PATH = re.compile(r"docs/.*-1-club-[^/]+\.md")
 LEGACY_POST_NAME = re.compile(r"(\d+)-1-club-")
@@ -256,8 +259,12 @@ def post_identity(text: str, path: str) -> tuple[int | None, str | None]:
                 raise ReservationError(f"Frontmatter поста должен быть таблицей полей: {path}")
             for key, value in document.value:
                 if (not isinstance(key, yaml.ScalarNode) or key.tag != "tag:yaml.org,2002:str"
-                        or key.value in fields):
+                        or key.value == "<<" or key.value in fields):
                     raise ReservationError(f"Неоднозначные поля frontmatter поста: {path}")
+                if key.value in ("post_number", "draft_id") and (
+                        value.start_mark.index < key.end_mark.index
+                        or isinstance(value, yaml.ScalarNode) and value.style in ("|", ">")):
+                    raise ReservationError(f"Неоднозначный скаляр принадлежности поста: {path}")
                 fields[key.value] = value
     number = None
     node = fields.get("post_number")
@@ -326,14 +333,16 @@ def verify_reservation(log: str, draft_id: str, post_number: int) -> None:
             continue
         try:
             entry = json.loads(line, object_pairs_hook=unique_json_object)
-            if not isinstance(entry, dict) or entry.get("artifact_type") != "post":
+            if (not isinstance(entry, dict)
+                    or set(entry) != {"draft_id", "artifact_type", "post_number", "timestamp"}
+                    or entry.get("artifact_type") != "post"):
                 raise ValueError("invalid artifact type")
             entry_id = canonical_draft_id(entry.get("draft_id"))
             number = entry.get("post_number")
             if type(number) is not int or not 1 <= number <= MAX_POST_NUMBER:
                 raise ValueError("invalid post number")
             timestamp = entry.get("timestamp")
-            if not isinstance(timestamp, str) or "T" not in timestamp:
+            if not isinstance(timestamp, str) or not TIMESTAMP_RE.fullmatch(timestamp):
                 raise ValueError("invalid timestamp")
             if datetime.fromisoformat(timestamp.replace("Z", "+00:00")).tzinfo is None:
                 raise ValueError("timestamp must include timezone")
@@ -396,6 +405,13 @@ def local_post_owner(root: Path, number: int, draft_id: str) -> Path | None:
     return None
 
 
+def yaml_string(value: str) -> str:
+    """Quote free text so neither YAML keys nor frontmatter delimiters can escape."""
+    return json.dumps(value, ensure_ascii=False).translate({
+        0x85: r"\u0085", 0x2028: r"\u2028", 0x2029: r"\u2029",
+    })
+
+
 def build_frontmatter(*, title, audience, created, channel, channel_number,
                       post_number, draft_id, source_post, source_knowledge,
                       content_plan, related_wp) -> str:
@@ -403,7 +419,7 @@ def build_frontmatter(*, title, audience, created, channel, channel_number,
     lines = [
         "---",
         "type: post",
-        f'title: "{title}"',
+        f"title: {yaml_string(title)}",
         f"audience: {audience}",
         "status: draft",
         f"created: {created}",
@@ -414,11 +430,11 @@ def build_frontmatter(*, title, audience, created, channel, channel_number,
     if post_number is not None:
         lines.append(f"post_number: {post_number}")
     if source_post:  # adaptations point back at the club source-of-truth
-        lines.append(f'source_post: "{source_post}"')
-    lines.append(f'source_knowledge: "{source_knowledge}"' if source_knowledge
+        lines.append(f"source_post: {yaml_string(source_post)}")
+    lines.append(f"source_knowledge: {yaml_string(source_knowledge)}" if source_knowledge
                  else "source_knowledge: null")
     lines.append("tags: []")
-    lines.append(f'content_plan: "{content_plan}"' if content_plan
+    lines.append(f"content_plan: {yaml_string(content_plan)}" if content_plan
                  else 'content_plan: ""')
     if related_wp is not None:
         lines.append(f"related_wp: {related_wp}")

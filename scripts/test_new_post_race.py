@@ -112,9 +112,10 @@ print(response if isinstance(response, str) else json.dumps(response))
         self.responses["_blobs"] = blobs
         self.save_responses()
 
-    def start_post(self, *, draft_id=DRAFT_ID, number=233, slug="test-post", extra=(), python_flags=()):
+    def start_post(self, *, draft_id=DRAFT_ID, number=233, slug="test-post", title="Test post",
+                   extra=(), python_flags=()):
         cmd = [sys.executable, *python_flags, str(self.root / "scripts" / "new-post.py"),
-               "--date", "2026-09-25", "--slug", slug, "--title", "Test post",
+               "--date", "2026-09-25", "--slug", slug, "--title", title,
                "--channels", "club,telegram"]
         if draft_id is not None:
             cmd += ["--draft-id", draft_id]
@@ -235,6 +236,8 @@ print(response if isinstance(response, str) else json.dumps(response))
             "post_number: [232]", "post_number: 0", "post_number: true",
             'post_number: "null"', "post_number: !!null 233",
             "post_number: " + "1" * 5000,
+            "number: &number 232\npost_number: *number",
+            "post_number: |-\n  232",
             "post_number: 232\ndraft_id: 123", "post_number: 232\ndraft_id: invalid",
             'title: "unclosed', "[232]",
         ]
@@ -310,9 +313,12 @@ print(response if isinstance(response, str) else json.dumps(response))
 
     def test_entire_ledger_must_be_valid_and_unambiguous(self):
         bad_entries = [None, [], {}, {**reservation(OTHER_ID, 234), "artifact_type": "note"},
+                       {**reservation(OTHER_ID, 234), "extra": "unexpected"},
                        {**reservation(OTHER_ID, 234), "draft_id": "invalid"},
                        {**reservation(OTHER_ID, 234), "timestamp": "invalid"},
                        {**reservation(OTHER_ID, 234), "timestamp": "2026-09-25"},
+                       {**reservation(OTHER_ID, 234), "timestamp": "2026-09-25T12:00Z"},
+                       {**reservation(OTHER_ID, 234), "timestamp": "2026-W39-5T12:00:00Z"},
                        {**reservation(OTHER_ID, 234), "post_number": True},
                        {**reservation(OTHER_ID, 234), "post_number": 234.0},
                        reservation(OTHER_ID, 0), reservation(OTHER_ID, 2**53),
@@ -366,6 +372,39 @@ print(response if isinstance(response, str) else json.dumps(response))
         club.write_text(club.read_text() + "Handwritten content.\n", encoding="utf-8")
         error = self.assert_rejected_without_writes(slug="retry-changed-slug")
         self.assertIn(str(club.relative_to(self.root)), error)
+
+    def test_telegram_only_request_keeps_canonical_club_and_blocks_replay(self):
+        code, stdout, stderr = self.run_post(extra=["--channels", "telegram"])
+        self.assertEqual(code, 0, stdout + stderr)
+        club_files = list((self.root / "docs").glob("**/*-1-club-*.md"))
+        self.assertEqual(len(club_files), 1)
+        self.assertEqual(len(list((self.root / "docs").glob("**/*.md"))), 2)
+        error = self.assert_rejected_without_writes(
+            slug="telegram-retry", extra=["--channels", "telegram"])
+        self.assertIn(str(club_files[0].relative_to(self.root)), error)
+
+    def test_free_text_stays_one_yaml_value_and_cannot_inject_ownership(self):
+        import yaml
+
+        title = 'Он сказал "да"\npost_number: 999\u2028---\u2029draft_id: ' + OTHER_ID
+        source = 'Pack "цитата"\npost_number: 999'
+        plan = 'План "на завтра"\nrelated_wp: 999'
+        code, stdout, stderr = self.run_post(
+            title=title, extra=["--source-knowledge", source, "--content-plan", plan])
+        self.assertEqual(code, 0, stdout + stderr)
+        files = list((self.root / "docs").glob("**/*.md"))
+        self.assertEqual(len(files), 2)
+        for path in files:
+            header = path.read_text().split("\n---\n", 1)[0].removeprefix("---\n")
+            fields = yaml.safe_load(header)
+            self.assertEqual(fields["title"], title)
+            self.assertEqual(fields["source_knowledge"], source)
+            self.assertEqual(fields["content_plan"], plan)
+            self.assertEqual(fields["post_number"], 233)
+            self.assertEqual(fields["draft_id"], DRAFT_ID)
+            self.assertNotIn("related_wp", fields)
+        # The real ownership parser must still see the original club on replay.
+        self.assert_rejected_without_writes(slug="quoted-title-retry")
 
     def test_existing_number_or_uuid_cannot_be_reused(self):
         for number, draft_id in ((233, None), (232, DRAFT_ID)):
