@@ -19,39 +19,40 @@ Usage:
   python3 scripts/new-post.py --date 2026-06-22 --slug my-topic \\
       --title "Название поста" [--audience community] [--channels club,telegram] \\
       [--related-wp 406] [--content-plan WP-406] \\
-      [--source-knowledge PACK-personal/PD.METHOD.001] [--dry-run]
+      [--source-knowledge PACK-personal/PD.METHOD.001] \\
+      --draft-id UUID --post-number NUMBER [--dry-run]
 
-post_number allocation (frontmatter "post_number", the historical cross-
-channel counter): if you have an MCP session (Claude/ChatGPT/Kimi via
-personal_write), call personal_new_post FIRST and pass the number it
-returns via --post-number below — that call is the atomic allocator
-(WP-560 Ф12, an append-only log in knowledge-mcp), not a local guess.
-Do NOT scan the repo yourself to compute "next" and pass that in instead —
-that "read max elsewhere, then call the script" pattern is exactly what
-produced duplicate post_number 190/191/196/197 (two agents each computed
-"next" from a snapshot that was already stale by the time either one
-wrote a file).
+Reserve the historical cross-channel post_number through personal_new_post
+FIRST, retaining the same draft_id UUID for retries (WP-560 Ф12). Real writes
+require that UUID and the returned number. The existing authenticated gh CLI
+reads docs/_allocator-log.jsonl from an immutable commit on origin's current
+default branch; missing or ambiguous reservations stop creation. No local
+allocator or manual-number fallback exists. The local lock still protects
+monthly folder numbering and checks for existing files. Replays are refused
+with the existing path, without overwriting content.
 
-Without an MCP session (e.g. this script run directly from a shell with no
-agent attached), the script still falls back to scanning every existing
-club file for its highest post_number and claiming max+1 under a file lock
-(see _allocation_lock below) — safe for a single local invocation, not
-safe against a concurrent agent-driven one racing the same number.
-
-Either way, --post-number (whether it came from personal_new_post or a
-manual override) is re-validated for occupancy under the same lock before
-being handed out, and refused if already taken.
+--dry-run requires an explicit positive --post-number but needs neither gh
+nor a reservation. Its output is an unverified preview, never a reservation.
 """
 
 import argparse
+import base64
+import binascii
 import contextlib
 import fcntl
+import json
 import re
+import subprocess
 import sys
 from datetime import date as date_cls
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
+from uuid import UUID
 
 # Import the shared convention (sibling module) — single source of truth.
+# Validation failures and dry-run must not create even a bytecode cache.
+sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _publish_convention import (  # noqa: E402
     CHANNELS, MONTHS_RU, NEW_POST_PREFIX_RE, SLUG_RE, reverse_month_number,
@@ -61,6 +62,13 @@ from _publish_convention import (  # noqa: E402
 # ("PP-MM-...-1-club-...md") or legacy ("NNN-1-club-...md") naming alike —
 # every post's canonical post_number lives there.
 POST_NUMBER_RE = re.compile(r"^post_number:\s*(\d+)\s*$", re.MULTILINE)
+DRAFT_ID_RE = re.compile(r"^draft_id:\s*[\"']?([0-9a-fA-F-]{36})[\"']?\s*$", re.MULTILINE)
+UUID_RE = re.compile(r"[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}")
+MAX_POST_NUMBER = 2**53 - 1
+
+
+class ReservationError(ValueError):
+    """A reservation could not be verified; no publication may be written."""
 
 
 def repo_root() -> Path:
@@ -68,19 +76,111 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
+def canonical_draft_id(value: str) -> str:
+    if not isinstance(value, str) or not UUID_RE.fullmatch(value):
+        raise ReservationError("draft_id должен быть UUID в формате 8-4-4-4-12.")
+    return str(UUID(value))
+
+
+def read_command(args: list[str], root: Path) -> str:
+    """Keep CLI diagnostics private: they may contain authentication data."""
+    try:
+        result = subprocess.run(args, cwd=root, capture_output=True, text=True,
+                                timeout=30, check=True)
+    except (OSError, subprocess.SubprocessError, UnicodeError) as exc:
+        raise ReservationError(
+            "Не удалось прочитать резервацию. Нужны доступный origin на GitHub, "
+            "сеть и авторизованный gh; проверьте gh auth status.") from exc
+    return result.stdout
+
+
+def github_json(root: Path, endpoint: str) -> dict:
+    response = read_command([
+        "gh", "api", "--hostname", "github.com", "--method", "GET",
+        "-H", "Accept: application/vnd.github+json",
+        "-H", "Cache-Control: no-cache", endpoint,
+    ], root)
+    try:
+        payload = json.loads(response)
+    except json.JSONDecodeError as exc:
+        raise ReservationError("GitHub вернул некорректный ответ.") from exc
+    if not isinstance(payload, dict):
+        raise ReservationError("GitHub вернул некорректный ответ.")
+    return payload
+
+
+def remote_allocator_log(root: Path) -> str:
+    remote = read_command(["git", "remote", "get-url", "origin"], root).strip()
+    match = re.fullmatch(
+        r"(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)"
+        r"([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+?)(?:\.git)?/?", remote)
+    if not match:
+        raise ReservationError("origin должен указывать на репозиторий github.com.")
+    endpoint = f"repos/{match.group(1)}"
+    branch = github_json(root, endpoint).get("default_branch")
+    if not isinstance(branch, str) or not branch:
+        raise ReservationError("Не удалось определить основную ветку GitHub.")
+    snapshot = github_json(root, f"{endpoint}/commits/{quote(branch, safe='')}")
+    sha = snapshot.get("sha")
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+        raise ReservationError("Не удалось определить снимок основной ветки GitHub.")
+    payload = github_json(root, f"{endpoint}/contents/docs/_allocator-log.jsonl?ref={sha}")
+    content = payload.get("content")
+    if (payload.get("type") != "file" or payload.get("encoding") != "base64"
+            or not isinstance(content, str)):
+        raise ReservationError("GitHub не вернул полный журнал резерваций.")
+    try:
+        return base64.b64decode("".join(content.split()), validate=True).decode("utf-8")
+    except (binascii.Error, UnicodeError, ValueError) as exc:
+        raise ReservationError("Не удалось прочитать журнал резерваций GitHub.") from exc
+
+
+def unique_json_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ReservationError("Журнал резерваций содержит повторяющееся поле.")
+        result[key] = value
+    return result
+
+
+def verify_reservation(log: str, draft_id: str, post_number: int) -> None:
+    """Validate the whole ledger, including conflicts unrelated to this draft."""
+    reservations = {}
+    used_numbers = set()
+    for line in log.splitlines():
+        if not line.strip():
+            continue
+        try:
+            entry = json.loads(line, object_pairs_hook=unique_json_object)
+            if not isinstance(entry, dict) or entry.get("artifact_type") != "post":
+                raise ValueError("invalid artifact type")
+            entry_id = canonical_draft_id(entry.get("draft_id"))
+            number = entry.get("post_number")
+            if type(number) is not int or not 1 <= number <= MAX_POST_NUMBER:
+                raise ValueError("invalid post number")
+            timestamp = entry.get("timestamp")
+            if not isinstance(timestamp, str) or "T" not in timestamp:
+                raise ValueError("invalid timestamp")
+            if datetime.fromisoformat(timestamp.replace("Z", "+00:00")).tzinfo is None:
+                raise ValueError("timestamp must include timezone")
+        except (ValueError, TypeError) as exc:
+            raise ReservationError("Журнал резерваций повреждён; создание остановлено.") from exc
+        if entry_id in reservations or number in used_numbers:
+            raise ReservationError("Журнал резерваций неоднозначен: повтор UUID или номера.")
+        reservations[entry_id] = number
+        used_numbers.add(number)
+    if reservations.get(draft_id) != post_number:
+        raise ReservationError(
+            "Пара draft_id и post_number не подтверждена журналом GitHub. "
+            "Сначала вызовите personal_new_post с этим UUID и используйте его номер.")
+
+
 @contextlib.contextmanager
 def _allocation_lock(root: Path):
-    """Serialize the scan-decide-write critical section across processes.
+    """Serialize local monthly numbering, ownership checks and file creation.
 
-    Without this, two concurrent invocations (two agents working in
-    parallel, or one agent re-run before the first finished) each scan the
-    current max PP/post_number, independently compute "next", and only
-    then write files — a classic read-then-write race with no atomicity
-    in between. flock() turns "scan existing numbers, decide the next one,
-    write files claiming it" into one atomic transaction: a second process
-    blocks until the first has committed its files to disk, so its own
-    scan always sees the first process's claim and computes a different
-    number.
+    Cross-machine post_number reservation belongs to personal_new_post.
 
     OS-level flock (not a marker/lockfile-exists check) is released
     automatically when the holding process exits, including on a crash —
@@ -98,8 +198,7 @@ def _allocation_lock(root: Path):
 def next_post_number(month_dir: Path, mm: str) -> int:
     """Return the next sequential PP within the month (max existing + 1).
 
-    Caller must hold _allocation_lock() — see next_global_post_number for
-    why an unlocked scan-then-decide is unsafe under concurrency.
+    Caller must hold _allocation_lock() when creating files.
     """
     if not month_dir.is_dir():
         return 1
@@ -122,17 +221,6 @@ def _all_club_post_numbers(root: Path):
             yield int(m.group(1)), path
 
 
-def next_global_post_number(root: Path) -> int:
-    """Return (highest existing frontmatter post_number across docs/) + 1.
-
-    This is the sole allocator for post_number — see the module docstring
-    for why callers must not pre-compute this themselves. Caller must hold
-    _allocation_lock().
-    """
-    highest = max((n for n, _ in _all_club_post_numbers(root)), default=0)
-    return highest + 1
-
-
 def post_number_owner(root: Path, n: int) -> Path | None:
     """Return the club file already using post_number n, or None if free.
 
@@ -144,8 +232,16 @@ def post_number_owner(root: Path, n: int) -> Path | None:
     return None
 
 
+def draft_owner(root: Path, draft_id: str) -> Path | None:
+    for path in (root / "docs").glob("**/*-1-club-*.md"):
+        match = DRAFT_ID_RE.search(path.read_text(encoding="utf-8"))
+        if match and match.group(1).lower() == draft_id:
+            return path
+    return None
+
+
 def build_frontmatter(*, title, audience, created, channel, channel_number,
-                      post_number, source_post, source_knowledge,
+                      post_number, draft_id, source_post, source_knowledge,
                       content_plan, related_wp) -> str:
     """Render frontmatter matching the contract in CLAUDE.md "Frontmatter"."""
     lines = [
@@ -157,6 +253,7 @@ def build_frontmatter(*, title, audience, created, channel, channel_number,
         f"created: {created}",
         f"target: {channel}",
         f"channel_number: {channel_number}",
+        f"draft_id: {draft_id}",
     ]
     if post_number is not None:
         lines.append(f"post_number: {post_number}")
@@ -186,13 +283,10 @@ def parse_args(argv):
                    choices=["wide", "community", "advanced"])
     p.add_argument("--channels", default="club",
                    help="Каналы через запятую (по умолчанию club)")
-    p.add_argument("--post-number", type=int, default=None,
-                   help="Сквозной номер (frontmatter post_number). Если пишешь из "
-                        "агентской сессии с MCP — сначала вызови personal_new_post и "
-                        "передай сюда то, что он вернул (WP-560 Ф12). Без агента — "
-                        "не указывай, скрипт сам просканирует и выделит следующий "
-                        "(безопасно для одного локального запуска). Занятый номер — "
-                        "ошибка, не тихий дубль.")
+    p.add_argument("--post-number", type=int, required=True,
+                   help="Сквозной номер из personal_new_post; локального выделения нет.")
+    p.add_argument("--draft-id", default=None,
+                   help="UUID резервации personal_new_post; обязателен для записи.")
     p.add_argument("--related-wp", type=int, default=None)
     p.add_argument("--content-plan", default=None, help='Например WP-406')
     p.add_argument("--source-knowledge", default=None)
@@ -203,6 +297,17 @@ def parse_args(argv):
 
 def main(argv=None):
     args = parse_args(argv if argv is not None else sys.argv[1:])
+
+    try:
+        if not 1 <= args.post_number <= MAX_POST_NUMBER:
+            raise ReservationError(
+                "post_number должен быть положительным безопасным целым числом.")
+        draft_id = canonical_draft_id(args.draft_id) if args.draft_id is not None else None
+        if not args.dry_run and draft_id is None:
+            raise ReservationError("Для записи нужен --draft-id UUID из personal_new_post.")
+    except ReservationError as exc:
+        print(f"❌ {exc}", file=sys.stderr)
+        return 2
 
     # --- validate inputs ---
     try:
@@ -236,33 +341,28 @@ def main(argv=None):
     month_dir = root / "docs" / str(d.year) / f"{nn:02d}-{month_name}"
 
     if args.dry_run:
-        # Preview only, no lock: nothing is claimed or written, so there is
-        # nothing to protect atomically. The previewed post_number is a
-        # snapshot and may differ from what a real (locked) run allocates
-        # if something else writes a post in between — that is inherent to
-        # "preview" and is exactly why the write path below re-scans fresh
-        # under the lock instead of trusting this value.
+        # Preview does not verify or create a reservation, and never writes.
         pp = next_post_number(month_dir, mm)
         post_dir = month_dir / f"{pp:02d}-{mm}-{args.date}-{args.slug}"
-        preview_post_number = (args.post_number if args.post_number is not None
-                               else next_global_post_number(root))
-        club_filename = f"{pp:02d}-{mm}-{CHANNELS['club']}-club-{args.date}.md"
         rel = post_dir.relative_to(root)
         print(f"[dry-run] Папка поста: {rel}/")
         print(f"[dry-run]   месяц: {month_name} → внешний {nn:02d} (обратный), "
               f"календарный {mm}; порядковый в месяце {pp:02d}; "
-              f"post_number (превью, не забронирован): {preview_post_number}")
+              f"post_number (превью, резервация не проверена): {args.post_number}")
         for ch in channels:
             fname = f"{pp:02d}-{mm}-{CHANNELS[ch]}-{ch}-{args.date}.md"
             print(f"[dry-run]   + {post_dir.relative_to(root)}/{fname}")
-        print("[dry-run] Ничего не записано (убери --dry-run для создания).")
+        print("[dry-run] Ничего не записано. Для создания нужны подтверждённые "
+              "--draft-id и --post-number из personal_new_post.")
         return 0
 
-    # --- allocate + write, atomically ---
-    # Everything that reads current post state to decide a number, and
-    # everything that writes files claiming that number, happens inside
-    # ONE lock acquisition — see _allocation_lock docstring for why the
-    # scan and the write cannot be split across the lock boundary.
+    # Fail before even creating the local lock file if verification is unavailable.
+    try:
+        verify_reservation(remote_allocator_log(root), draft_id, args.post_number)
+    except ReservationError as exc:
+        print(f"❌ {exc}", file=sys.stderr)
+        return 1
+
     with _allocation_lock(root):
         pp = next_post_number(month_dir, mm)
         post_dir = month_dir / f"{pp:02d}-{mm}-{args.date}-{args.slug}"
@@ -272,17 +372,13 @@ def main(argv=None):
                   file=sys.stderr)
             return 1
 
-        if args.post_number is not None:
-            owner = post_number_owner(root, args.post_number)
-            if owner is not None:
-                print(f"❌ post_number {args.post_number} уже занят: "
-                      f"{owner.relative_to(root)}. Не вычисляй номер вручную — "
-                      f"убери --post-number, скрипт выделит свободный сам.",
-                      file=sys.stderr)
-                return 1
-            post_number = args.post_number
-        else:
-            post_number = next_global_post_number(root)
+        owner = draft_owner(root, draft_id) or post_number_owner(root, args.post_number)
+        if owner is not None:
+            print(f"❌ UUID или post_number {args.post_number} уже записан: "
+                  f"{owner.relative_to(root)}. Повтор не меняет существующий пост.",
+                  file=sys.stderr)
+            return 1
+        post_number = args.post_number
 
         club_filename = f"{pp:02d}-{mm}-{CHANNELS['club']}-club-{args.date}.md"
 
@@ -294,7 +390,7 @@ def main(argv=None):
             content = build_frontmatter(
                 title=args.title, audience=args.audience, created=args.date,
                 channel=ch, channel_number=CHANNELS[ch],
-                post_number=post_number, source_post=source_post,
+                post_number=post_number, draft_id=draft_id, source_post=source_post,
                 source_knowledge=args.source_knowledge,
                 content_plan=args.content_plan, related_wp=args.related_wp)
             planned.append((post_dir / fname, content))
@@ -313,7 +409,7 @@ def main(argv=None):
     print("  1. Написать club-лонгрид (source-of-truth), затем адаптации")
     print("  2. Обновить docs/README.md "
           f"(строка сверху в месяце «{month_name.capitalize()}»)")
-    print("  3. git add docs/ && commit && push")
+    print("  3. Добавить в git только созданные файлы, затем commit и push")
     print("  (Обложка не обязательна и не блокирует status: ready; "
           "генератор — внешний скрипт в DS-IT-systems, см. PROCESSES.md S48 / CLAUDE.md §5)")
     return 0

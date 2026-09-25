@@ -47,11 +47,13 @@ docs/{YYYY}/{NN}-{месяц}/{PP}-{MM}-{YYYY-MM-DD}-{slug}/
 Папку публикации и канальные файлы создаёт только штатный scaffold:
 
 ```bash
-python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club --dry-run
-python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club
+python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club --post-number <номер> --dry-run
+python3 scripts/new-post.py --date YYYY-MM-DD --slug <slug> --title "<заголовок>" --channels club --draft-id <UUID> --post-number <номер>
 ```
 
-Скрипт сам вычисляет номера и проверяет коллизии. Не создавайте публикацию вручную и не задавайте `--post-number`, кроме осознанного backfill.
+Сначала зарезервируйте сквозной номер через `personal_new_post` с постоянным UUID `draft_id`; при повторе используйте тот же UUID. Передайте UUID и полученный номер в скрипт. Через уже авторизованный `gh` он проверит уникальность этой пары в `docs/_allocator-log.jsonl` на снимке текущей основной ветки GitHub. Без подтверждённой резервации, доступа к GitHub или при повреждённом журнале файлы не создаются. Локального выделения номера и ручного обхода нет.
+
+Скрипт сам вычисляет месячную нумерацию папок и проверяет локальные коллизии под блокировкой. Повтор UUID или номера сообщает путь существующего поста и останавливается, сохраняя написанный текст. `--dry-run` показывает только превью явно переданного номера, не проверяет и не создаёт резервацию.
 
 **Frontmatter для постов:**
 ```yaml
@@ -60,7 +62,8 @@ type: post
 status: draft | ready | published
 created: YYYY-MM-DD
 target: club | facebook | linkedin | telegram | tenchat | x | youtube | dzen
-post_number: 123  # сквозной номер, назначает new-post.py
+post_number: 123  # сквозной номер из personal_new_post
+draft_id: <UUID>  # постоянный идентификатор резервации
 source_knowledge: <ссылка на Pack/Framework, откуда взято знание>
 ---
 ```
