@@ -43,7 +43,8 @@ class NewPostReservationTest(unittest.TestCase):
         self.tmp = Path(self.temp.name)
         self.root = self.tmp / "repo"
         (self.root / "scripts").mkdir(parents=True)
-        for name in ("new-post.py", "_publish_convention.py"):
+        for name in ("new-post.py", "_publish_convention.py", "_publish_convention.json",
+                     "check-publish-naming.py"):
             shutil.copy2(REPO_ROOT / "scripts" / name, self.root / "scripts" / name)
         subprocess.run(["git", "init", "-q", str(self.root)], check=True)
         subprocess.run(["git", "-C", str(self.root), "remote", "add", "origin",
@@ -149,10 +150,69 @@ print(response if isinstance(response, str) else json.dumps(response))
 
     def test_missing_or_invalid_arguments_never_write(self):
         for kwargs in ({"draft_id": None}, {"number": None}, {"draft_id": "not-a-uuid"},
-                       {"number": 0}, {"number": -1}, {"number": 2**53}):
+                       {"number": 0}, {"number": -1}, {"number": 2**53},
+                       {"extra": ["--date", "20260925"]}, {"slug": "test-post\n"}):
             with self.subTest(kwargs=kwargs):
                 self.assert_rejected_without_writes(**kwargs)
         self.assertFalse((self.tmp / "calls.jsonl").exists())
+
+    def test_missing_or_invalid_shared_convention_blocks_writer_and_hook(self):
+        path = self.root / "scripts" / "_publish_convention.json"
+        original = path.read_text()
+        bad_values = [None, "{broken", original.replace('"version": 1', '"version": 2'),
+                      original.replace('"club": 1', '"club": 2'),
+                      original.replace('"version": 1', '"version": 1, "version": 1'),
+                      original.replace('"{sequence}-{month}-{date}-{slug}"',
+                                       '"../{sequence}-{month}-{date}-{slug}"'),
+                      original.replace('"{sequence}-{month}-{date}-{slug}"',
+                                       '"{sequence:02d}-{month}-{date}-{slug}"'),
+                      original.replace('{channel}-{date}.md', '{channel}-{date}')]
+        for value in bad_values:
+            with self.subTest(value=value):
+                if value is None:
+                    path.unlink()
+                else:
+                    path.write_text(value)
+                self.assert_rejected_without_writes()
+                result = subprocess.run(
+                    [sys.executable, str(self.root / "scripts" / "check-publish-naming.py"), "--staged"],
+                    cwd=self.root, capture_output=True, text=True, env=self.env, timeout=15)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("Конвенция публикаций недоступна", result.stderr)
+                self.assertNotIn("Traceback", result.stderr)
+        self.assertFalse((self.tmp / "calls.jsonl").exists())
+
+    def test_shared_renderer_preserves_calendar_and_channel_names(self):
+        cases = [
+            ("2026-01-01", "telegram,club,telegram", "12-январь", "01-01-2026-01-01-test-post",
+             ["01-01-1-club-2026-01-01.md", "01-01-4-telegram-2026-01-01.md"]),
+            ("2026-12-31", "dzen", "01-декабрь", "01-12-2026-12-31-test-post",
+             ["01-12-1-club-2026-12-31.md", "01-12-8-dzen-2026-12-31.md"]),
+            ("2028-02-29", "youtube,facebook", "11-февраль", "01-02-2028-02-29-test-post",
+             ["01-02-1-club-2028-02-29.md", "01-02-2-facebook-2028-02-29.md",
+              "01-02-7-youtube-2028-02-29.md"]),
+        ]
+        for day, channels, month, directory, filenames in cases:
+            with self.subTest(day=day):
+                code, stdout, stderr = self.run_post(extra=["--date", day, "--channels", channels])
+                self.assertEqual(code, 0, stdout + stderr)
+                folder = self.root / "docs" / day[:4] / month / directory
+                self.assertEqual(sorted(path.name for path in folder.iterdir()), sorted(filenames))
+                result = subprocess.run(
+                    [sys.executable, str(self.root / "scripts" / "check-publish-naming.py")],
+                    cwd=self.root, capture_output=True, text=True, env=self.env, timeout=15)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                shutil.rmtree(self.root / "docs")
+
+    def test_monthly_sequence_99_is_valid_and_100_does_not_create_files(self):
+        month = self.root / "docs" / "2026" / "04-сентябрь"
+        (month / "98-09-2026-09-24-existing").mkdir(parents=True)
+        code, stdout, stderr = self.run_post()
+        self.assertEqual(code, 0, stdout + stderr)
+        self.assertTrue((month / "99-09-2026-09-25-test-post" / "99-09-1-club-2026-09-25.md").exists())
+        self.set_log([reservation(number=234)])
+        error = self.assert_rejected_without_writes(number=234, slug="next-post")
+        self.assertIn("от 01 до 99", error)
 
     def test_gh_unavailable_never_writes(self):
         self.gh.unlink()

@@ -22,11 +22,15 @@ import sys
 from pathlib import Path
 
 # Import the shared convention (sibling module) — single source of truth.
+sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _publish_convention import (  # noqa: E402
-    MONTH_BY_NAME, MONTH_DIR_RE, NON_MONTH_DIRS,
-    validate_month_dir, validate_post_dir,
-)
+try:
+    from _publish_convention import (  # noqa: E402
+        MONTH_BY_NAME, MONTH_DIR_RE, NON_MONTH_DIRS,
+        validate_month_dir, validate_post_dir,
+    )
+except ValueError as exc:
+    raise SystemExit(f"❌ Конвенция публикаций недоступна: {exc}") from None
 
 
 def repo_root() -> Path:
