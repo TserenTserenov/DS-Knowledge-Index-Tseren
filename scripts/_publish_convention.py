@@ -31,6 +31,13 @@ PATTERN_GROUPS = {
     "slug": 0, "month_dir": 2, "new_post_prefix": 2, "new_post": 0,
     "legacy_post": 0, "legacy_alt_post": 0, "service": 0,
 }
+# Version 1 consumers discover channel files independently of the JSON templates.
+# Keep generated names visible to both the write guard and the ownership scanner.
+POST_CHANNEL_FILENAME_RE = re.compile(
+    r"(?:(?:[0-9]{2}-[0-9]{2})|[0-9]{1,4})-[0-9]{1,2}-"
+    r"(?:club|facebook|linkedin|telegram|tenchat|x|youtube|dzen|habr)-"
+    r"[0-9]{4}-[0-9]{2}-[0-9]{2}\.md", re.IGNORECASE)
+CLUB_FILENAME_RE = re.compile(r".*-1-club-[^/]+\.md")
 
 
 def _unique_object(pairs):
@@ -91,7 +98,7 @@ def load_convention(path: Path):
             or len(set(months)) != 12):
         raise ConventionError("В конвенции нужны 12 разных русских названий месяцев.")
     channels = data["channels"]
-    if (not isinstance(channels, dict) or not channels or channels.get("club") != 1
+    if (not isinstance(channels, dict) or not 1 <= len(channels) <= 16 or channels.get("club") != 1
             or any(not re.fullmatch(r"[a-z][a-z0-9]*", channel) for channel in channels)
             or any(type(number) is not int for number in channels.values())
             or set(channels.values()) != set(range(1, len(channels) + 1))):
@@ -185,6 +192,10 @@ def render_post_names(published_date: date, slug: str, sequence: int, channels) 
             **values, channel=channel, channel_number=str(CHANNELS[channel])))
     if len(set(files.values())) != len(files):
         raise ConventionError("Шаблон канала создаёт совпадающие имена файлов.")
+    if (any(not POST_CHANNEL_FILENAME_RE.fullmatch(name) for name in files.values())
+            or sum(bool(CLUB_FILENAME_RE.fullmatch(name)) for name in files.values()) != 1
+            or not CLUB_FILENAME_RE.fullmatch(files["club"])):
+        raise ConventionError("Шаблон канала несовместим с поиском публикаций конвенции версии 1.")
     return PostNames(month_directory_name(published_date.month), post_dir, files)
 
 

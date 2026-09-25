@@ -204,6 +204,26 @@ print(response if isinstance(response, str) else json.dumps(response))
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
                 shutil.rmtree(self.root / "docs")
 
+    def test_reordered_channel_template_never_creates_files(self):
+        path = self.root / "scripts" / "_publish_convention.json"
+        config = json.loads(path.read_text())
+        for template in ("{channel}-{channel_number}-{sequence}-{month}-{date}.md",
+                         "{sequence}-{month}-0{channel_number}-{channel}-{date}.md"):
+            with self.subTest(template=template):
+                config["templates"]["channel_file"] = template
+                path.write_text(json.dumps(config, ensure_ascii=False))
+                error = self.assert_rejected_without_writes()
+                self.assertIn("несовместим с поиском публикаций", error)
+        self.assertFalse((self.tmp / "calls.jsonl").exists())
+
+    def test_channel_registry_above_server_limit_never_creates_files(self):
+        path = self.root / "scripts" / "_publish_convention.json"
+        config = json.loads(path.read_text())
+        config["channels"] = {"club": 1, **{f"channel{number}": number for number in range(2, 18)}}
+        path.write_text(json.dumps(config, ensure_ascii=False))
+        self.assert_rejected_without_writes()
+        self.assertFalse((self.tmp / "calls.jsonl").exists())
+
     def test_monthly_sequence_99_is_valid_and_100_does_not_create_files(self):
         month = self.root / "docs" / "2026" / "04-сентябрь"
         (month / "98-09-2026-09-24-existing").mkdir(parents=True)

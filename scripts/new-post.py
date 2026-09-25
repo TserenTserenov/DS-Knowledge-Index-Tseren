@@ -518,6 +518,8 @@ def main(argv=None):
     root = repo_root()
     try:
         month_dir = root / "docs" / f"{d.year:04d}" / month_directory_name(d.month)
+        # Reject incompatible channel templates before network calls or the lock file.
+        render_post_names(d, args.slug, 1, channels)
     except ConventionError as exc:
         print(f"❌ {exc}", file=sys.stderr)
         return 2
