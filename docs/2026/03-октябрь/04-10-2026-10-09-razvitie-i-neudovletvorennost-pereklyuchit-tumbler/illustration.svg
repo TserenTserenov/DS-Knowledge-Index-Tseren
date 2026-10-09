@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e7f0fc"/><stop offset="1" stop-color="#fdf9ee"/></linearGradient>
+<linearGradient id="stairs" x2="0" y2="1"><stop stop-color="#f7dfbd"/><stop offset="1" stop-color="#dfb98e"/></linearGradient>
+</defs>
+<rect width="1200" height="720" fill="url(#sky)"/>
+<circle cx="1030" cy="165" r="92" fill="#ffe1a8" opacity=".6"/>
+<path d="M0 540 230 345 410 475 655 300 820 460 1000 230 1200 425V720H0Z" fill="#b9c9e1"/>
+<path d="M0 605 190 465 335 530 570 415 735 525 970 345 1200 510V720H0Z" fill="#8ba6c8"/>
+<path d="M0 650 240 540 425 620 670 490 895 565 1200 435V720H0Z" fill="#5b7e9a"/>
+<text x="72" y="96" font-family="Arial,sans-serif" font-size="51" font-weight="700" fill="#182b42">Развитие не убирает</text>
+<text x="72" y="157" font-family="Arial,sans-serif" font-size="51" font-weight="700" fill="#182b42">неудовлетворённость</text>
+<text x="72" y="217" font-family="Arial,sans-serif" font-size="43" font-weight="700" fill="#4267a0">Оно поднимает уровень задач</text>
+<g fill="url(#stairs)" stroke="#9b775b" stroke-width="3">
+<path d="M75 625h215v68H75z"/>
+<path d="M290 557h215v68H290z"/>
+<path d="M505 489h215v68H505z"/>
+<path d="M720 421h215v68H720z"/>
+</g>
+<g font-family="Arial,sans-serif" font-weight="700" font-size="30" fill="#26354a" text-anchor="middle">
+<text x="182" y="670">Заметил</text>
+<text x="397" y="603">Разобрался</text>
+<text x="612" y="535">Изменил</text>
+<text x="827" y="466">Сделал</text>
+</g>
+<g transform="translate(765 235)">
+<path d="M30 104 0 206M30 104 60 207" fill="none" stroke="#24364b" stroke-width="26" stroke-linecap="round"/>
+<path d="M20 96 75 145" stroke="#24364b" stroke-width="19" stroke-linecap="round"/>
+<path d="M30 96 -17 150" stroke="#24364b" stroke-width="19" stroke-linecap="round"/>
+<rect x="1" y="45" width="63" height="86" rx="20" fill="#526e62"/>
+<circle cx="34" cy="22" r="31" fill="#d6a27f"/>
+<path d="M5 18Q0 -16 35 -12Q73 -8 66 24Q48 9 35 7Q22 25 5 18" fill="#352e34"/>
+<rect x="51" y="60" width="43" height="59" rx="12" fill="#314c69"/>
+</g>
+<g transform="translate(645 405)">
+<rect x="-29" y="-34" width="60" height="57" rx="22" fill="#ffffff" stroke="#59718d" stroke-width="5"/>
+<rect x="-19" y="-23" width="40" height="30" rx="14" fill="#254966"/>
+<path d="M-10 -8q9 10 18 0" stroke="#83d3ed" stroke-width="3" fill="none"/>
+<path d="M-12 25v20m26-20v20" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+</g>
+<path d="M987 432V255" stroke="#344660" stroke-width="8"/>
+<path d="M990 255 1090 268 1053 301 990 290Z" fill="#ec945c"/>
+<rect x="954" y="335" width="210" height="63" rx="12" fill="#fffaf2" opacity=".95"/>
+<text x="1059" y="375" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#344660" text-anchor="middle">Новая задача</text>
+<rect x="75" y="290" width="412" height="144" rx="20" fill="#ffffff" opacity=".91"/>
+<text x="102" y="337" font-family="Arial,sans-serif" font-size="27" fill="#375576">Я вижу пройденный путь</text>
+<text x="102" y="376" font-family="Arial,sans-serif" font-size="27" fill="#375576">и выбираю новый шаг</text>
+<text x="75" y="705" font-family="Arial,sans-serif" font-size="18" fill="#42617c">Осознанное движение вперёд — уже результат</text>
+</svg>
