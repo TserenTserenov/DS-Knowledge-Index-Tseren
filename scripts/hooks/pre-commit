@@ -3,7 +3,24 @@
 # Blocks a commit only when IT introduces a publication folder whose name
 # violates the convention. See scripts/new-post.py (scaffold) and
 # scripts/check-publish-naming.py (checker). Install via scripts/install-hooks.sh.
+#
+# Also prints concept-kind warnings for staged markdown (РП-388 Ф27): "X — это Y"
+# claims checked against the concept-kind registry. Warn-only, never blocks.
 set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel)"
+
+concept_check="${IWE_ROOT:-$HOME/IWE}/scripts/concept-kind.py"
+if [ -f "$concept_check" ]; then
+  while IFS= read -r -d '' path; do
+    # Check the staged blob, not the working tree: that is what gets committed.
+    out="$(git show ":$path" | python3 "$concept_check" --agent "${IWE_AGENT:-pre-commit}" check-text - 2>&1)" ||
+      out="concept-kind failed: $out"
+    case "$out" in
+      *"предупреждений 0."*) ;;
+      *) printf '⚠️  %s\n%s\n' "$path" "$out" >&2 ;;
+    esac
+  done < <(git diff --cached --name-only -z --diff-filter=AMR -- '*.md')
+fi
+
 exec python3 "$repo_root/scripts/check-publish-naming.py" --staged
